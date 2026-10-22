@@ -565,6 +565,7 @@ function Membership({ go }) {
     { i:"🤝",key:"Collaborative Membership",n:"Collaborative Membership",d:"You want reliable information to stay current with labour and compliance changes, and you want your business to add its weight to the wider employer voice in advocacy and lobbying. This option provides information and resources but does not include formal representation.",pop:false },
   ];
   const closeApplication = () => setSelectedCategory(null);
+  const scrollToCategories = () => document.getElementById("membership-categories").scrollIntoView({ behavior:"smooth" });
   const applicationLinks = {
     "Micro Employers":[["Micro Business · 1–5 employees","https://forms.clickup.com/20674763/f/kpy6b-14012/ZRXKTORARPAWWEFEN6"]],
     "Small, Medium & Large":[["Small Business · 6–49 employees","https://forms.clickup.com/20674763/f/kpy6b-13572/SLOHVZXOU852RDRYTG"],["Medium Business · 50–199 employees","https://forms.clickup.com/20674763/f/kpy6b-13872/NCZEGCB18PFE3YPFFX"],["Large Business · 200–499 employees","https://forms.clickup.com/20674763/f/kpy6b-13932/WVTEQ0W8QKP60Q4BXY"],["Macro Business · 500+ employees","https://forms.clickup.com/20674763/f/kpy6b-13972/6Y85TBWM7M19MJID6O"]],
@@ -603,6 +604,61 @@ function Membership({ go }) {
             </div>
           </div>
 
+          <section style={{ marginBottom:56 }}>
+            <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:16,lineHeight:1.2 }}>The decisions you make as an employer carry consequences.</h2>
+            <p style={{ color:"#4A5568",marginBottom:20 }}>You may need to dismiss an employee, respond to a workplace complaint, apply a sector agreement or adjust to a new legal requirement. Some decisions will be tested later. Others change what your business must pay or do before you have had much say in them.</p>
+            <p style={{ color:"#4A5568",marginBottom:24 }}>Membership places your business within a registered employers’ organisation. Represented options give eligible members access to formal representation. Across the membership offer, (SA)UEO provides information, practical support and a way for employer realities to inform collective bargaining and advocacy. The exact support depends on the option you choose.</p>
+            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+              <button className="btn-p" onClick={scrollToCategories}>Find Your Membership</button>
+              <button className="btn-o" onClick={scrollToCategories}>Apply for Membership</button>
+            </div>
+          </section>
+
+          <section style={{ padding:"36px 0",marginBottom:48,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
+            <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16 }}>A workplace decision can become a formal case.</h2>
+            <p style={{ color:"#4A5568",marginBottom:14 }}>The CCMA received 193,069 referrals in 2024/25, with 51% concerning unfair dismissal. Each case is different, but the volume makes one point clear: employers need to be ready to explain the reason for a decision, the process followed and the records that support it.</p>
+            <p style={{ color:"#4A5568",marginBottom:14 }}>The Labour Relations Act permits compensation of up to 12 months’ remuneration for an unfair dismissal and 24 months for an automatically unfair dismissal. Reinstatement may also be ordered. At a salary of R20,000 a month, 12 months’ remuneration is R240,000. That is an illustration of a statutory ceiling, not an expected award. The time spent preparing a case and the disruption to the business also have a cost.</p>
+            <p style={{ color:"#4A5568",marginBottom:24 }}>There is a practical question before a hearing: can the person who advised you represent your business there? Advice alone does not confer that right. (SA)UEO represents eligible members under its mandate and the applicable forum rules. Its organisers also help members address process and record-keeping issues before a decision is tested.</p>
+            <button className="btn-p" onClick={scrollToCategories}>Understand Representation →</button>
+          </section>
+
+          <section style={{ marginBottom:56 }}>
+            <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:28 }}>Standing. Support. Voice.</h2>
+            <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:16,marginBottom:28 }}>
+              {[
+                ["Standing when a matter becomes formal","Under represented options, eligible members can be represented by organisers acting under (SA)UEO’s mandate, subject to the rules of the forum. Membership verification and the institutional representation letter establish the authority under which they act."],
+                ["Support before and during a problem","Employer updates, practical resources and discussions with an organiser help you understand a requirement or check a process. When a matter becomes formal, the organiser prepares from the law, the facts and your records, with a national network and Head Office behind them."],
+                ["A voice beyond your own business","Your circumstances can inform the positions (SA)UEO takes where it participates in collective bargaining, and in advocacy and lobbying. The more clearly we understand the businesses behind a position, the stronger the case we can put forward."],
+                ["The business behind the employer","A labour decision may be tied to cash flow, operations or wider compliance obligations. Where a question reaches beyond labour relations, (SA)UEO can connect members with credible knowledge and relevant expertise."],
+              ].map(([title,description])=>(
+                <div key={title} style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"3px solid #688276",borderRadius:12,padding:"24px 22px",boxShadow:"0 8px 22px rgba(16,42,67,0.05)" }}>
+                  <h3 style={{ fontFamily:"'Manrope',sans-serif",fontSize:"0.9rem",fontWeight:800,marginBottom:12,color:"#19324A" }}>{title}</h3>
+                  <p style={{ fontSize:"0.88rem",color:"#4A5568",lineHeight:1.7 }}>{description}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ color:"#4A5568" }}>Represented options include formal representation where the membership terms and forum rules permit it. Collaborative Membership provides information and participation in the collective voice without formal representation. Optional CCMA cover is available separately, subject to policy terms.</p>
+          </section>
+
+          <section style={{ marginBottom:56 }}>
+            <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:22 }}>How to join</h2>
+            <ol style={{ paddingLeft:24,color:"#19324A" }}>
+              <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Apply</strong><p style={{ color:"#4A5568" }}>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
+              <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Confirm</strong><p style={{ color:"#4A5568" }}>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
+              <li style={{ paddingLeft:8 }}><strong>Use your membership</strong><p style={{ color:"#4A5568" }}>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
+            </ol>
+          </section>
+
+          <section style={{ padding:"36px 0",marginBottom:48,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
+            <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:14 }}>Make the decision to join before a dispute makes it urgent.</h2>
+            <p style={{ color:"#4A5568",marginBottom:22 }}>Explore the options or tell us about your workplace. We will explain the membership terms and the support available to you.</p>
+            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+              <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
+              <button className="btn-o" onClick={()=>go("contact")}>Enquire Now</button>
+            </div>
+          </section>
+
+          <div id="membership-categories">
           <span className="sl">Choose Your Category</span>
           <div className="gl" />
           <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:36 }}>Six categories. <em style={{ color:"#C9A84C" }}>One organised employer platform.</em></h2>
@@ -616,6 +672,7 @@ function Membership({ go }) {
                 <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.68rem",fontWeight:700,letterSpacing:"0.1em",color:"#C9A84C",textTransform:"uppercase" }}>Apply Now →</div>
               </div>
             ))}
+          </div>
           </div>
           {selectedCategory && (
             <div className="membership-modal" onClick={closeApplication}>
