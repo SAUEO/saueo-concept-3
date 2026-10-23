@@ -167,7 +167,9 @@ footer{background:var(--ink)!important;}
 .skip-link:focus{top:16px;}
 .nav-toggle{display:none;border:1px solid rgba(201,168,76,0.6);background:transparent;color:#C9A84C;padding:8px 11px;font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;}
 .about-nav-item{position:relative;}
-.about-nav-trigger{border:0;background:transparent;font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;padding:0 0 2px;}
+.about-nav-item{display:flex;align-items:center;gap:5px;}
+.about-nav-trigger,.about-nav-toggle{border:0;background:transparent;font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;padding:0 0 2px;}
+.about-nav-toggle{font-size:0.8rem;padding:0 3px;}
 .about-dropdown{position:absolute;top:calc(100% + 16px);left:-16px;min-width:245px;padding:8px;background:#fff;border:1px solid var(--line);border-top:3px solid #C9A84C;border-radius:0 0 10px 10px;box-shadow:0 14px 28px rgba(7,28,44,0.18);display:grid;gap:2px;z-index:1001;}
 .about-dropdown button{border:0;background:transparent;text-align:left;padding:12px 14px;color:var(--ink);font:700 0.72rem 'Barlow',sans-serif;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;}
 .about-dropdown button:hover,.about-dropdown button:focus-visible{background:var(--coral-soft);color:var(--ink);}
@@ -181,8 +183,9 @@ footer{background:var(--ink)!important;}
   .nav-links.open{display:flex!important;flex-direction:column;align-items:stretch;gap:0!important;}
   .nav-links.open span{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
   .nav-links.open button{margin-top:14px;}
-  .about-nav-item{width:100%;border-bottom:1px solid rgba(255,255,255,0.08);}
-  .about-nav-trigger{width:100%;padding:14px 0;text-align:left;}
+  .about-nav-item{width:100%;flex-wrap:wrap;gap:0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .about-nav-trigger{flex:1;padding:14px 0;text-align:left;}
+  .about-nav-toggle{padding:14px 4px;}
   .about-dropdown{position:static;min-width:0;margin:0 0 10px;padding:4px;background:rgba(255,255,255,0.06);border:0;border-left:2px solid #C9A84C;border-radius:0;box-shadow:none;}
   .about-dropdown button{background:transparent!important;color:#fff!important;padding:12px 14px;}
   .about-dropdown button:hover,.about-dropdown button:focus-visible{background:rgba(255,255,255,0.1)!important;color:#fff!important;}
@@ -209,10 +212,10 @@ function Nav({ cur, go }) {
   }, [cur]);
 
   const aboutPages = [
-    ["about","About Us overview"],
     ["representation","Representation"],
     ["collectivebargaining","Collective Bargaining"],
     ["advocacy","Advocacy and Lobbying"],
+    ["team","Meet the Team"],
   ];
   const isAboutPage = aboutPages.some(([id]) => id === cur);
   const navigateAbout = id => {
@@ -254,13 +257,23 @@ function Nav({ cur, go }) {
             <button
               className="about-nav-trigger"
               type="button"
+              onClick={()=>navigateAbout("about")}
+              aria-current={cur==="about"?"page":undefined}
+              style={{ color:isAboutPage?"#C9A84C":"#fff",borderBottom:isAboutPage?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
+            >
+              About Us
+            </button>
+            <button
+              className="about-nav-toggle"
+              type="button"
+              aria-label={`${aboutOpen ? "Close" : "Open"} About Us menu`}
               aria-expanded={aboutOpen}
               aria-controls="about-subnavigation"
               onClick={()=>setAboutOpen(open=>!open)}
               onKeyDown={event=>{ if (event.key === "Escape") setAboutOpen(false); }}
-              style={{ color:isAboutPage?"#C9A84C":"#fff",borderBottom:isAboutPage?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
+              style={{ color:isAboutPage?"#C9A84C":"#fff" }}
             >
-              About Us <span aria-hidden="true">{aboutOpen ? "−" : "+"}</span>
+              <span aria-hidden="true">{aboutOpen ? "−" : "+"}</span>
             </button>
             {aboutOpen && (
               <div id="about-subnavigation" className="about-dropdown" aria-label="About Us pages">
