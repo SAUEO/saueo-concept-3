@@ -228,10 +228,10 @@ function Nav({ cur, go }) {
   }, [cur]);
 
   const aboutPages = [
-    ["representation","Representation"],
-    ["collectivebargaining","Collective Bargaining"],
     ["advocacy","Advocacy and Lobbying"],
+    ["collectivebargaining","Collective Bargaining"],
     ["team","Meet the Team"],
+    ["representation","Representation"],
   ];
   const isAboutPage = aboutPages.some(([id]) => id === cur);
   const navigateAbout = id => {
@@ -754,20 +754,13 @@ function CollectiveBargainingPage({ go }) {
 
       <section style={{ padding:"58px 0",background:"#F7F9F8" }}>
         <div className="con bargaining-columns">
-          <div className="bargaining-left">
-            <div className="bargaining-copy-block">
-              <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>An agreement you did not sign can still change what you pay.</h2>
-              <p style={{ color:"#4A5568",marginBottom:16 }}>A bargaining council agreement may be negotiated without your business at the table. If it is extended and your workplace falls within the council’s registered scope, its wages, benefits, levies or other terms may become obligations you have to meet. That can change a payroll you have already planned.</p>
-              <p style={{ color:"#4A5568",marginBottom:22 }}>Where (SA)UEO participates in a bargaining structure, we put the circumstances of the employers we represent before the parties negotiating those terms.</p>
-              <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
-                <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
-                <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
-              </div>
-            </div>
-            <div className="bargaining-copy-block">
-              <h2 style={{ fontSize:"clamp(1.55rem,2.6vw,2rem)",lineHeight:1.2,marginBottom:16 }}>Bargaining terms should be tested against the businesses that must apply them.</h2>
-              <p style={{ color:"#4A5568",marginBottom:16 }}>Where (SA)UEO is a party to a council, we can explain what a proposed term would mean for the employers we represent. A wage increase, benefit contribution or changed condition does not land in the same way in every business. We need member information to put those differences forward responsibly.</p>
-              <p style={{ color:"#4A5568" }}>Representivity also has to withstand scrutiny. In a sample check of (SA)UEO’s paid-up membership for the Metal and Engineering Industries Bargaining Council, the required checks were complete by February 2026 with no outstanding discrepancies. That is a council-specific example of why accurate records matter when an organisation says whom it represents.</p>
+          <div>
+            <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>An agreement you did not sign can still change what you pay.</h2>
+            <p style={{ color:"#4A5568",marginBottom:16 }}>A bargaining council agreement may be negotiated without your business at the table. If it is extended and your workplace falls within the council’s registered scope, its wages, benefits, levies or other terms may become obligations you have to meet. That can change a payroll you have already planned.</p>
+            <p style={{ color:"#4A5568",marginBottom:22 }}>Where (SA)UEO participates in a bargaining structure, we put the circumstances of the employers we represent before the parties negotiating those terms.</p>
+            <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
+              <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+              <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
             </div>
           </div>
           <div>
@@ -775,6 +768,14 @@ function CollectiveBargainingPage({ go }) {
             <p style={{ color:"#4A5568",marginBottom:16 }}>Where (SA)UEO is a party to a council, we can explain what a proposed term would mean for the employers we represent. A wage increase, benefit contribution or changed condition does not land in the same way in every business. We need member information to put those differences forward responsibly.</p>
             <p style={{ color:"#4A5568" }}>Representivity also has to withstand scrutiny. In a sample check of (SA)UEO’s paid-up membership for the Metal and Engineering Industries Bargaining Council, the required checks were complete by February 2026 with no outstanding discrepancies. That is a council-specific example of why accurate records matter when an organisation says whom it represents.</p>
           </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"54px 0 60px",background:"#E4EDE8" }}>
+        <div className="con" style={{ maxWidth:1010 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.25rem)",lineHeight:1.2,marginBottom:16 }}>Bargaining terms should be tested against the businesses that must apply them.</h2>
+          <p style={{ color:"#4A5568",marginBottom:16 }}>Where (SA)UEO is a party to a council, we can explain what a proposed term would mean for the employers we represent. A wage increase, benefit contribution or changed condition does not land in the same way in every business. We need member information to put those differences forward responsibly.</p>
+          <p style={{ color:"#4A5568" }}>Representivity also has to withstand scrutiny. In a sample check of (SA)UEO’s paid-up membership for the Metal and Engineering Industries Bargaining Council, the required checks were complete by February 2026 with no outstanding discrepancies. That is a council-specific example of why accurate records matter when an organisation says whom it represents.</p>
         </div>
       </section>
 
