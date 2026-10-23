@@ -470,29 +470,22 @@ function About({ go }) {
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"5fr 4fr",gap:56,alignItems:"start" }}>
             <div>
-              <span className="sl">Institutional Story</span>
-              <div className="gl" />
-              <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.4rem)",marginBottom:20,lineHeight:1.2 }}>Since 1998.<br /><em style={{ color:"#C9A84C" }}>Built for what comes next.</em></h2>
-              <p style={{ color:"#4A5568",marginBottom:16 }}>More than 25 years in South Africa's labour system. Established when organised employer representation was already scarce and the pressures on businesses were already complex. (SA)UEO has remained in that space, focused on the employers who need a voice most.</p>
-              <p style={{ color:"#4A5568",marginBottom:16 }}>Being next-generation means raising the standard of the practitioners who represent employers, and supporting business members holistically, not only when a dispute has already arrived.</p>
-              <p style={{ color:"#4A5568",marginBottom:28,fontStyle:"italic",borderLeft:"3px solid #C9A84C",paddingLeft:16 }}>Labour risk does not sit apart from business risk. Compliance, management decisions and the health of a business are connected. The support we provide reflects that understanding.</p>
+              <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.4rem)",marginBottom:20,lineHeight:1.2 }}>Behind every mandate is a member.</h2>
+              <p style={{ color:"#4A5568",marginBottom:20 }}>If an organisation says it speaks for employers, it should be able to say who they are, what authority it holds and how its people are accountable. That matters when someone represents your business at a hearing. It matters just as much when they speak at a bargaining table or comment on a proposed law.</p>
+              <p style={{ color:"#4A5568",marginBottom:28 }}>(SA)UEO was founded in 1998 and registered with the Department of Employment and Labour in 1999. We are an employers' organisation whose work rests on three responsibilities, Representation, Collective Bargaining, and Advocacy and Lobbying, and on a fourth that runs through all of them: helping members meet the legal and statutory requirements that govern employment. Our work must remain grounded in the members whose businesses and employees are affected by decisions made in those settings.</p>
               <button className="btn-p" onClick={()=>go("team")}>Meet Our Team</button>
             </div>
-            <div>
-              <div style={{ background:"#0B1E3E",padding:36 }}>
-                <div style={{ height:3,background:"#C9A84C",marginBottom:24 }} />
-                <h3 style={{ color:"#fff",marginBottom:12,fontSize:"1.1rem" }}>Our Mission</h3>
-                <p style={{ color:"rgba(255,255,255,0.78)",marginBottom:20,lineHeight:1.8 }}>To represent, strengthen and give voice to South African employers through professional representation, collective bargaining and evidence-led advocacy, while providing the guidance and support they need to build stronger, more sustainable businesses.</p>
-                <div style={{ borderTop:"1px solid rgba(201,168,76,0.25)",paddingTop:20,marginBottom:20 }}>
-                  <h3 style={{ color:"#fff",marginBottom:10,fontSize:"1.1rem" }}>The One Word</h3>
-                  <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"1.8rem",fontWeight:900,color:"#C9A84C",fontStyle:"italic" }}>Defensible.</div>
-                  <p style={{ color:"rgba(255,255,255,0.65)",fontSize:"0.9rem",marginTop:8,lineHeight:1.7 }}>Representation grounded in law and fact. Bargaining positions that reflect the employers we represent. Advocacy backed by evidence. Credibility earned in every choice.</p>
+            <div style={{ display:"grid",gap:14 }}>
+              {[
+                { t:"Our vision",d:"To be a next-generation employers' organisation that empowers employers to adapt their workplaces effectively in the rapidly changing world of work." },
+                { t:"Our mission",d:"To represent, strengthen and give voice to South African employers through professional representation, collective bargaining and evidence-led advocacy, while providing the guidance and support they need to build stronger, more sustainable businesses." },
+                { t:"Our higher purpose",d:"To contribute to a stronger South African business environment by helping employers remain resilient, responsible and ready for change, while ensuring that their collective voice is heard where it matters." },
+              ].map((v,i)=>(
+                <div key={i} className="card">
+                  <h3 style={{ fontFamily:"'Barlow',sans-serif",color:"#0B1E3E",fontSize:"0.95rem",fontWeight:700,marginBottom:10 }}>{v.t}</h3>
+                  <p style={{ color:"#4A5568",fontSize:"0.9rem" }}>{v.d}</p>
                 </div>
-              </div>
-              <div style={{ background:"#C9A84C",padding:"20px 36px",marginTop:3 }}>
-                <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.62rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#071429",marginBottom:4 }}>Established</div>
-                <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"2.2rem",fontWeight:900,color:"#071429" }}>1998</div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
