@@ -104,6 +104,9 @@ a{text-decoration:none;color:inherit;}
 .membership-join-steps li{background:#fff;border:1px solid var(--line);border-top:4px solid #C9A84C;border-radius:12px;padding:24px;min-width:0;box-shadow:0 10px 28px rgba(16,42,67,0.06);}
 .membership-join-steps li::marker{color:var(--coral);font-weight:800;}
 .membership-join-steps p{color:var(--slate);margin-top:8px;}
+.about-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;}
+.about-work-card{display:flex;flex-direction:column;align-items:flex-start;}
+.about-work-card .btn-p{margin-top:auto;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
@@ -170,7 +173,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -491,24 +494,20 @@ function About({ go }) {
         </div>
       </div>
 
-      <div style={{ background:"#0B1E3E",padding:"80px 0" }}>
+      <div style={{ background:"#E4EDE8",padding:"80px 0" }}>
         <div className="con">
-          <span className="sl">How We Show Up</span>
-          <div className="gl" />
-          <h2 style={{ color:"#fff",fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:18 }}>Values have to show in the work.</h2>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:1,background:"rgba(201,168,76,0.12)" }}>
+          <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:28 }}>What the four ways we work mean for an employer</h2>
+          <div className="about-work-grid">
             {[
-              { h:"Empathy",d:"We hear what an employer is carrying before we respond to the employment question. The person behind the business matters." },
-              { h:"Integrity",d:"We say what we believe, acknowledge what we do not know and do not overstate what we can deliver." },
-              { h:"Relationships",d:"The connection between an employer and their organiser is not transactional. It is built over time and held in both directions." },
-              { h:"Innovation",d:"The labour system changes. So does the business environment. We do not stay still when the world our members operate in is moving." },
-              { h:"Optimism",d:"We believe South African employers can build workplaces worth working in. That belief is not naive. It is the reason the work is worth doing." },
-              { h:"Defensible",d:"Representation grounded in law. Bargaining positions that reflect reality. Advocacy backed by evidence. Credibility earned in every choice." },
+              { h:"Representation",d:"When a workplace matter becomes formal, the reason for a decision, the process followed and the records available may all be examined. (SA)UEO’s organisers represent eligible members at the CCMA, in bargaining councils and in other labour forums under the organisation’s mandate and the relevant forum rules.",button:"Read about representation →",page:"services" },
+              { h:"Collective Bargaining",d:"Sector agreements can set wages, benefits and conditions employers must plan for. Where (SA)UEO participates in a bargaining structure, it brings the circumstances of its members into the negotiation. Those circumstances need to be heard before terms are settled.",button:"Read about collective bargaining →",page:"services" },
+              { h:"Advocacy and Lobbying",d:"Proposed laws and regulations can have costs and practical consequences that are difficult to see on paper. We listen to employers, develop positions from evidence we can substantiate and use available channels to engage decision-makers.",button:"Read about advocacy and lobbying →",page:"services" },
+              { h:"Compliance",d:"Labour law and statutory requirements change, and the obligation to meet them sits with the employer. (SA)UEO helps members understand what applies to their workplace, identify gaps through a compliance checklist and address them with their organiser, so that an inspection, a dispute or a penalty does not find them first.",button:"Resources for compliance →",page:"resourcehub" },
             ].map((b,i)=>(
-              <div key={i} style={{ background:"#071429",padding:"28px 24px" }}>
-                <div style={{ width:28,height:2,background:"#C9A84C",marginBottom:12 }} />
-                <h4 style={{ color:"#fff",fontSize:"0.95rem",marginBottom:8 }}>{b.h}</h4>
-                <p style={{ color:"rgba(255,255,255,0.68)",fontSize:"0.88rem",lineHeight:1.7 }}>{b.d}</p>
+              <div key={i} className="card about-work-card">
+                <h3 style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.9rem",fontWeight:800,color:"#19324A",marginBottom:12 }}>{b.h}</h3>
+                <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.7,marginBottom:22 }}>{b.d}</p>
+                <button className="btn-p" onClick={()=>go(b.page)}>{b.button}</button>
               </div>
             ))}
           </div>
