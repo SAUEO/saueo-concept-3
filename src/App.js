@@ -250,39 +250,56 @@ function Home({ go }) {
           <div className="modern-hero-mark-label">A safe harbour for business</div>
           <div className="modern-hero-mark-line" />
         </div>
-        <div className="modern-callout" style={{ position:"absolute",bottom:80,right:"6%",background:"#FFDDD6",padding:"20px 28px",maxWidth:200,borderRadius:12 }}>
-          <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.6rem",fontWeight:800,letterSpacing:"0.14em",textTransform:"uppercase",color:"#071429",marginBottom:4 }}>Our One Word</div>
-          <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"2rem",fontWeight:900,color:"#071429",fontStyle:"italic",lineHeight:1 }}>Defensible.</div>
-          <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.6rem",color:"#071429",marginTop:6,lineHeight:1.45 }}>We make your employer position defensible, procedurally, institutionally, and under scrutiny.</div>
-        </div>
       </div>
 
       <div className="modern-stat-grid" style={{ background:"#102A43",display:"grid",gridTemplateColumns:"repeat(4,1fr)",borderTop:"1px solid rgba(255,107,87,0.25)" }}>
-        {[["4,445","Member Businesses"],["224,000+","People Employed by Members"],["41","Sectors Represented"],["R28.7bn+","Annual Economic Activity"]].map(([n,l],i)=>(
+        {[["Since 1998",""],["Registered","With the Department of Employment and Labour"],["More than 200","Active Organisers"],["41 sectors","Represented in our membership"]].map(([n,l],i)=>(
           <div key={i} style={{ textAlign:"center",padding:"24px 16px",borderRight:i<3?"1px solid rgba(201,168,76,0.12)":"none" }}>
             <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"2.6rem",fontWeight:900,color:"#C9A84C",lineHeight:1 }}>{n}</div>
-            <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"#9CA3AF",marginTop:6 }}>{l}</div>
+            {l && <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:600,letterSpacing:"0.08em",textTransform:"uppercase",color:"#9CA3AF",marginTop:6 }}>{l}</div>}
           </div>
         ))}
       </div>
 
+      <div style={{ padding:"72px 0",background:"#F8F4EC" }}>
+        <div className="con">
+          <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1.1fr 0.9fr",gap:40,alignItems:"center" }}>
+            <div>
+              <span className="sl">The Collective Behind the Voice</span>
+              <div className="gl" />
+              <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Your business is one of many carrying these pressures.</h2>
+              <p style={{ color:"#4A5568",marginBottom:20,lineHeight:1.8 }}>An employer can explain what a change means inside one workplace. A collective can show how the same issue reaches businesses of different sizes and sectors. That gives (SA)UEO a firmer basis for the positions it takes and makes it accountable for whom it says it represents.</p>
+              <p style={{ color:"#4A5568",margin:0 }}>Our 2025/26 membership audit recorded:</p>
+            </div>
+            <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:0,background:"#E2F0EA",borderRadius:12,padding:"22px 14px" }}>
+              {[["4,445","member businesses"],["224,000+","people employed by members"],["41","sectors"],["R28.7 billion+","in annual economic activity"]].map(([n,l],i)=>(
+                <div key={i} style={{ padding:"18px 12px",borderRight:i%2===0?"1px solid rgba(25,50,74,0.14)":"none",borderBottom:i<2?"1px solid rgba(25,50,74,0.14)":"none" }}>
+                  <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(1.5rem,2.5vw,2rem)",fontWeight:900,color:"#688276",lineHeight:1.1,marginBottom:10 }}>{n}</div>
+                  <div style={{ fontSize:"0.78rem",color:"#52616D",lineHeight:1.5 }}>{l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p style={{ color:"#4A5568",lineHeight:1.8,margin:"28px 0 0" }}>These figures show the breadth of the employers whose realities (SA)UEO has a duty to understand. A credible collective voice starts with knowing who stands behind it.</p>
+        </div>
+      </div>
+
       <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
         <div className="con">
-          <span className="sl">Our Institutional Mandate</span>
+          <span className="sl">The Mandate</span>
           <div className="gl" />
           <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:40,alignItems:"start" }}>
             <div>
-              <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Employers are not alone<br /><em style={{ color:"#C9A84C" }}>in this.</em></h2>
-              <p style={{ color:"#4A5568",marginBottom:16 }}>4,445 member businesses. 200+ professional organisers. Nine provinces. One organised voice. (SA)UEO is a nationally registered employers' organisation that gives businesses collective strength in South Africa's labour system.</p>
-              <p style={{ color:"#4A5568",marginBottom:16,fontStyle:"italic",borderLeft:"3px solid #C9A84C",paddingLeft:16 }}>Without membership of an employers' organisation, you have no voice in industry negotiations, yet you are lawfully bound by the outcome.</p>
+              <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Four ways we work for employers. One collective employer voice.</h2>
+              <p style={{ color:"#4A5568",marginBottom:16,lineHeight:1.8 }}>Different decisions call for different forms of action. A dispute may require formal representation. A sector agreement may require an employer's circumstances to be heard at a bargaining table. A proposed regulation may need a clear account of what it would take to apply inside a business. A new legal requirement may need to be identified and met before an inspector or a dispute tests it.</p>
               <button className="btn-p" onClick={()=>go("about")} style={{ marginTop:8 }}>About (SA)UEO</button>
             </div>
             <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16 }}>
               {[
-                { i:"⚖️",t:"Representation",d:"We represent members at the CCMA, Labour Court and Bargaining Councils. Your position, defended." },
-                { i:"🏛️",t:"Collective Bargaining",d:"We negotiate collective agreements on behalf of members. Your voice in the room, before the outcome binds you." },
-                { i:"📋",t:"Advocacy and Lobbying",d:"We engage government, parliament and regulators on the issues that shape the environment employers operate in." },
-                { i:"📊",t:"State of Business",d:"Employer experience, systematically collected and turned into evidence-led positions." },
+                { i:"⚖️",t:"Representation",d:"When a workplace matter enters a formal process, (SA)UEO represents eligible members at the CCMA, in bargaining councils and in other labour forums, subject to the rules of each forum." },
+                { i:"🏛️",t:"Collective Bargaining",d:"Where (SA)UEO participates in a bargaining structure, we put the circumstances of the employers we represent before the parties negotiating sector terms." },
+                { i:"📊",t:"Advocacy and Lobbying",d:"We gather employer insight, test it against credible evidence and engage on policy and regulatory issues that affect the way businesses employ people." },
+                { i:"📋",t:"Compliance",d:"Labour law and statutory requirements change, and the obligation to meet them sits with the employer. (SA)UEO helps members understand what applies to their workplace, identify gaps through a compliance checklist and address them with their organiser, so that an inspection, a dispute or a penalty does not find them first." },
               ].map((p,i)=>(
                 <div key={i} className="card">
                   <div style={{ fontSize:"1.6rem",marginBottom:12 }}>{p.i}</div>
@@ -292,6 +309,7 @@ function Home({ go }) {
               ))}
             </div>
           </div>
+          <p style={{ color:"#4A5568",margin:"28px 0 0",lineHeight:1.8 }}>The purpose across all four is a stronger collective employer voice, grounded in members and facts we can substantiate.</p>
         </div>
       </div>
 
