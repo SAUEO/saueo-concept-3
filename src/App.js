@@ -101,7 +101,7 @@ a{text-decoration:none;color:inherit;}
 .membership-contact-note p{color:var(--slate);font-size:0.9rem;margin-bottom:18px;}
 .membership-includes{background:#fff;border:1px solid var(--line);border-top:3px solid var(--coral);border-radius:12px;padding:28px 24px;box-shadow:0 10px 28px rgba(16,42,67,0.06);}
 .membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0;list-style-position:inside;color:var(--ink);}
-.membership-join-steps li{background:#fff;border:1px solid var(--line);border-top:3px solid var(--coral);border-radius:12px;padding:24px;min-width:0;box-shadow:0 10px 28px rgba(16,42,67,0.06);}
+.membership-join-steps li{background:#fff;border:1px solid var(--line);border-top:4px solid #C9A84C;border-radius:12px;padding:24px;min-width:0;box-shadow:0 10px 28px rgba(16,42,67,0.06);}
 .membership-join-steps li::marker{color:var(--coral);font-weight:800;}
 .membership-join-steps p{color:var(--slate);margin-top:8px;}
 .resource-card{cursor:default!important;}
