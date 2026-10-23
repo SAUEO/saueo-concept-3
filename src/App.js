@@ -166,7 +166,7 @@ a{text-decoration:none;color:inherit;}
 footer{background:var(--ink)!important;}
 .skip-link:focus{top:16px;}
 .nav-toggle{display:none;border:1px solid rgba(201,168,76,0.6);background:transparent;color:#C9A84C;padding:8px 11px;font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;}
-.about-nav-item{display:flex;align-items:center;gap:5px;}
+.about-nav-item{position:relative;display:flex;align-items:center;gap:5px;}
 .about-nav-trigger,.about-nav-toggle{border:0;background:transparent;font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;padding:0 0 2px;}
 .about-nav-toggle{font-size:0.8rem;padding:0 3px;}
 .about-dropdown{position:absolute;top:100%;left:-16px;min-width:245px;padding:8px;background:#fff;border:1px solid var(--line);border-top:3px solid #C9A84C;border-radius:0 0 10px 10px;box-shadow:0 14px 28px rgba(7,28,44,0.18);display:grid;gap:2px;z-index:1001;}
