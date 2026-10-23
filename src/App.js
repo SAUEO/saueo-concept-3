@@ -110,6 +110,7 @@ a{text-decoration:none;color:inherit;}
 .about-context-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:start;}
 .about-context-columns>div{border-top:1px solid var(--line);padding-top:26px;}
 .about-values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;}
+.about-values-grid .card{border-top:4px solid #C9A84C;}
 .about-network-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:start;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
