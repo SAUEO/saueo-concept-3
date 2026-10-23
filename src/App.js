@@ -99,6 +99,9 @@ a{text-decoration:none;color:inherit;}
 .membership-link span{color:var(--coral);font-size:0.65rem;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;}
 .membership-contact-note{background:var(--paper);border-radius:10px;padding:18px;margin-top:20px;}
 .membership-contact-note p{color:var(--slate);font-size:0.9rem;margin-bottom:18px;}
+.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-left:24px;color:var(--ink);}
+.membership-join-steps li{padding-left:8px;}
+.membership-join-steps p{color:var(--ink);margin-top:8px;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
@@ -165,7 +168,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -593,7 +596,6 @@ function Membership({ go }) {
               <p style={{ color:"#4A5568",marginBottom:28 }}>Every (SA)UEO member also receives a coupon code to register as a Recalibrate Business Client — free of charge.</p>
               <button className="btn-p" onClick={()=>go("contact")}>Speak to Our Team</button>
             </div>
-            <div>
             <div style={{ background:"#0B1E3E",padding:36 }}>
               <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:18 }}>What Membership Includes</div>
               {["Recognised representation at CCMA, Labour Court & Bargaining Councils","Access to 211 professional organisers nationally","Compliance checklists, contract templates, and HR policies","Preventative compliance screening at onboarding","Expert updates on labour law changes","State of Business Survey participation","Free Recalibrate Business Client registration","Employee benefit scheme access","Professional development through the LLLRA","Invitations to employer forums and institutional engagements"].map((b,i)=>(
@@ -603,15 +605,14 @@ function Membership({ go }) {
                 </div>
               ))}
             </div>
-            <section style={{ background:"#C9A84C",padding:36 }}>
+            <section style={{ background:"#C9A84C",padding:36,gridColumn:"1 / -1" }}>
               <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:22,color:"#19324A" }}>How to join</h2>
-              <ol style={{ paddingLeft:24,color:"#19324A" }}>
-                <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Apply</strong><p style={{ color:"#19324A" }}>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
-                <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Confirm</strong><p style={{ color:"#19324A" }}>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
-                <li style={{ paddingLeft:8 }}><strong>Use your membership</strong><p style={{ color:"#19324A" }}>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
+              <ol className="membership-join-steps">
+                <li><strong>Apply</strong><p>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
+                <li><strong>Confirm</strong><p>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
+                <li><strong>Use your membership</strong><p>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
               </ol>
             </section>
-            </div>
           </div>
 
           <section style={{ marginBottom:56 }}>
