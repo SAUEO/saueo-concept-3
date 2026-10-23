@@ -55,7 +55,7 @@ a{text-decoration:none;color:inherit;}
 .modern-stat-grid>div{border-right-color:rgba(25,50,74,0.1)!important;}
 .modern-stat-grid>div>div:first-child{color:var(--coral)!important;}
 .modern-stat-grid>div>div:last-child{color:var(--ink)!important;}
-.modern-ecosystem{background:var(--paper)!important;}
+.modern-ecosystem{background:var(--mint)!important;}
 .modern-ecosystem h2{color:var(--ink)!important;}
 .modern-ecosystem> .con>p{color:var(--slate)!important;}
 .modern-ecosystem .modern-partner-grid>div{background:#fff!important;border-top-color:var(--coral)!important;color:var(--ink)!important;}
@@ -169,7 +169,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -290,7 +290,7 @@ function Home({ go }) {
         </div>
       </div>
 
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#EAF3F0" }}>
         <div className="con">
           <span className="sl">The Mandate</span>
           <div className="gl" />
@@ -312,18 +312,53 @@ function Home({ go }) {
               ))}
             </div>
           <p style={{ color:"#4A5568",margin:"28px 0 0",lineHeight:1.8 }}>The purpose across all four is a stronger collective employer voice, grounded in members and facts we can substantiate.</p>
+          <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:44,alignItems:"center",marginTop:60,padding:"40px",background:"#F7F9F8",borderRadius:16 }}>
+            <div>
+              <h3 style={{ fontSize:"clamp(1.55rem,2.5vw,2.1rem)",lineHeight:1.2,marginBottom:16 }}>Support before a matter becomes formal.</h3>
+              <p style={{ color:"#4A5568",lineHeight:1.8,margin:0 }}>A labour issue rarely arrives in isolation. A staffing decision may be tied to cash flow. A new requirement may affect payroll, records and the way work is organised. Members need information while there is still time to consider what to do.</p>
+            </div>
+            <div style={{ background:"#E3F1EB",padding:"28px",borderRadius:12 }}>
+              <p style={{ color:"#4A5568",lineHeight:1.8,marginBottom:20 }}>Heads-Up, employer alerts, webinars and practical resources help members understand changes and ask better questions earlier. When a matter reaches beyond labour relations, we can connect members with relevant knowledge and expertise.</p>
+              <button className="btn-p" onClick={()=>go("resourcehub")}>Explore Resources</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="modern-ecosystem" style={{ background:"#0B1E3E",padding:"80px 0" }}>
+      <div style={{ padding:"80px 0",background:"#F7F9F8" }}>
+        <div className="con">
+          <span className="sl">Membership</span>
+          <div className="gl" />
+          <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Membership starts before you need representation.</h2>
+          <p style={{ color:"#4A5568",lineHeight:1.8,maxWidth:850,marginBottom:30 }}>An employers’ organisation is there for the decisions you face now as well as the matters that may arise later. Find the option that reflects your workplace. The support available under each option is explained before you apply.</p>
+          <div className="homepage-membership-cards" style={{ display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:16 }}>
+            {[
+              ["Domestic Employers",false],
+              ["Micro Employers",false],
+              ["Small, Medium and Large Employers",true],
+              ["NPOs",false],
+              ["Agriculture Employers",false],
+              ["Collaborative Membership",false],
+            ].map(([name,popular])=>(
+              <div key={name} style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.14)",borderTop:popular?"4px solid #C9A84C":"3px solid #688276",borderRadius:12,padding:"24px 22px",minHeight:150,display:"flex",flexDirection:"column",alignItems:"flex-start",boxShadow:popular?"0 12px 28px rgba(25,50,74,0.1)":"0 8px 20px rgba(25,50,74,0.05)",position:"relative" }}>
+                {popular && <span style={{ position:"absolute",top:12,right:14,fontFamily:"'Barlow',sans-serif",fontSize:"0.56rem",fontWeight:800,letterSpacing:"0.08em",textTransform:"uppercase",color:"#80651F",background:"#F5E8BF",padding:"6px 8px",borderRadius:999 }}>Most popular</span>}
+                <h3 style={{ fontSize:"1.15rem",lineHeight:1.35,marginBottom:"auto",paddingRight:popular?80:0 }}>{name}</h3>
+                <button onClick={()=>go("membership")} style={{ border:0,background:"transparent",padding:0,marginTop:22,color:"#557467",fontFamily:"'Barlow',sans-serif",fontSize:"0.64rem",fontWeight:800,letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer" }}>Find out more →</button>
+              </div>
+            ))}
+          </div>
+          <button className="btn-p" onClick={()=>go("membership")} style={{ marginTop:26 }}>Find Your Membership</button>
+        </div>
+      </div>
+
+      <div className="modern-ecosystem" style={{ background:"#EAF3F0",padding:"80px 0" }}>
         <div className="con">
           <span className="sl">Partnerships That Extend Member Value</span>
           <div className="gl" />
           <h2 style={{ color:"#fff",fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:14 }}>Complementary expertise, <em style={{ color:"#C9A84C" }}>within reach.</em></h2>
-          <p style={{ color:"rgba(255,255,255,0.7)",marginBottom:32,maxWidth:620,lineHeight:1.8 }}>Carefully selected relationships extend member value beyond the core mandate. These partners support business resilience, financial insight, and professional standards while (SA)UEO remains the constitutional anchor.</p>
-          <div className="modern-partner-grid" style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16 }}>
+          <p style={{ color:"rgba(255,255,255,0.7)",marginBottom:32,maxWidth:620,lineHeight:1.8 }}>Carefully selected relationships extend member value beyond the core mandate, supporting business resilience and professional standards while (SA)UEO remains the constitutional anchor.</p>
+          <div className="modern-partner-grid" style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:16 }}>
             {[
-              { label:"CIBA",role:"Financial & Governance Insight",pts:["Financial advisory insight","Governance support","Business intelligence","Professional advisory"] },
               { label:"Recalibrate",role:"Independent Strategic Partner",pts:["Business systems and pipelines","Service provider network","Operational enablement","Structurally separate"] },
               { label:"LLLRA",role:"Professional Standards",pts:["Labour-relations development","CPD and ethical discipline","Practitioner standards","Recognition wording pending"] },
             ].map((b,i)=>(
