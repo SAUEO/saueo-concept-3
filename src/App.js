@@ -166,6 +166,12 @@ a{text-decoration:none;color:inherit;}
 footer{background:var(--ink)!important;}
 .skip-link:focus{top:16px;}
 .nav-toggle{display:none;border:1px solid rgba(201,168,76,0.6);background:transparent;color:#C9A84C;padding:8px 11px;font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;}
+.about-nav-item{position:relative;}
+.about-nav-trigger{border:0;background:transparent;font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;padding:0 0 2px;}
+.about-dropdown{position:absolute;top:calc(100% + 16px);left:-16px;min-width:245px;padding:8px;background:#fff;border:1px solid var(--line);border-top:3px solid #C9A84C;border-radius:0 0 10px 10px;box-shadow:0 14px 28px rgba(7,28,44,0.18);display:grid;gap:2px;z-index:1001;}
+.about-dropdown button{border:0;background:transparent;text-align:left;padding:12px 14px;color:var(--ink);font:700 0.72rem 'Barlow',sans-serif;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;}
+.about-dropdown button:hover,.about-dropdown button:focus-visible{background:var(--coral-soft);color:var(--ink);}
+.about-dropdown button:focus-visible,.about-nav-trigger:focus-visible{outline:2px solid var(--coral);outline-offset:3px;}
 @media(max-width:980px){
   .nav-utility{padding:6px 22px!important;}
   .nav-utility-copy{display:none;}
@@ -175,6 +181,11 @@ footer{background:var(--ink)!important;}
   .nav-links.open{display:flex!important;flex-direction:column;align-items:stretch;gap:0!important;}
   .nav-links.open span{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
   .nav-links.open button{margin-top:14px;}
+  .about-nav-item{width:100%;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .about-nav-trigger{width:100%;padding:14px 0;text-align:left;}
+  .about-dropdown{position:static;min-width:0;margin:0 0 10px;padding:4px;background:rgba(255,255,255,0.06);border:0;border-left:2px solid #C9A84C;border-radius:0;box-shadow:none;}
+  .about-dropdown button{background:transparent!important;color:#fff!important;padding:12px 14px;}
+  .about-dropdown button:hover,.about-dropdown button:focus-visible{background:rgba(255,255,255,0.1)!important;color:#fff!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
@@ -185,16 +196,33 @@ footer{background:var(--ink)!important;}
 function Nav({ cur, go }) {
   const [sc, setSc] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   useEffect(() => {
     const fn = () => setSc(window.scrollY > 40);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  useEffect(() => setMobileOpen(false), [cur]);
+  useEffect(() => {
+    setMobileOpen(false);
+    setAboutOpen(false);
+  }, [cur]);
+
+  const aboutPages = [
+    ["about","About Us overview"],
+    ["representation","Representation"],
+    ["collectivebargaining","Collective Bargaining"],
+    ["advocacy","Advocacy and Lobbying"],
+  ];
+  const isAboutPage = aboutPages.some(([id]) => id === cur);
+  const navigateAbout = id => {
+    setAboutOpen(false);
+    setMobileOpen(false);
+    go(id);
+  };
 
   const links = [
-    ["home","Home"],["about","About"],["services","How We Support"],["membership","Membership"],
+    ["home","Home"],["services","How We Support"],["membership","Membership"],
     ["resourcehub","Resources"],["shop","Shop"],["newsroom","Employer Voice"],["partnerships","Partners"],
   ];
 
@@ -219,7 +247,30 @@ function Nav({ cur, go }) {
         </div>
         <button className="nav-toggle" aria-expanded={mobileOpen} aria-controls="primary-navigation" onClick={()=>setMobileOpen(open=>!open)}>{mobileOpen ? "Close" : "Menu"}</button>
         <div id="primary-navigation" className={`nav-links${mobileOpen ? " open" : ""}`} style={{ display:"flex",gap:18,alignItems:"center" }}>
-          {links.map(([id,label])=>(
+          {links.slice(0,1).map(([id,label])=>(
+            <span key={id} onClick={()=>go(id)} style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</span>
+          ))}
+          <div className="about-nav-item">
+            <button
+              className="about-nav-trigger"
+              type="button"
+              aria-expanded={aboutOpen}
+              aria-controls="about-subnavigation"
+              onClick={()=>setAboutOpen(open=>!open)}
+              onKeyDown={event=>{ if (event.key === "Escape") setAboutOpen(false); }}
+              style={{ color:isAboutPage?"#C9A84C":"#fff",borderBottom:isAboutPage?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
+            >
+              About Us <span aria-hidden="true">{aboutOpen ? "−" : "+"}</span>
+            </button>
+            {aboutOpen && (
+              <div id="about-subnavigation" className="about-dropdown" aria-label="About Us pages">
+                {aboutPages.map(([id,label])=>(
+                  <button key={id} type="button" onClick={()=>navigateAbout(id)} aria-current={cur===id?"page":undefined}>{label}</button>
+                ))}
+              </div>
+            )}
+          </div>
+          {links.slice(1).map(([id,label])=>(
             <span key={id} onClick={()=>go(id)} style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</span>
           ))}
           <button className="btn-p" onClick={()=>go("contact")} style={{ fontSize:"0.66rem",padding:"9px 18px" }}>Get Help</button>
@@ -590,6 +641,26 @@ function About({ go }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function AboutSubpage({ title, go }) {
+  return (
+    <div>
+      <div className="ph">
+        <div className="bc">Home / About Us / {title}</div>
+        <h1>{title}</h1>
+      </div>
+      <section style={{ padding:"88px 0",background:"#F3F4F2" }}>
+        <div className="con" style={{ maxWidth:900 }}>
+          <span className="sl">About (SA)UEO</span>
+          <div className="gl" />
+          <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>This page is taking shape.</h2>
+          <p style={{ color:"#4A5568",marginBottom:28 }}>More information about {title.toLowerCase()} will be added here.</p>
+          <button className="btn-p" onClick={()=>go("about")}>Back to About Us</button>
+        </div>
+      </section>
     </div>
   );
 }
@@ -1255,6 +1326,9 @@ export default function App() {
     home: <Home go={go} />,
     partnerships: <Partnerships />,
     about: <About go={go} />,
+    representation: <AboutSubpage title="Representation" go={go} />,
+    collectivebargaining: <AboutSubpage title="Collective Bargaining" go={go} />,
+    advocacy: <AboutSubpage title="Advocacy and Lobbying" go={go} />,
     team: <Team />,
     membership: <Membership go={go} />,
     newsroom: <Newsroom go={go} />,
