@@ -169,7 +169,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:600px!important;margin:0 auto;text-align:center;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -228,7 +228,7 @@ function Home({ go }) {
         <div style={{ position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px)",backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute",top:"8%",right:"-4%",width:560,height:560,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%)" }} />
         <div className="con" style={{ position:"relative",zIndex:2 }}>
-          <div style={{ maxWidth:740 }}>
+          <div style={{ maxWidth:740,width:"60%",textAlign:"center" }}>
             <span className="sl">Registered Employers' Organisation — Department of Employment and Labour</span>
             <h1 style={{ color:"#19324A",fontSize:"clamp(2.6rem,5vw,4.4rem)",fontWeight:900,lineHeight:1.08,marginBottom:22 }}>
               You carry more<br /><em style={{ color:"#688276" }}>than a business.</em>
@@ -236,10 +236,10 @@ function Home({ go }) {
             <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,marginBottom:14,fontStyle:"italic",fontFamily:"'DM Serif Display',serif" }}>
               Behind every business is a livelihood. Often several.
             </p>
-            <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,marginBottom:40 }}>
-              (SA)UEO stands with the employers who carry livelihoods, communities and economic consequences on their shoulders. We represent, we negotiate, we advocate. And we make sure your voice is heard.
+            <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,margin:"0 auto 40px",padding:"12px 0 12px 18px",borderLeft:"3px solid #C9A84C" }}>
+              As an employer, you carry livelihoods, communities and a part of our economy. You also carry the consequences when a workplace decision is challenged, an industry agreement changes your wage bill or a new rule adds to what your business must do.
             </p>
-            <div style={{ display:"flex",gap:14,flexWrap:"wrap" }}>
+            <div style={{ display:"flex",gap:14,flexWrap:"wrap",justifyContent:"center" }}>
               <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
               <button className="btn-o" onClick={()=>go("about")}>About (SA)UEO</button>
             </div>
