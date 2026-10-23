@@ -599,7 +599,7 @@ function Membership({ go }) {
             </div>
             <div style={{ background:"#0B1E3E",padding:36 }}>
               <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:18 }}>What Membership Includes</div>
-              {["Recognised representation at CCMA, Labour Court & Bargaining Councils","Access to 211 professional organisers nationally","Compliance checklists, contract templates, and HR policies","Preventative compliance screening at onboarding","Expert updates on labour law changes","State of Business Survey participation","Free Recalibrate Business Client registration","Employee benefit scheme access","Professional development through the LLLRA","Invitations to employer forums and institutional engagements"].map((b,i)=>(
+              {["Representation at CCMA, Labour Court & Bargaining Councils, subject to membership category","Access to 211 professional organisers nationally","Compliance checklists, contract templates, and HR policies","Preventative compliance screening at onboarding","Expert updates on labour law changes","State of Business Survey participation","Free Recalibrate Business Client registration","Employee benefit scheme access","Professional development through the LLLRA","Invitations to employer forums and institutional engagements"].map((b,i)=>(
                 <div key={i} style={{ display:"flex",gap:12,alignItems:"flex-start",marginBottom:12 }}>
                   <div style={{ width:5,height:5,background:"#C9A84C",borderRadius:"50%",marginTop:9,flexShrink:0 }} />
                   <p style={{ color:"rgba(255,255,255,0.8)",fontSize:"0.9rem",lineHeight:1.65,margin:0 }}>{b}</p>
