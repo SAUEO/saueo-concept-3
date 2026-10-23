@@ -179,6 +179,12 @@ footer{background:var(--ink)!important;}
 .representation-organiser-card:last-child{grid-column:1;}
 .representation-faq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;}
 .representation-faq summary{cursor:pointer;font-size:0.84rem;font-weight:700;color:var(--ink);}
+.bargaining-columns{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.bargaining-left{display:grid;gap:32px;}
+.bargaining-copy-block{border-bottom:1px solid var(--line);padding-bottom:26px;}
+.bargaining-employer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.bargaining-employer-card{background:#fff;border:1px solid var(--line);border-top:2px solid #688276;border-radius:10px;padding:22px 20px;box-shadow:0 10px 28px rgba(16,42,67,0.05);}
+.bargaining-employer-card:last-child{grid-column:1;}
 @media(max-width:980px){
   .nav-utility{padding:6px 22px!important;}
   .nav-utility-copy{display:none;}
@@ -199,7 +205,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid{grid-template-columns:1fr!important;}.representation-organiser-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid{grid-template-columns:1fr!important;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -728,6 +734,73 @@ function RepresentationPage({ go }) {
           <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
             <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
             <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function CollectiveBargainingPage({ go }) {
+  return (
+    <div>
+      <div className="ph">
+        <div className="bc">Home / About Us / Collective Bargaining</div>
+        <h1>Collective Bargaining</h1>
+      </div>
+
+      <section style={{ padding:"58px 0",background:"#F7F9F8" }}>
+        <div className="con bargaining-columns">
+          <div className="bargaining-left">
+            <div className="bargaining-copy-block">
+              <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>An agreement you did not sign can still change what you pay.</h2>
+              <p style={{ color:"#4A5568",marginBottom:16 }}>A bargaining council agreement may be negotiated without your business at the table. If it is extended and your workplace falls within the council’s registered scope, its wages, benefits, levies or other terms may become obligations you have to meet. That can change a payroll you have already planned.</p>
+              <p style={{ color:"#4A5568",marginBottom:22 }}>Where (SA)UEO participates in a bargaining structure, we put the circumstances of the employers we represent before the parties negotiating those terms.</p>
+              <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
+                <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+                <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
+              </div>
+            </div>
+            <div className="bargaining-copy-block">
+              <h2 style={{ fontSize:"clamp(1.55rem,2.6vw,2rem)",lineHeight:1.2,marginBottom:16 }}>Bargaining terms should be tested against the businesses that must apply them.</h2>
+              <p style={{ color:"#4A5568",marginBottom:16 }}>Where (SA)UEO is a party to a council, we can explain what a proposed term would mean for the employers we represent. A wage increase, benefit contribution or changed condition does not land in the same way in every business. We need member information to put those differences forward responsibly.</p>
+              <p style={{ color:"#4A5568" }}>Representivity also has to withstand scrutiny. In a sample check of (SA)UEO’s paid-up membership for the Metal and Engineering Industries Bargaining Council, the required checks were complete by February 2026 with no outstanding discrepancies. That is a council-specific example of why accurate records matter when an organisation says whom it represents.</p>
+            </div>
+          </div>
+          <div>
+            <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>Bargaining terms should be tested against the businesses that must apply them.</h2>
+            <p style={{ color:"#4A5568",marginBottom:16 }}>Where (SA)UEO is a party to a council, we can explain what a proposed term would mean for the employers we represent. A wage increase, benefit contribution or changed condition does not land in the same way in every business. We need member information to put those differences forward responsibly.</p>
+            <p style={{ color:"#4A5568" }}>Representivity also has to withstand scrutiny. In a sample check of (SA)UEO’s paid-up membership for the Metal and Engineering Industries Bargaining Council, the required checks were complete by February 2026 with no outstanding discrepancies. That is a council-specific example of why accurate records matter when an organisation says whom it represents.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"54px 0 60px",background:"#F3F4F2" }}>
+        <div className="con" style={{ maxWidth:1010 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.25rem)",lineHeight:1.2,marginBottom:14 }}>Employer realities at the table</h2>
+          <p style={{ color:"#4A5568",marginBottom:26 }}>In councils where (SA)UEO participates, member circumstances can inform the positions we put forward. 82% of our members employ fewer than 50 people. Their cost structures and capacity deserve to be understood alongside those of larger employers.</p>
+          <div className="bargaining-employer-grid">
+            {[
+              ["Clear information when terms change","Members can use (SA)UEO’s updates to understand a relevant agreement, an extension and the provisions that may affect their workplace. The first question is whether the agreement applies to the business at all."],
+              ["Help with an exemption route","Where an exemption is possible, an organiser can help you understand the council’s criteria and prepare the records and explanation your application needs. The council or relevant appeal body decides the outcome."],
+              ["Representation in council disputes","Where a council hears disputes, (SA)UEO can represent eligible members under its mandate and the council’s rules."],
+            ].map(([title,description])=>(
+              <article className="bargaining-employer-card" key={title}>
+                <h3 style={{ fontFamily:"'Manrope',sans-serif",fontSize:"0.82rem",fontWeight:800,marginBottom:14,color:"#19324A" }}>{title}</h3>
+                <p style={{ fontSize:"0.86rem",color:"#4A5568",lineHeight:1.7 }}>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"48px 0 64px",background:"#E4EDE8" }}>
+        <div className="con" style={{ maxWidth:1010 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.3rem)",lineHeight:1.2,marginBottom:14 }}>Know what your sector’s agreement requires.</h2>
+          <p style={{ color:"#4A5568",marginBottom:22 }}>If you are unsure whether a council agreement applies to your workplace, or what a provision would mean for your business, ask before the cost reaches your payroll.</p>
+          <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
+            <button className="btn-p" onClick={()=>go("contact")}>Talk to Us</button>
+            <button className="btn-o" onClick={()=>go("membership")}>Find Your Membership</button>
           </div>
         </div>
       </section>
@@ -1417,7 +1490,7 @@ export default function App() {
     partnerships: <Partnerships />,
     about: <About go={go} />,
     representation: <RepresentationPage go={go} />,
-    collectivebargaining: <AboutSubpage title="Collective Bargaining" go={go} />,
+    collectivebargaining: <CollectiveBargainingPage go={go} />,
     advocacy: <AboutSubpage title="Advocacy and Lobbying" go={go} />,
     team: <Team />,
     membership: <Membership go={go} />,
