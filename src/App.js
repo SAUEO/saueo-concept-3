@@ -169,7 +169,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:600px!important;margin:0 auto;text-align:center;}.modern-hero .con>div:first-child>div{justify-content:center;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -272,9 +272,9 @@ function Home({ go }) {
             </div>
             <div>
               <p style={{ color:"#4A5568",margin:"0 0 12px",fontWeight:600 }}>Our 2025/26 membership audit recorded:</p>
-              <div style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:2,background:"#E2F0EA",borderRadius:12,padding:16 }}>
+              <div style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:0,background:"#E2F0EA",borderRadius:12,padding:16 }}>
                 {[["4,445","member businesses"],["224,000+","people employed by members"],["41","sectors"],["R28.7 billion+","in annual economic activity"]].map(([n,l],i)=>(
-                  <div key={i} style={{ background:"#fff",padding:"22px 20px",minWidth:0 }}>
+                  <div key={i} style={{ background:"#fff",padding:"22px 20px",minWidth:0,borderRight:i%2===0?"1px solid rgba(25,50,74,0.16)":"none",borderBottom:i<2?"1px solid rgba(25,50,74,0.16)":"none" }}>
                     <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(1.45rem,2.5vw,2rem)",fontWeight:900,color:"#688276",lineHeight:1.1,marginBottom:10,overflowWrap:"anywhere" }}>{n}</div>
                     <div style={{ fontSize:"0.78rem",color:"#52616D",lineHeight:1.5 }}>{l}</div>
                   </div>
