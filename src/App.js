@@ -224,7 +224,7 @@ function Nav({ cur, go }) {
 function Home({ go }) {
   return (
     <div>
-      <div className="modern-hero" style={{ minHeight:760,background:"linear-gradient(135deg,#F7F9F8 0%,#EAF3F0 62%,#DDEBE6 100%)",display:"flex",alignItems:"center",position:"relative",overflow:"hidden",padding:"80px 0 64px" }}>
+      <div className="modern-hero" style={{ minHeight:760,background:"linear-gradient(135deg,#F7F9F8 0%,#EAF3F0 62%,#DDEBE6 100%)",display:"flex",alignItems:"center",position:"relative",overflow:"hidden",padding:"150px 0 64px" }}>
         <div style={{ position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px)",backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute",top:"8%",right:"-4%",width:560,height:560,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%)" }} />
         <div className="con" style={{ position:"relative",zIndex:2 }}>
