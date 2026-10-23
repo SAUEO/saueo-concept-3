@@ -588,13 +588,13 @@ function Membership({ go }) {
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,marginBottom:64,alignItems:"start" }}>
             <div>
-              <span className="sl">Why Organised Membership Matters</span>
-              <div className="gl" />
-              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.3rem)",marginBottom:16,lineHeight:1.25 }}>Unorganised employers have no voice <em style={{ color:"#C9A84C" }}>— yet are bound by the outcome.</em></h2>
-              <p style={{ color:"#4A5568",marginBottom:14 }}>In South Africa’s labour system, collective agreements reached in Bargaining Councils bind all employers in that sector — whether or not they participated. Only organised employers have standing to influence those agreements before they are concluded.</p>
-              <p style={{ color:"#4A5568",marginBottom:14,fontStyle:"italic",borderLeft:"3px solid #C9A84C",paddingLeft:16 }}>Membership is not a support service. It is institutional standing in the forums where your decisions are tested.</p>
-              <p style={{ color:"#4A5568",marginBottom:28 }}>Every (SA)UEO member also receives a coupon code to register as a Recalibrate Business Client — free of charge.</p>
-              <button className="btn-p" onClick={()=>go("contact")}>Speak to Our Team</button>
+              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.3rem)",marginBottom:16,lineHeight:1.25 }}>The decisions you make as an employer carry consequences.</h2>
+              <p style={{ color:"#4A5568",marginBottom:20 }}>You may need to dismiss an employee, respond to a workplace complaint, apply a sector agreement or adjust to a new legal requirement. Some decisions will be tested later. Others change what your business must pay or do before you have had much say in them.</p>
+              <p style={{ color:"#4A5568",marginBottom:24 }}>Membership places your business within a registered employers’ organisation. Represented options give eligible members access to formal representation. Across the membership offer, (SA)UEO provides information, practical support and a way for employer realities to inform collective bargaining and advocacy. The exact support depends on the option you choose.</p>
+              <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+                <button className="btn-p" onClick={scrollToCategories}>Find Your Membership</button>
+                <button className="btn-o" onClick={scrollToCategories}>Apply for Membership</button>
+              </div>
             </div>
             <div style={{ background:"#0B1E3E",padding:36 }}>
               <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:18 }}>What Membership Includes</div>
