@@ -107,8 +107,6 @@ a{text-decoration:none;color:inherit;}
 .about-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;}
 .about-work-card{display:flex;flex-direction:column;align-items:flex-start;}
 .about-work-card .btn-p{margin-top:auto;}
-.about-context-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:start;}
-.about-context-columns>div{border-top:1px solid var(--line);padding-top:26px;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
@@ -175,7 +173,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -473,17 +471,24 @@ function About({ go }) {
       </div>
       <div style={{ padding:"88px 0",background:"#F3F4F2" }}>
         <div className="con">
-          <div className="about-context-columns">
+          <div style={{ display:"grid",gridTemplateColumns:"5fr 4fr",gap:56,alignItems:"start" }}>
             <div>
-              <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.4rem)",marginBottom:20,lineHeight:1.2 }}>Members need help before a matter reaches a forum.</h2>
-              <p style={{ color:"#4A5568",marginBottom:20 }}>By the time a dispute is lodged, the decision and much of the process behind it may already have happened. An employer may need guidance earlier: when a legal requirement changes, a manager is unsure of a procedure or a difficult staffing decision is taking shape.</p>
-              <p style={{ color:"#4A5568",marginBottom:28 }}>That is why representation sits alongside employer alerts, practical guidance, webinars and resources. These help members understand what has changed and what to check. The organiser remains the person who can help apply that information to the facts of a particular workplace.</p>
-              <button className="btn-p" onClick={()=>go("membership")}>Explore Membership Support</button>
+              <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.4rem)",marginBottom:20,lineHeight:1.2 }}>Behind every mandate is a member.</h2>
+              <p style={{ color:"#4A5568",marginBottom:20 }}>If an organisation says it speaks for employers, it should be able to say who they are, what authority it holds and how its people are accountable. That matters when someone represents your business at a hearing. It matters just as much when they speak at a bargaining table or comment on a proposed law.</p>
+              <p style={{ color:"#4A5568",marginBottom:28 }}>(SA)UEO was founded in 1998 and registered with the Department of Employment and Labour in 1999. We are an employers' organisation whose work rests on three responsibilities, Representation, Collective Bargaining, and Advocacy and Lobbying, and on a fourth that runs through all of them: helping members meet the legal and statutory requirements that govern employment. Our work must remain grounded in the members whose businesses and employees are affected by decisions made in those settings.</p>
+              <button className="btn-p" onClick={()=>go("team")}>Meet Our Team</button>
             </div>
-            <div>
-              <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.4rem)",marginBottom:20,lineHeight:1.2 }}>Most of our members run smaller workplaces.</h2>
-              <p style={{ color:"#4A5568",marginBottom:20 }}>In the 2025/26 audit, 82% of members employed fewer than 50 people. In a small business, the person dealing with a labour question may also be responsible for payroll, customers and keeping the day’s work moving. That reality must inform the support we provide and the positions we take.</p>
-              <p style={{ color:"#4A5568" }}>The audit recorded 4,445 member businesses across 41 sectors. No single sector accounted for more than 12% of the membership. Our responsibility is to hear the differences within that collective, not to pretend one employer’s circumstances fit all.</p>
+            <div style={{ display:"grid",gap:14 }}>
+              {[
+                { t:"Our vision",d:"To be a next-generation employers' organisation that empowers employers to adapt their workplaces effectively in the rapidly changing world of work." },
+                { t:"Our mission",d:"To represent, strengthen and give voice to South African employers through professional representation, collective bargaining and evidence-led advocacy, while providing the guidance and support they need to build stronger, more sustainable businesses." },
+                { t:"Our higher purpose",d:"To contribute to a stronger South African business environment by helping employers remain resilient, responsible and ready for change, while ensuring that their collective voice is heard where it matters." },
+              ].map((v,i)=>(
+                <div key={i} className="card">
+                  <h3 style={{ fontFamily:"'Barlow',sans-serif",color:"#0B1E3E",fontSize:"0.95rem",fontWeight:700,marginBottom:10 }}>{v.t}</h3>
+                  <p style={{ color:"#4A5568",fontSize:"0.9rem" }}>{v.d}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
