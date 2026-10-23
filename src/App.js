@@ -504,7 +504,7 @@ function About({ go }) {
               { h:"Advocacy and Lobbying",d:"Proposed laws and regulations can have costs and practical consequences that are difficult to see on paper. We listen to employers, develop positions from evidence we can substantiate and use available channels to engage decision-makers.",button:"Read about advocacy and lobbying →",page:"services" },
               { h:"Compliance",d:"Labour law and statutory requirements change, and the obligation to meet them sits with the employer. (SA)UEO helps members understand what applies to their workplace, identify gaps through a compliance checklist and address them with their organiser, so that an inspection, a dispute or a penalty does not find them first.",button:"Resources for compliance →",page:"resourcehub" },
             ].map((b,i)=>(
-              <div key={i} className="card about-work-card">
+              <div key={i} className="card about-work-card" style={{ borderTop:"4px solid #C9A84C" }}>
                 <h3 style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.9rem",fontWeight:800,color:"#19324A",marginBottom:12 }}>{b.h}</h3>
                 <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.7,marginBottom:22 }}>{b.d}</p>
                 <button className="btn-p" onClick={()=>go(b.page)}>{b.button}</button>
