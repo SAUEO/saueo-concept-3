@@ -646,9 +646,8 @@ function Membership({ go }) {
           </section>
 
           <div id="membership-categories">
-          <span className="sl">Choose Your Category</span>
-          <div className="gl" />
-          <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:36 }}>Six categories. <em style={{ color:"#C9A84C" }}>One organised employer platform.</em></h2>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:16 }}>Different workplaces. Different pressures. One clear starting point.</h2>
+          <p style={{ color:"#4A5568",marginBottom:28 }}>Choose the description closest to your workplace. The represented options share (SA)UEO’s core mandate, with terms and support explained during the application. Collaborative Membership has a different purpose and does not include formal representation.</p>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:16 }}>
             {cats.map((c,i)=>(
               <div key={i} role="button" tabIndex="0" onClick={()=>setSelectedCategory(c.key)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){setSelectedCategory(c.key);}}} style={{ background:c.pop?"#0B1E3E":"#fff",borderTop:"4px solid #C9A84C",padding:"22px 18px",cursor:"pointer",boxShadow:"0 2px 12px rgba(11,30,62,0.07)",position:"relative" }}>
