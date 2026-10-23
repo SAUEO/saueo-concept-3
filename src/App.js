@@ -55,14 +55,14 @@ a{text-decoration:none;color:inherit;}
 .modern-stat-grid>div{border-right-color:rgba(25,50,74,0.1)!important;}
 .modern-stat-grid>div>div:first-child{color:var(--coral)!important;}
 .modern-stat-grid>div>div:last-child{color:var(--ink)!important;}
-.modern-ecosystem{background:var(--mint)!important;}
+.modern-ecosystem{background:#F8F4EC!important;}
 .modern-ecosystem h2{color:var(--ink)!important;}
 .modern-ecosystem> .con>p{color:var(--slate)!important;}
 .modern-ecosystem .modern-partner-grid>div{background:#fff!important;border-top-color:var(--coral)!important;color:var(--ink)!important;}
 .modern-ecosystem .modern-partner-grid>div div{color:var(--ink)!important;}
 .modern-ecosystem .modern-partner-grid>div span{color:var(--slate)!important;}
 .modern-ecosystem .modern-partner-grid>div>div:first-child{color:var(--coral)!important;}
-.modern-cta{background:var(--coral-soft)!important;}
+.modern-cta{background:#DCEBE5!important;}
 .modern-cta h2,.modern-cta p{color:var(--ink)!important;}
 .modern-cta button:first-child{background:var(--ink)!important;color:#fff!important;}
 .modern-cta button:last-child{border-color:var(--ink)!important;color:var(--ink)!important;}
@@ -404,7 +404,7 @@ function Home({ go }) {
       <div className="modern-cta" style={{ background:"#C9A84C",padding:"72px 0" }}>
         <div className="con" style={{ textAlign:"center" }}>
           <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.3rem)",color:"#071429",marginBottom:12 }}>Know who will stand <em>with your business.</em></h2>
-          <p style={{ color:"#071429",fontSize:"1.05rem",maxWidth:520,margin:"0 auto 28px",lineHeight:1.75 }}>Explore the membership options or speak to us about the support relevant to your workplace.</p>
+          <p style={{ color:"#071429",fontSize:"1.05rem",maxWidth:560,margin:"0 auto 28px",lineHeight:1.75 }}>Explore the membership options or speak to us about the support relevant to your workplace.</p>
           <div style={{ display:"flex",gap:14,justifyContent:"center" }}>
             <button onClick={()=>go("membership")} style={{ background:"#071429",color:"#C9A84C",fontFamily:"'Barlow',sans-serif",fontWeight:800,fontSize:"0.72rem",letterSpacing:"0.12em",textTransform:"uppercase",padding:"13px 28px",border:"none",cursor:"pointer" }}>View Membership Options</button>
             <button onClick={()=>go("contact")} style={{ border:"2px solid #071429",color:"#071429",background:"transparent",fontFamily:"'Barlow',sans-serif",fontWeight:800,fontSize:"0.72rem",letterSpacing:"0.12em",textTransform:"uppercase",padding:"11px 26px",cursor:"pointer" }}>Contact Our Team</button>
