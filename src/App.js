@@ -99,9 +99,10 @@ a{text-decoration:none;color:inherit;}
 .membership-link span{color:var(--coral);font-size:0.65rem;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;}
 .membership-contact-note{background:var(--paper);border-radius:10px;padding:18px;margin-top:20px;}
 .membership-contact-note p{color:var(--slate);font-size:0.9rem;margin-bottom:18px;}
-.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,5vw,64px);padding-left:32px;color:var(--ink);}
-.membership-join-steps li{padding-left:12px;}
-.membership-join-steps p{color:var(--ink);margin-top:8px;}
+.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0;list-style-position:inside;color:#fff;}
+.membership-join-steps li{background:#C9A84C;padding:24px;min-width:0;}
+.membership-join-steps li::marker{color:#fff;font-weight:800;}
+.membership-join-steps p{color:#fff;margin-top:8px;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
@@ -633,18 +634,9 @@ function Membership({ go }) {
             <p style={{ color:"#4A5568" }}>Represented options include formal representation where the membership terms and forum rules permit it. Collaborative Membership provides information and participation in the collective voice without formal representation. Optional CCMA cover is available separately, subject to policy terms.</p>
           </section>
 
-          <section style={{ padding:"36px 0",marginBottom:48,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
-            <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:14 }}>Make the decision to join before a dispute makes it urgent.</h2>
-            <p style={{ color:"#4A5568",marginBottom:22 }}>Explore the options or tell us about your workplace. We will explain the membership terms and the support available to you.</p>
-            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
-              <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
-              <button className="btn-o" onClick={()=>go("contact")}>Enquire Now</button>
-            </div>
-          </section>
-
           <section style={{ marginBottom:56 }}>
             <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16,color:"#19324A" }}>How to join</h2>
-            <div style={{ background:"#C9A84C",padding:36 }}>
+            <div style={{ background:"#fff",padding:12 }}>
               <ol className="membership-join-steps">
                 <li><strong>Apply</strong><p>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
                 <li><strong>Confirm</strong><p>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
@@ -669,6 +661,14 @@ function Membership({ go }) {
             ))}
           </div>
           </div>
+          <section style={{ padding:"36px 0",marginTop:56,marginBottom:24,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
+            <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:14 }}>Make the decision to join before a dispute makes it urgent.</h2>
+            <p style={{ color:"#4A5568",marginBottom:22 }}>Explore the options or tell us about your workplace. We will explain the membership terms and the support available to you.</p>
+            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+              <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
+              <button className="btn-o" onClick={()=>go("contact")}>Enquire Now</button>
+            </div>
+          </section>
           {selectedCategory && (
             <div className="membership-modal" onClick={closeApplication}>
               <div className="membership-form" role="dialog" aria-modal="true" aria-label={`Apply for ${cats.find(c=>c.key===selectedCategory).n}`} onClick={e=>e.stopPropagation()}>
