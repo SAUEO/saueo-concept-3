@@ -99,10 +99,11 @@ a{text-decoration:none;color:inherit;}
 .membership-link span{color:var(--coral);font-size:0.65rem;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;}
 .membership-contact-note{background:var(--paper);border-radius:10px;padding:18px;margin-top:20px;}
 .membership-contact-note p{color:var(--slate);font-size:0.9rem;margin-bottom:18px;}
-.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0;list-style-position:inside;color:#fff;}
-.membership-join-steps li{background:#C9A84C;padding:24px;min-width:0;}
-.membership-join-steps li::marker{color:#fff;font-weight:800;}
-.membership-join-steps p{color:#fff;margin-top:8px;}
+.membership-includes{background:#fff;border:1px solid var(--line);border-top:3px solid var(--coral);border-radius:12px;padding:28px 24px;box-shadow:0 10px 28px rgba(16,42,67,0.06);}
+.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0;list-style-position:inside;color:var(--ink);}
+.membership-join-steps li{background:#fff;border:1px solid var(--line);border-top:3px solid var(--coral);border-radius:12px;padding:24px;min-width:0;box-shadow:0 10px 28px rgba(16,42,67,0.06);}
+.membership-join-steps li::marker{color:var(--coral);font-weight:800;}
+.membership-join-steps p{color:var(--slate);margin-top:8px;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
@@ -673,12 +674,12 @@ function Membership({ go }) {
                 <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
               </div>
             </div>
-            <div style={{ background:"#0B1E3E",padding:36 }}>
-              <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:18 }}>What Membership Includes</div>
+            <div className="membership-includes">
+              <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#19324A",marginBottom:18 }}>What Membership Includes</div>
               {["Representation at CCMA, Labour Court & Bargaining Councils, subject to membership category","Access to 211 professional organisers nationally","Compliance checklists, contract templates, and HR policies","Preventative compliance screening at onboarding","Expert updates on labour law changes","State of Business Survey participation","Free Recalibrate Business Client registration","Employee benefit scheme access","Professional development through the LLLRA","Invitations to employer forums and institutional engagements"].map((b,i)=>(
                 <div key={i} style={{ display:"flex",gap:12,alignItems:"flex-start",marginBottom:12 }}>
-                  <div style={{ width:5,height:5,background:"#C9A84C",borderRadius:"50%",marginTop:9,flexShrink:0 }} />
-                  <p style={{ color:"rgba(255,255,255,0.8)",fontSize:"0.9rem",lineHeight:1.65,margin:0 }}>{b}</p>
+                  <div style={{ width:5,height:5,background:"#688276",borderRadius:"50%",marginTop:9,flexShrink:0 }} />
+                  <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.65,margin:0 }}>{b}</p>
                 </div>
               ))}
             </div>
@@ -715,10 +716,10 @@ function Membership({ go }) {
           </div>
         </section>
 
-        <section style={{ marginBottom:56,background:"#E4EDE8" }}>
+        <section style={{ marginBottom:56,paddingBottom:64,background:"#E4EDE8" }}>
           <div className="con">
             <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16,color:"#19324A" }}>How to join</h2>
-            <div style={{ background:"#fff",padding:12 }}>
+            <div>
               <ol className="membership-join-steps">
                 <li><strong>Apply</strong><p>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
                 <li><strong>Confirm</strong><p>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
