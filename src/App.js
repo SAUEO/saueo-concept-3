@@ -593,8 +593,7 @@ function Membership({ go }) {
               <p style={{ color:"#4A5568",marginBottom:20 }}>You may need to dismiss an employee, respond to a workplace complaint, apply a sector agreement or adjust to a new legal requirement. Some decisions will be tested later. Others change what your business must pay or do before you have had much say in them.</p>
               <p style={{ color:"#4A5568",marginBottom:24 }}>Membership places your business within a registered employers’ organisation. Represented options give eligible members access to formal representation. Across the membership offer, (SA)UEO provides information, practical support and a way for employer realities to inform collective bargaining and advocacy. The exact support depends on the option you choose.</p>
               <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
-                <button className="btn-p" onClick={scrollToCategories}>Find Your Membership</button>
-                <button className="btn-o" onClick={scrollToCategories}>Apply for Membership</button>
+                <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
               </div>
             </div>
             <div style={{ background:"#0B1E3E",padding:36 }}>
