@@ -224,11 +224,11 @@ function Nav({ cur, go }) {
 function Home({ go }) {
   return (
     <div>
-      <div className="modern-hero" style={{ minHeight:"100vh",background:"linear-gradient(135deg,#F7F9F8 0%,#EAF3F0 62%,#DDEBE6 100%)",display:"flex",alignItems:"center",position:"relative",overflow:"hidden",paddingTop:120 }}>
+      <div className="modern-hero" style={{ minHeight:680,background:"linear-gradient(135deg,#F7F9F8 0%,#EAF3F0 62%,#DDEBE6 100%)",display:"flex",alignItems:"center",position:"relative",overflow:"hidden",paddingTop:120 }}>
         <div style={{ position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px)",backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute",top:"8%",right:"-4%",width:560,height:560,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%)" }} />
         <div className="con" style={{ position:"relative",zIndex:2 }}>
-          <div style={{ maxWidth:660,width:"58%",textAlign:"left" }}>
+          <div style={{ maxWidth:760,width:"66%",textAlign:"left" }}>
             <span className="sl">Registered Employers' Organisation — Department of Employment and Labour</span>
             <h1 style={{ color:"#19324A",fontSize:"clamp(2.6rem,5vw,4.4rem)",fontWeight:900,lineHeight:1.08,marginBottom:22 }}>
               You carry more than<br /><em style={{ color:"#688276" }}>a business.</em>
@@ -236,7 +236,7 @@ function Home({ go }) {
             <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,marginBottom:14,fontStyle:"italic",fontFamily:"'DM Serif Display',serif" }}>
               Behind every business is a livelihood. Often several.
             </p>
-            <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,margin:"0 auto 40px",padding:"12px 0 12px 18px",borderLeft:"3px solid #C9A84C" }}>
+            <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:680,margin:"0 auto 32px",padding:"12px 0 12px 18px",borderLeft:"3px solid #C9A84C" }}>
               As an employer, you carry livelihoods, communities and a part of our economy. You also carry the consequences when a workplace decision is challenged, an industry agreement changes your wage bill or a new rule adds to what your business must do.
             </p>
             <div style={{ display:"flex",gap:14,flexWrap:"wrap" }}>
