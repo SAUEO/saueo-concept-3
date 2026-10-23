@@ -167,8 +167,8 @@ footer{background:var(--ink)!important;}
   .nav-links.open span{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
   .nav-links.open button{margin-top:14px;}
 }
-@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
-@media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}}
+@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
+@media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
 @media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
@@ -228,15 +228,15 @@ function Home({ go }) {
         <div style={{ position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px)",backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute",top:"8%",right:"-4%",width:560,height:560,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%)" }} />
         <div className="con" style={{ position:"relative",zIndex:2 }}>
-          <div style={{ maxWidth:760,width:"66%",textAlign:"left" }}>
+          <div style={{ maxWidth:800,width:"72%",textAlign:"left" }}>
             <span className="sl">Registered Employers' Organisation — Department of Employment and Labour</span>
-            <h1 style={{ color:"#19324A",fontSize:"clamp(2.6rem,5vw,4.4rem)",fontWeight:900,lineHeight:1.08,marginBottom:22 }}>
+            <h1 style={{ color:"#19324A",fontSize:"clamp(2.5rem,4.2vw,4rem)",fontWeight:900,lineHeight:1.08,marginBottom:22 }}>
               You carry more than<br /><em style={{ color:"#688276" }}>a business.</em>
             </h1>
             <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,marginBottom:14,fontStyle:"italic",fontFamily:"'DM Serif Display',serif" }}>
               Behind every business is a livelihood. Often several.
             </p>
-            <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:680,margin:"0 auto 32px",padding:"12px 0 12px 18px",borderLeft:"3px solid #C9A84C" }}>
+            <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:740,margin:"0 auto 32px",padding:"12px 0 12px 18px",borderLeft:"3px solid #C9A84C" }}>
               As an employer, you carry livelihoods, communities and a part of our economy. You also carry the consequences when a workplace decision is challenged, an industry agreement changes your wage bill or a new rule adds to what your business must do.
             </p>
             <div style={{ display:"flex",gap:14,flexWrap:"wrap" }}>
@@ -348,6 +348,28 @@ function Home({ go }) {
             ))}
           </div>
           <button className="btn-p" onClick={()=>go("membership")} style={{ marginTop:26 }}>Find Your Membership</button>
+        </div>
+      </div>
+
+      <div style={{ padding:"64px 0",background:"#EAF3F0" }}>
+        <div className="con">
+          <div className="homepage-insight-grid" style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:24,alignItems:"stretch" }}>
+            <div style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"3px solid #688276",borderRadius:12,padding:"30px 32px",boxShadow:"0 10px 28px rgba(16,42,67,0.06)",display:"flex",flexDirection:"column" }}>
+              <span className="sl">State of Business</span>
+              <div className="gl" />
+              <h2 style={{ fontSize:"clamp(1.55rem,2.4vw,2rem)",lineHeight:1.2,marginBottom:16 }}>Before we advocate, we listen.</h2>
+              <p style={{ color:"#4A5568",lineHeight:1.75,marginBottom:16 }}>A requirement may look workable in a policy document and prove difficult in a business with five employees, a seasonal workforce or a narrow margin. We need employers to tell us where the pressure lies and what the proposed change would mean in practice.</p>
+              <p style={{ color:"#4A5568",lineHeight:1.75,marginBottom:22 }}>The State of Business Survey helps us identify issues to investigate and build a more credible basis for advocacy and lobbying.</p>
+              <button className="btn-p" onClick={()=>go("newsroom")} style={{ marginTop:"auto",alignSelf:"flex-start" }}>Why We Ask</button>
+            </div>
+            <div style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"3px solid #688276",borderRadius:12,padding:"30px 32px",boxShadow:"0 10px 28px rgba(16,42,67,0.06)",display:"flex",flexDirection:"column" }}>
+              <span className="sl">Employer Updates</span>
+              <div className="gl" />
+              <h2 style={{ fontSize:"clamp(1.55rem,2.4vw,2rem)",lineHeight:1.2,marginBottom:16 }}>Has a rule changed what you need to pay, record or do?</h2>
+              <p style={{ color:"#4A5568",lineHeight:1.75,marginBottom:22 }}>An amended law, a new earnings threshold, an extended bargaining council agreement or a significant court judgment can affect decisions you make about people. Heads-Up and our employer alerts explain what has been proposed or changed, who it affects, when it applies and what to check in your business.</p>
+              <button className="btn-p" onClick={()=>go("newsroom")} style={{ marginTop:"auto",alignSelf:"flex-start" }}>Read Employer Updates</button>
+            </div>
+          </div>
         </div>
       </div>
 
