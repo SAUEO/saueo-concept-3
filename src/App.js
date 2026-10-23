@@ -605,16 +605,6 @@ function Membership({ go }) {
                 </div>
               ))}
             </div>
-            <section style={{ gridColumn:"1 / -1" }}>
-              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16,color:"#19324A" }}>How to join</h2>
-              <div style={{ background:"#C9A84C",padding:36 }}>
-              <ol className="membership-join-steps">
-                <li><strong>Apply</strong><p>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
-                <li><strong>Confirm</strong><p>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
-                <li><strong>Use your membership</strong><p>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
-              </ol>
-              </div>
-            </section>
           </div>
 
           <section style={{ marginBottom:56 }}>
@@ -641,6 +631,17 @@ function Membership({ go }) {
             <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
               <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
               <button className="btn-o" onClick={()=>go("contact")}>Enquire Now</button>
+            </div>
+          </section>
+
+          <section style={{ marginBottom:56 }}>
+            <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16,color:"#19324A" }}>How to join</h2>
+            <div style={{ background:"#C9A84C",padding:36 }}>
+              <ol className="membership-join-steps">
+                <li><strong>Apply</strong><p>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
+                <li><strong>Confirm</strong><p>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
+                <li><strong>Use your membership</strong><p>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
+              </ol>
             </div>
           </section>
 
