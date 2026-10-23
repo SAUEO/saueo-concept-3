@@ -109,6 +109,8 @@ a{text-decoration:none;color:inherit;}
 .about-work-card .btn-p{margin-top:auto;}
 .about-context-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:start;}
 .about-context-columns>div{border-top:1px solid var(--line);padding-top:26px;}
+.about-values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;}
+.about-network-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:start;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
@@ -175,7 +177,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -530,6 +532,60 @@ function About({ go }) {
               <p style={{ color:"#4A5568",marginBottom:20 }}>In the 2025/26 audit, 82% of members employed fewer than 50 people. In a small business, the person dealing with a labour question may also be responsible for payroll, customers and keeping the day’s work moving. That reality must inform the support we provide and the positions we take.</p>
               <p style={{ color:"#4A5568" }}>The audit recorded 4,445 member businesses across 41 sectors. No single sector accounted for more than 12% of the membership. Our responsibility is to hear the differences within that collective, not to pretend one employer’s circumstances fit all.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ padding:"80px 0",background:"#E4EDE8" }}>
+          <div className="con">
+            <h2 style={{ fontSize:"clamp(1.7rem,2.8vw,2.3rem)",marginBottom:14 }}>Values have to show in the work.</h2>
+            <p style={{ color:"#4A5568",marginBottom:28,maxWidth:900 }}>Members experience our values in a call returned, a matter prepared, a fact checked and a difficult answer given plainly. They matter only if they guide those choices.</p>
+            <div className="about-values-grid">
+              {[
+                { t:"Empathy",d:"We listen to the full situation, including the business and the people affected by it." },
+                { t:"Integrity",d:"We work from the law, the facts and information we can substantiate. We take responsibility for what we say and do." },
+                { t:"Relationships",d:"We invest in knowing the members we represent and the organisers who work with them." },
+                { t:"Innovation",d:"We improve our tools and ways of working where they make support more useful and reliable." },
+                { t:"Optimism",d:"We take the pressures employers face seriously and look for the steps that are still open to them." },
+              ].map((value,i)=>(
+                <div key={i} className="card">
+                  <h3 style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.9rem",fontWeight:800,color:"#19324A",marginBottom:12 }}>{value.t}</h3>
+                  <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.7 }}>{value.d}</p>
+                </div>
+              ))}
+            </div>
+            <h3 style={{ fontSize:"1.2rem",marginTop:28,marginBottom:12 }}>One discipline behind it all: defensible.</h3>
+            <p style={{ color:"#4A5568",maxWidth:900 }}>Representation must be grounded in law and fact. Bargaining positions must reflect the employers we represent. Advocacy needs evidence. Information needs credible sources. Our own claims must withstand scrutiny. Credibility is earned in these choices.</p>
+          </div>
+      </div>
+
+      <div style={{ padding:"80px 0",background:"#F3F4F2" }}>
+          <div className="con">
+            <div className="about-network-grid">
+              <div>
+                <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",lineHeight:1.2,marginBottom:16 }}>The person beside you has an organisation behind them.</h2>
+                <p style={{ color:"#4A5568",marginBottom:20 }}>When you are making a difficult workplace decision, you need advice that takes the facts, the process and the possible consequences seriously. If the matter becomes formal, you need someone entitled and prepared to represent you. (SA)UEO invests in the organisers who carry that responsibility.</p>
+                <p style={{ color:"#4A5568",marginBottom:18 }}>Our national network: more than 200 active organisers.</p>
+                <details style={{ borderTop:"1px solid rgba(25,50,74,0.16)",borderBottom:"1px solid rgba(25,50,74,0.16)",padding:"16px 0" }}>
+                  <summary style={{ cursor:"pointer",fontSize:"0.84rem",fontWeight:700,color:"#19324A" }}>What stands behind your organiser</summary>
+                  <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.8,margin:"16px 0 0" }}>Organisers work within (SA)UEO’s national mandate, with access to Head Office support, labour-relations expertise and the knowledge of a wider network of practitioners.</p>
+                </details>
+              </div>
+              <div>
+                <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",lineHeight:1.2,marginBottom:16 }}>Raising the standard of labour relations practice</h2>
+                <p style={{ color:"#4A5568" }}>(SA)UEO is a founding sponsor of the Labour Law and Labour Relations Association. Its registration process is under way. Organisers are earmarked to be among its first members and to pursue professional designation once the body and its designation process are formally in place. Until then, the standard is carried the way it always has been: by organisers who prepare carefully, work from the facts and the law, and keep learning.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div style={{ padding:"64px 0",background:"#E4EDE8",borderTop:"1px solid rgba(25,50,74,0.12)" }}>
+          <div className="con">
+            <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.4rem)",marginBottom:12 }}>Know who will stand with your business.</h2>
+            <p style={{ color:"#4A5568",marginBottom:24 }}>Explore the membership options or speak to us about the support relevant to your workplace.</p>
+            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+              <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+              <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
           </div>
         </div>
       </div>
