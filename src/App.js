@@ -173,6 +173,12 @@ footer{background:var(--ink)!important;}
 .about-dropdown button{border:0;background:transparent;text-align:left;padding:12px 14px;color:var(--ink);font:700 0.72rem 'Barlow',sans-serif;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;}
 .about-dropdown button:hover,.about-dropdown button:focus-visible{background:var(--coral-soft);color:var(--ink);}
 .about-dropdown button:focus-visible,.about-nav-trigger:focus-visible{outline:2px solid var(--coral);outline-offset:3px;}
+.representation-intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.representation-organiser-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.representation-organiser-card{background:#fff;border:1px solid var(--line);border-top:2px solid #688276;border-radius:10px;padding:22px 20px;box-shadow:0 10px 28px rgba(16,42,67,0.05);}
+.representation-organiser-card:last-child{grid-column:1;}
+.representation-faq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;}
+.representation-faq summary{cursor:pointer;font-size:0.84rem;font-weight:700;color:var(--ink);}
 @media(max-width:980px){
   .nav-utility{padding:6px 22px!important;}
   .nav-utility-copy{display:none;}
@@ -193,7 +199,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid{grid-template-columns:1fr!important;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid{grid-template-columns:1fr!important;}.representation-organiser-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -659,6 +665,72 @@ function About({ go }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function RepresentationPage({ go }) {
+  return (
+    <div>
+      <div className="ph">
+        <div className="bc">Home / About Us / Representation</div>
+        <h1>Representation</h1>
+      </div>
+
+      <section style={{ padding:"58px 0 48px",background:"#F7F9F8" }}>
+        <div className="con representation-intro">
+          <div>
+            <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>A CCMA case does not stop the rest of your business.</h2>
+            <p style={{ color:"#4A5568",marginBottom:16 }}>An employee has challenged a workplace decision. You still have people to manage and work to keep moving, while the case brings dates to meet, records to gather and a position to prepare. The reason for your decision matters. So do the process you followed and what you can show happened.</p>
+            <p style={{ color:"#4A5568",marginBottom:22 }}>(SA)UEO represents eligible members at the CCMA, in bargaining councils and in other labour forums. Our organisers prepare from the facts, the law and your records, and act under the organisation’s mandate and the forum’s rules.</p>
+            <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
+              <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+              <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
+            </div>
+          </div>
+
+          <div>
+            <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>A CCMA notice sets more in motion than a hearing date.</h2>
+            <p style={{ color:"#4A5568",marginBottom:16 }}>The CCMA received 193,069 referrals in 2024/25. Unfair dismissal accounted for 51% of them. Those figures show how common formal disputes are; they do not predict what will happen in your matter.</p>
+            <p style={{ color:"#4A5568",marginBottom:20 }}>If a case involving your business is among them, you need to understand what is being challenged, gather the relevant records and prepare the people who can explain what happened. Some disputes settle at conciliation. Others go to arbitration, sometimes on the same day. The route varies, but preparation cannot wait until you walk into the room.</p>
+            <details className="representation-faq">
+              <summary>What an unfair dismissal finding can mean</summary>
+              <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.75,margin:"14px 0 0" }}>The Labour Relations Act allows compensation of up to 12 months’ remuneration for an unfair dismissal and up to 24 months for an automatically unfair dismissal. Reinstatement may also be ordered. The outcome depends on the circumstances and applicable law; these limits are statutory ceilings, not predicted awards.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"56px 0 48px",background:"#F3F4F2" }}>
+        <div className="con" style={{ maxWidth:1010 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.25rem)",lineHeight:1.2,marginBottom:14 }}>An organiser who prepares the matter</h2>
+          <p style={{ color:"#4A5568",marginBottom:26 }}>Your organiser works through the facts, the law and your records with you. They explain the process, prepare your position and represent you where your membership and the forum’s rules allow it.</p>
+          <div className="representation-organiser-grid">
+            {[
+              ["Support behind your organiser","Your organiser can draw on current case law, the experience of colleagues across the national network and Head Office support when a matter needs wider input."],
+              ["The authority to represent you","Once your membership is verified, (SA)UEO issues a representation letter where representation is included in your option. Your organiser acts under the organisation’s mandate, subject to the forum’s rules."],
+              ["Help before a matter becomes formal","Guidance, checklists and templates help you understand requirements and keep better records. Your organiser can help you apply them to a decision you are facing now."],
+            ].map(([title,description])=>(
+              <article className="representation-organiser-card" key={title}>
+                <h3 style={{ fontFamily:"'Manrope',sans-serif",fontSize:"0.82rem",fontWeight:800,marginBottom:14,color:"#19324A" }}>{title}</h3>
+                <p style={{ fontSize:"0.86rem",color:"#4A5568",lineHeight:1.7 }}>{description}</p>
+              </article>
+            ))}
+          </div>
+          <p style={{ color:"#4A5568",fontSize:"0.88rem",marginTop:24 }}>Optional CCMA cover is available under a separate policy, subject to its terms.</p>
+        </div>
+      </section>
+
+      <section style={{ padding:"48px 0 64px",background:"#E4EDE8" }}>
+        <div className="con" style={{ maxWidth:1010 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.3rem)",lineHeight:1.2,marginBottom:14 }}>Be ready to explain and support your decisions.</h2>
+          <p style={{ color:"#4A5568",marginBottom:22 }}>Find a membership option that includes representation, or talk to us about the workplace matter you are facing.</p>
+          <div style={{ display:"flex",gap:10,flexWrap:"wrap" }}>
+            <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+            <button className="btn-o" onClick={()=>go("contact")}>Talk to Us</button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
@@ -1344,7 +1416,7 @@ export default function App() {
     home: <Home go={go} />,
     partnerships: <Partnerships />,
     about: <About go={go} />,
-    representation: <AboutSubpage title="Representation" go={go} />,
+    representation: <RepresentationPage go={go} />,
     collectivebargaining: <AboutSubpage title="Collective Bargaining" go={go} />,
     advocacy: <AboutSubpage title="Advocacy and Lobbying" go={go} />,
     team: <Team />,
