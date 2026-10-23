@@ -229,7 +229,7 @@ function Home({ go }) {
         <div style={{ position:"absolute",top:"8%",right:"-4%",width:560,height:560,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%)" }} />
         <div className="con" style={{ position:"relative",zIndex:2 }}>
           <div style={{ maxWidth:800,width:"72%",textAlign:"left" }}>
-            <span className="sl">Registered Employers' Organisation — Department of Employment and Labour</span>
+            <span className="sl" style={{ textTransform:"none",letterSpacing:"0.04em" }}>Since 1998 · Registered with the Department of Employment and Labour</span>
             <h1 style={{ color:"#19324A",fontSize:"clamp(2.5rem,4.2vw,4rem)",fontWeight:900,lineHeight:1.08,marginBottom:22 }}>
               You carry more than<br /><em style={{ color:"#688276" }}>a business.</em>
             </h1>
