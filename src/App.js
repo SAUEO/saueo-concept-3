@@ -583,18 +583,7 @@ function Membership({ go }) {
       </div>
       <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
         <div className="con">
-          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,marginBottom:64,alignItems:"start" }}>
-            <div>
-              <span className="sl">Why Organised Membership Matters</span>
-              <div className="gl" />
-              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.3rem)",marginBottom:16,lineHeight:1.25 }}>The decisions you make as an employer carry consequences.</h2>
-              <p style={{ color:"#4A5568",marginBottom:14 }}>You may need to dismiss an employee, respond to a workplace complaint, apply a sector agreement or adjust to a new legal requirement. Some decisions will be tested later. Others change what your business must pay or do before you have had much say in them.</p>
-              <p style={{ color:"#4A5568",marginBottom:24 }}>Membership places your business within a registered employers’ organisation. Represented options give eligible members access to formal representation. Across the membership offer, (SA)UEO provides information, practical support and a way for employer realities to inform collective bargaining and advocacy. The exact support depends on the option you choose.</p>
-              <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
-                <button className="btn-p" onClick={scrollToCategories}>Find Your Membership</button>
-                <button className="btn-o" onClick={scrollToCategories}>Apply for Membership</button>
-              </div>
-            </div>
+          <div style={{ maxWidth:760,margin:"0 auto 64px" }}>
             <div style={{ background:"#0B1E3E",padding:36 }}>
               <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:18 }}>What Membership Includes</div>
               {["Recognised representation at CCMA, Labour Court & Bargaining Councils","Access to 211 professional organisers nationally","Compliance checklists, contract templates, and HR policies","Preventative compliance screening at onboarding","Expert updates on labour law changes","State of Business Survey participation","Free Recalibrate Business Client registration","Employee benefit scheme access","Professional development through the LLLRA","Invitations to employer forums and institutional engagements"].map((b,i)=>(
@@ -604,25 +593,15 @@ function Membership({ go }) {
                 </div>
               ))}
             </div>
+            <section style={{ background:"#C9A84C",padding:36 }}>
+              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:22,color:"#19324A" }}>How to join</h2>
+              <ol style={{ paddingLeft:24,color:"#19324A" }}>
+                <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Apply</strong><p style={{ color:"#19324A" }}>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
+                <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Confirm</strong><p style={{ color:"#19324A" }}>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
+                <li style={{ paddingLeft:8 }}><strong>Use your membership</strong><p style={{ color:"#19324A" }}>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
+              </ol>
+            </section>
           </div>
-
-          <section style={{ marginBottom:56 }}>
-            <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:16,lineHeight:1.2 }}>The decisions you make as an employer carry consequences.</h2>
-            <p style={{ color:"#4A5568",marginBottom:20 }}>You may need to dismiss an employee, respond to a workplace complaint, apply a sector agreement or adjust to a new legal requirement. Some decisions will be tested later. Others change what your business must pay or do before you have had much say in them.</p>
-            <p style={{ color:"#4A5568",marginBottom:24 }}>Membership places your business within a registered employers’ organisation. Represented options give eligible members access to formal representation. Across the membership offer, (SA)UEO provides information, practical support and a way for employer realities to inform collective bargaining and advocacy. The exact support depends on the option you choose.</p>
-            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
-              <button className="btn-p" onClick={scrollToCategories}>Find Your Membership</button>
-              <button className="btn-o" onClick={scrollToCategories}>Apply for Membership</button>
-            </div>
-          </section>
-
-          <section style={{ padding:"36px 0",marginBottom:48,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
-            <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16 }}>A workplace decision can become a formal case.</h2>
-            <p style={{ color:"#4A5568",marginBottom:14 }}>The CCMA received 193,069 referrals in 2024/25, with 51% concerning unfair dismissal. Each case is different, but the volume makes one point clear: employers need to be ready to explain the reason for a decision, the process followed and the records that support it.</p>
-            <p style={{ color:"#4A5568",marginBottom:14 }}>The Labour Relations Act permits compensation of up to 12 months’ remuneration for an unfair dismissal and 24 months for an automatically unfair dismissal. Reinstatement may also be ordered. At a salary of R20,000 a month, 12 months’ remuneration is R240,000. That is an illustration of a statutory ceiling, not an expected award. The time spent preparing a case and the disruption to the business also have a cost.</p>
-            <p style={{ color:"#4A5568",marginBottom:24 }}>There is a practical question before a hearing: can the person who advised you represent your business there? Advice alone does not confer that right. (SA)UEO represents eligible members under its mandate and the applicable forum rules. Its organisers also help members address process and record-keeping issues before a decision is tested.</p>
-            <button className="btn-p" onClick={scrollToCategories}>Understand Representation →</button>
-          </section>
 
           <section style={{ marginBottom:56 }}>
             <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:28 }}>Standing. Support. Voice.</h2>
@@ -640,15 +619,6 @@ function Membership({ go }) {
               ))}
             </div>
             <p style={{ color:"#4A5568" }}>Represented options include formal representation where the membership terms and forum rules permit it. Collaborative Membership provides information and participation in the collective voice without formal representation. Optional CCMA cover is available separately, subject to policy terms.</p>
-          </section>
-
-          <section style={{ marginBottom:56 }}>
-            <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:22 }}>How to join</h2>
-            <ol style={{ paddingLeft:24,color:"#19324A" }}>
-              <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Apply</strong><p style={{ color:"#4A5568" }}>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
-              <li style={{ paddingLeft:8,marginBottom:18 }}><strong>Confirm</strong><p style={{ color:"#4A5568" }}>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
-              <li style={{ paddingLeft:8 }}><strong>Use your membership</strong><p style={{ color:"#4A5568" }}>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
-            </ol>
           </section>
 
           <section style={{ padding:"36px 0",marginBottom:48,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
