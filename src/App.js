@@ -185,6 +185,9 @@ footer{background:var(--ink)!important;}
 .bargaining-employer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
 .bargaining-employer-card{background:#fff;border:1px solid var(--line);border-top:2px solid #688276;border-radius:10px;padding:22px 20px;box-shadow:0 10px 28px rgba(16,42,67,0.05);}
 .bargaining-employer-card:last-child{grid-column:1;}
+.advocacy-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.advocacy-evidence-card{background:#fff;border:1px solid var(--line);border-top:2px solid #688276;border-radius:10px;padding:22px 20px;box-shadow:0 10px 28px rgba(16,42,67,0.05);}
+.advocacy-evidence-card:last-child{grid-column:1;}
 @media(max-width:980px){
   .nav-utility{padding:6px 22px!important;}
   .nav-utility-copy{display:none;}
@@ -205,7 +208,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid{grid-template-columns:1fr!important;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid,.advocacy-evidence-grid{grid-template-columns:1fr!important;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child,.advocacy-evidence-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -808,20 +811,66 @@ function CollectiveBargainingPage({ go }) {
   );
 }
 
-function AboutSubpage({ title, go }) {
+function AdvocacyPage({ go }) {
   return (
     <div>
       <div className="ph">
-        <div className="bc">Home / About Us / {title}</div>
-        <h1>{title}</h1>
+        <div className="bc">Home / About Us / Advocacy and Lobbying</div>
+        <h1>Advocacy and Lobbying</h1>
       </div>
-      <section style={{ padding:"88px 0",background:"#F3F4F2" }}>
-        <div className="con" style={{ maxWidth:900 }}>
-          <span className="sl">About (SA)UEO</span>
-          <div className="gl" />
-          <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>This page is taking shape.</h2>
-          <p style={{ color:"#4A5568",marginBottom:28 }}>More information about {title.toLowerCase()} will be added here.</p>
-          <button className="btn-p" onClick={()=>go("about")}>Back to About Us</button>
+
+      <section style={{ padding:"58px 0 52px",background:"#F7F9F8" }}>
+        <div className="con representation-intro">
+          <div>
+            <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>A proposed rule can have a cost its wording does not show.</h2>
+            <p style={{ color:"#4A5568",marginBottom:16 }}>A change to leave, severance pay or another employment requirement may look straightforward on paper. In a business, it can affect staffing plans, records, payroll and decisions you can afford to make. Those effects need to be explained while proposals are still being considered.</p>
+            <p style={{ color:"#4A5568",marginBottom:22 }}>(SA)UEO listens to employers, develops positions from evidence it can substantiate and engages on policy and regulatory issues affecting them. We cannot promise a particular decision. We can make the practical case clearly.</p>
+            <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+          </div>
+          <div>
+            <h2 style={{ fontSize:"clamp(1.65rem,2.8vw,2.15rem)",lineHeight:1.2,marginBottom:16 }}>A comment process exists. The question is what decision-makers hear in it.</h2>
+            <p style={{ color:"#4A5568",marginBottom:16 }}>Proposed labour laws and regulations may go through public comment and structured engagement among government, organised labour and organised business. An individual employer can make a submission, but reading a proposal, calculating its impact and putting a case on record takes time and expertise.</p>
+            <p style={{ color:"#4A5568",marginBottom:20 }}>A collective organisation can gather accounts from employers, compare them with other evidence and explain where a proposed requirement would create a practical problem. The task is to put relevant facts before those considering the proposal, while there is still time for those facts to matter.</p>
+            <details className="representation-faq">
+              <summary>A practical example</summary>
+              <p style={{ color:"#4A5568",fontSize:"0.9rem",lineHeight:1.75,margin:"14px 0 0" }}>If a proposal changes a workplace obligation, employers can describe the practical steps it would require: who would need to do the work, what records would need to be kept, and how it may affect staffing or payroll. (SA)UEO can compare these accounts with available evidence and present a substantiated view through the relevant engagement process.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"48px 0 54px",background:"#F3F4F2" }}>
+        <div className="con" style={{ maxWidth:1120 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.25rem)",lineHeight:1.2,marginBottom:14 }}>Before we speak for employers, we need to hear them.</h2>
+          <p style={{ color:"#4A5568",marginBottom:16 }}>Organisers hear what members face in their workplaces. The State of Business Survey gives employers another way to describe costs, compliance pressures and the effects of proposed changes. We compare those accounts with credible sources before deciding what a position can responsibly say.</p>
+          <p style={{ color:"#4A5568" }}>(SA)UEO uses available channels to comment on proposals and engage with relevant institutions and stakeholders. An advocacy position should identify the issue, show whom it affects and explain what evidence supports the concern. That is how an employer reality becomes more than an assertion.</p>
+        </div>
+      </section>
+
+      <section style={{ padding:"52px 0 62px",background:"#F7F9F8" }}>
+        <div className="con" style={{ maxWidth:1040 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.25rem)",lineHeight:1.2,marginBottom:14 }}>Your experience can inform the evidence</h2>
+          <p style={{ color:"#4A5568",marginBottom:26 }}>Tell us what a proposal or requirement means in your workplace, through your organiser or the survey. We can examine whether the same issue is arising across businesses and how it can be substantiated.</p>
+          <div className="advocacy-evidence-grid">
+            {[
+              ["An explanation you can use","Heads-Up and employer alerts distinguish proposals from requirements already in force and explain what an employer may need to check or plan for."],
+              ["A collective case","(SA)UEO represents more than 4,400 member businesses. Their combined experience can reveal effects a single submission might miss. We have to make that case with evidence."],
+              ["A record of what we say","When (SA)UEO publishes a submission or reports an engagement, members should be able to see the issue raised and the position taken. An outcome is for the relevant decision-maker to determine."],
+            ].map(([title,description])=>(
+              <article className="advocacy-evidence-card" key={title}>
+                <h3 style={{ fontFamily:"'Manrope',sans-serif",fontSize:"0.82rem",fontWeight:800,marginBottom:14,color:"#19324A" }}>{title}</h3>
+                <p style={{ fontSize:"0.86rem",color:"#4A5568",lineHeight:1.7 }}>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding:"48px 0 64px",background:"#E4EDE8" }}>
+        <div className="con" style={{ maxWidth:1120 }}>
+          <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.3rem)",lineHeight:1.2,marginBottom:14 }}>Tell us what a proposed change would mean in your business.</h2>
+          <p style={{ color:"#4A5568",marginBottom:22 }}>Your experience may reveal a cost or practical difficulty that deserves to be examined before a rule is finalised.</p>
+          <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
         </div>
       </section>
     </div>
@@ -1491,7 +1540,7 @@ export default function App() {
     about: <About go={go} />,
     representation: <RepresentationPage go={go} />,
     collectivebargaining: <CollectiveBargainingPage go={go} />,
-    advocacy: <AboutSubpage title="Advocacy and Lobbying" go={go} />,
+    advocacy: <AdvocacyPage go={go} />,
     team: <Team />,
     membership: <Membership go={go} />,
     newsroom: <Newsroom go={go} />,
