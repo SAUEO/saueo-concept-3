@@ -4,7 +4,7 @@ const fonts = `@import url('https://fonts.googleapis.com/css2?family=Barlow:wght
 
 const gs = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--ink:#19324A;--ink-deep:#19324A;--coral:#688276;--coral-soft:#E7EFEB;--mint:#E3F1EB;--paper:#F7F9F8;--slate:#5B6872;--line:rgba(25,50,74,0.12);}
+:root{--ink:#19324A;--ink-deep:#19324A;--coral:#688276;--coral-soft:#E7EFEB;--mint:#E3F1EB;--paper:#F1F3F2;--slate:#5B6872;--line:rgba(25,50,74,0.12);}
 html{scroll-behavior:smooth;}
 body{font-family:'Manrope',sans-serif;background:var(--paper);color:var(--ink);}
 h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;}
@@ -19,7 +19,7 @@ a{text-decoration:none;color:inherit;}
 .con{max-width:1240px;margin:0 auto;padding:0 52px;}
 .card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--coral);border-radius:12px;padding:28px 24px;box-shadow:0 10px 28px rgba(16,42,67,0.06);transition:transform 0.2s,box-shadow 0.2s;}
 .card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(16,42,67,0.1);}
-.ph{background:#EAF2EE!important;padding:88px 52px 68px;position:relative;overflow:hidden;}
+.ph{background:#EAF3F0!important;padding:88px 52px 68px;position:relative;overflow:hidden;}
 .ph::before{display:none;}
 .ph .bc{font-family:'Manrope',sans-serif;font-size:0.65rem;letter-spacing:0.1em;color:#688276;margin-bottom:14px;text-transform:uppercase;}
 .ph h1{color:var(--ink);font-size:clamp(2rem,4vw,3.4rem);font-weight:400;line-height:1.1;position:relative;z-index:2;}
@@ -55,7 +55,7 @@ a{text-decoration:none;color:inherit;}
 .modern-stat-grid>div{border-right-color:rgba(25,50,74,0.1)!important;}
 .modern-stat-grid>div>div:first-child{color:var(--coral)!important;}
 .modern-stat-grid>div>div:last-child{color:var(--ink)!important;}
-.modern-ecosystem{background:#F7F9F8!important;}
+.modern-ecosystem{background:#F1F3F2!important;}
 .modern-ecosystem h2{color:var(--ink)!important;}
 .modern-ecosystem> .con>p{color:var(--slate)!important;}
 .modern-ecosystem .modern-partner-grid>div{background:#fff!important;border-top-color:var(--coral)!important;color:var(--ink)!important;}
@@ -261,7 +261,7 @@ function Home({ go }) {
         ))}
       </div>
 
-      <div style={{ padding:"72px 0",background:"#F7F9F8" }}>
+      <div style={{ padding:"72px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1.1fr 0.9fr",gap:40,alignItems:"center" }}>
             <div>
@@ -312,7 +312,7 @@ function Home({ go }) {
               ))}
             </div>
           <p style={{ color:"#4A5568",margin:"28px 0 0",lineHeight:1.8 }}>The purpose across all four is a stronger collective employer voice, grounded in members and facts we can substantiate.</p>
-          <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:44,alignItems:"center",marginTop:60,padding:"40px",background:"#F7F9F8",borderRadius:16 }}>
+          <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:44,alignItems:"center",marginTop:60,padding:"40px",background:"#F1F3F2",borderRadius:16 }}>
             <div>
               <h3 style={{ fontSize:"clamp(1.55rem,2.5vw,2.1rem)",lineHeight:1.2,marginBottom:16 }}>Support before a matter becomes formal.</h3>
               <p style={{ color:"#4A5568",lineHeight:1.8,margin:0 }}>A labour issue rarely arrives in isolation. A staffing decision may be tied to cash flow. A new requirement may affect payroll, records and the way work is organised. Members need information while there is still time to consider what to do.</p>
@@ -325,7 +325,7 @@ function Home({ go }) {
         </div>
       </div>
 
-      <div style={{ padding:"80px 0",background:"#F7F9F8" }}>
+      <div style={{ padding:"80px 0",background:"#F1F3F2" }}>
         <div className="con">
           <span className="sl">Membership</span>
           <div className="gl" />
@@ -429,7 +429,7 @@ function Partnerships() {
         <div className="bc">Home / Partnerships & Member Value</div>
         <h1>Complementary expertise.<br /><em>One stronger employer ecosystem.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#F1F3F2" }}>
         <div className="con">
           <span className="sl">Partnerships & Member Value</span>
           <div className="gl" />
@@ -465,7 +465,7 @@ function About({ go }) {
         <div className="bc">Home / About Us</div>
         <h1>An organisation with<br /><em>substance behind the words.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"5fr 4fr",gap:56,alignItems:"start" }}>
             <div>
@@ -521,7 +521,7 @@ function About({ go }) {
         </div>
       </div>
 
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#F1F3F2" }}>
         <div className="con">
           <span className="sl">Institutional Values</span>
           <div className="gl" />
@@ -598,7 +598,7 @@ function Team() {
         <div className="bc">Home / Our Team</div>
         <h1>The people behind<br /><em>South Africa's organised employer voice.</em></h1>
       </div>
-      <div style={{ padding:"80px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"80px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"200px 1fr",gap:40,alignItems:"start" }}>
             <div>
@@ -662,7 +662,7 @@ function Membership({ go }) {
         <div className="bc">Home / Membership</div>
         <h1>Membership categories.<br /><em>Structured for value.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,marginBottom:64,alignItems:"start" }}>
             <div>
@@ -683,16 +683,20 @@ function Membership({ go }) {
               ))}
             </div>
           </div>
+        </div>
 
-          <section style={{ padding:"36px 0",marginBottom:48 }}>
+        <section style={{ padding:"36px 0",marginBottom:48,background:"#EAF3F0" }}>
+          <div className="con">
             <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16 }}>A workplace decision can become a formal case.</h2>
             <p style={{ color:"#4A5568",marginBottom:20 }}>The CCMA received 193,069 referrals in 2024/25, with 51% concerning unfair dismissal. Each case is different, but the volume makes one point clear: employers need to be ready to explain the reason for a decision, the process followed and the records that support it.</p>
             <p style={{ color:"#4A5568",marginBottom:20 }}>The Labour Relations Act permits compensation of up to 12 months’ remuneration for an unfair dismissal and 24 months for an automatically unfair dismissal. Reinstatement may also be ordered. At a salary of R20,000 a month, 12 months’ remuneration is R240,000. That is an illustration of a statutory ceiling, not an expected award. The time spent preparing a case and the disruption to the business also have a cost.</p>
             <p style={{ color:"#4A5568",marginBottom:24 }}>There is a practical question before a hearing: can the person who advised you represent your business there? Advice alone does not confer that right. (SA)UEO represents eligible members under its mandate and the applicable forum rules. Its organisers also help members address process and record-keeping issues before a decision is tested.</p>
             <button className="btn-p" onClick={scrollToCategories}>Understand Representation →</button>
-          </section>
+          </div>
+        </section>
 
-          <section style={{ marginBottom:56 }}>
+        <section style={{ marginBottom:56,background:"#F1F3F2" }}>
+          <div className="con">
             <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:28 }}>Standing. Support. Voice.</h2>
             <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:16,marginBottom:28 }}>
               {[
@@ -708,9 +712,11 @@ function Membership({ go }) {
               ))}
             </div>
             <p style={{ color:"#4A5568" }}>Represented options include formal representation where the membership terms and forum rules permit it. Collaborative Membership provides information and participation in the collective voice without formal representation. Optional CCMA cover is available separately, subject to policy terms.</p>
-          </section>
+          </div>
+        </section>
 
-          <section style={{ marginBottom:56 }}>
+        <section style={{ marginBottom:56,background:"#EAF3F0" }}>
+          <div className="con">
             <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16,color:"#19324A" }}>How to join</h2>
             <div style={{ background:"#fff",padding:12 }}>
               <ol className="membership-join-steps">
@@ -719,8 +725,10 @@ function Membership({ go }) {
                 <li><strong>Use your membership</strong><p>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
               </ol>
             </div>
-          </section>
+          </div>
+        </section>
 
+        <div className="con">
           <div id="membership-categories">
           <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:16 }}>Different workplaces. Different pressures. One clear starting point.</h2>
           <p style={{ color:"#4A5568",marginBottom:28 }}>Choose the description closest to your workplace. The represented options share (SA)UEO’s core mandate, with terms and support explained during the application. Collaborative Membership has a different purpose and does not include formal representation.</p>
@@ -736,14 +744,18 @@ function Membership({ go }) {
             ))}
           </div>
           </div>
-          <section style={{ padding:"36px 0",marginTop:56,marginBottom:24,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)" }}>
+        </div>
+        <section style={{ padding:"36px 0",marginTop:56,marginBottom:24,borderTop:"1px solid rgba(25,50,74,0.12)",borderBottom:"1px solid rgba(25,50,74,0.12)",background:"#EAF3F0" }}>
+          <div className="con">
             <h2 style={{ fontSize:"clamp(1.7rem,3vw,2.5rem)",marginBottom:14 }}>Make the decision to join before a dispute makes it urgent.</h2>
             <p style={{ color:"#4A5568",marginBottom:22 }}>Explore the options or tell us about your workplace. We will explain the membership terms and the support available to you.</p>
             <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
               <button className="btn-p" onClick={scrollToCategories}>Apply for Membership</button>
               <button className="btn-o" onClick={()=>go("contact")}>Enquire Now</button>
             </div>
-          </section>
+          </div>
+        </section>
+        <div className="con">
           {selectedCategory && (
             <div className="membership-modal" onClick={closeApplication}>
               <div className="membership-form" role="dialog" aria-modal="true" aria-label={`Apply for ${cats.find(c=>c.key===selectedCategory).n}`} onClick={e=>e.stopPropagation()}>
@@ -793,7 +805,7 @@ function Newsroom({ go }) {
         <div className="bc">Home / Newsroom</div>
         <h1>Newsroom.<br /><em>Evidence before opinion. Structure before noise.</em></h1>
       </div>
-      <div style={{ padding:"80px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"80px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div className="newsroom-intro">
             <div><span className="sl">Employer voice</span><h2>Useful insight for the decisions in front of you.</h2><p>Read the latest (SA)UEO updates, practical guidance, and employer perspectives. New articles will appear in the current month automatically.</p></div>
@@ -847,7 +859,7 @@ function ResourceHub({ go }) {
         <div className="bc">Home / Resource Hub</div>
         <h1>Resource Hub.<br /><em>Compliance tools built for South African employers.</em></h1>
       </div>
-      <div style={{ padding:"80px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"80px 0",background:"#F1F3F2" }}>
         <div className="con">
             <div style={{ background:"#0B1E3E",padding:"28px 36px",marginBottom:36,display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>
             <div>
@@ -906,7 +918,7 @@ function Shop() {
         <div className="bc">Home / Shop</div>
         <h1>Practical tools.<br /><em>Ready for the real workplace.</em></h1>
       </div>
-      <div style={{ padding:"80px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"80px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"1fr",gap:36,alignItems:"start",marginBottom:64 }}>
             <div>
@@ -1030,7 +1042,7 @@ function Services({ go }) {
         <div className="bc">Home / Services & Programmes</div>
         <h1>Services & Programmes.<br /><em>More than labour. By institutional design.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div className="services-intro" style={{ display:"grid",gridTemplateColumns:"1fr 2fr",gap:56,marginBottom:56,alignItems:"start" }}>
             <div>
@@ -1089,7 +1101,7 @@ function Contact() {
         <div className="bc">Home / Contact Us</div>
         <h1>Get in Touch.<br /><em>We are here to help.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"88px 0",background:"#F1F3F2" }}>
         <div className="con">
           <div style={{ display:"grid",gridTemplateColumns:"2fr 3fr",gap:56,alignItems:"start" }}>
             <div>
