@@ -169,7 +169,7 @@ footer{background:var(--ink)!important;}
 }
 @media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:600px!important;margin:0 auto;text-align:center;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:600px!important;margin:0 auto;text-align:center;}.modern-hero .con>div:first-child>div{justify-content:center;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards{grid-template-columns:1fr!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -228,10 +228,10 @@ function Home({ go }) {
         <div style={{ position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px)",backgroundSize:"60px 60px" }} />
         <div style={{ position:"absolute",top:"8%",right:"-4%",width:560,height:560,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%)" }} />
         <div className="con" style={{ position:"relative",zIndex:2 }}>
-          <div style={{ maxWidth:740,width:"60%",textAlign:"center" }}>
+          <div style={{ maxWidth:660,width:"58%",textAlign:"left" }}>
             <span className="sl">Registered Employers' Organisation — Department of Employment and Labour</span>
             <h1 style={{ color:"#19324A",fontSize:"clamp(2.6rem,5vw,4.4rem)",fontWeight:900,lineHeight:1.08,marginBottom:22 }}>
-              You carry more<br /><em style={{ color:"#688276" }}>than a business.</em>
+              You carry more than<br /><em style={{ color:"#688276" }}>a business.</em>
             </h1>
             <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,marginBottom:14,fontStyle:"italic",fontFamily:"'DM Serif Display',serif" }}>
               Behind every business is a livelihood. Often several.
@@ -239,7 +239,7 @@ function Home({ go }) {
             <p style={{ color:"#52616D",fontSize:"1.1rem",lineHeight:1.8,maxWidth:560,margin:"0 auto 40px",padding:"12px 0 12px 18px",borderLeft:"3px solid #C9A84C" }}>
               As an employer, you carry livelihoods, communities and a part of our economy. You also carry the consequences when a workplace decision is challenged, an industry agreement changes your wage bill or a new rule adds to what your business must do.
             </p>
-            <div style={{ display:"flex",gap:14,flexWrap:"wrap",justifyContent:"center" }}>
+            <div style={{ display:"flex",gap:14,flexWrap:"wrap" }}>
               <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
               <button className="btn-o" onClick={()=>go("about")}>About (SA)UEO</button>
             </div>
@@ -247,7 +247,7 @@ function Home({ go }) {
         </div>
         <div className="modern-hero-mark" aria-label="(SA)UEO 25 years emblem">
           <img src={`${process.env.PUBLIC_URL}/saueo-logo-transparent2.png`} alt="(SA)UEO 25 years emblem" />
-          <div className="modern-hero-mark-label">A safe harbour for business</div>
+          <div className="modern-hero-mark-label">Since 1998</div>
           <div className="modern-hero-mark-line" />
         </div>
       </div>
@@ -269,18 +269,24 @@ function Home({ go }) {
               <div className="gl" />
               <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Your business is one of many carrying these pressures.</h2>
               <p style={{ color:"#4A5568",marginBottom:20,lineHeight:1.8 }}>An employer can explain what a change means inside one workplace. A collective can show how the same issue reaches businesses of different sizes and sectors. That gives (SA)UEO a firmer basis for the positions it takes and makes it accountable for whom it says it represents.</p>
-              <p style={{ color:"#4A5568",margin:0 }}>Our 2025/26 membership audit recorded:</p>
             </div>
-            <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:0,background:"#E2F0EA",borderRadius:12,padding:"22px 14px" }}>
-              {[["4,445","member businesses"],["224,000+","people employed by members"],["41","sectors"],["R28.7 billion+","in annual economic activity"]].map(([n,l],i)=>(
-                <div key={i} style={{ padding:"18px 12px",borderRight:i%2===0?"1px solid rgba(25,50,74,0.14)":"none",borderBottom:i<2?"1px solid rgba(25,50,74,0.14)":"none" }}>
-                  <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(1.5rem,2.5vw,2rem)",fontWeight:900,color:"#688276",lineHeight:1.1,marginBottom:10 }}>{n}</div>
-                  <div style={{ fontSize:"0.78rem",color:"#52616D",lineHeight:1.5 }}>{l}</div>
-                </div>
-              ))}
+            <div>
+              <p style={{ color:"#4A5568",margin:"0 0 12px",fontWeight:600 }}>Our 2025/26 membership audit recorded:</p>
+              <div style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:2,background:"#E2F0EA",borderRadius:12,padding:16 }}>
+                {[["4,445","member businesses"],["224,000+","people employed by members"],["41","sectors"],["R28.7 billion+","in annual economic activity"]].map(([n,l],i)=>(
+                  <div key={i} style={{ background:"#fff",padding:"22px 20px",minWidth:0 }}>
+                    <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(1.45rem,2.5vw,2rem)",fontWeight:900,color:"#688276",lineHeight:1.1,marginBottom:10,overflowWrap:"anywhere" }}>{n}</div>
+                    <div style={{ fontSize:"0.78rem",color:"#52616D",lineHeight:1.5 }}>{l}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <p style={{ color:"#4A5568",lineHeight:1.8,margin:"28px 0 0" }}>These figures show the breadth of the employers whose realities (SA)UEO has a duty to understand. A credible collective voice starts with knowing who stands behind it.</p>
+          <details open style={{ borderTop:"1px solid rgba(25,50,74,0.16)",borderBottom:"1px solid rgba(25,50,74,0.16)",marginTop:24,padding:"16px 0" }}>
+            <summary style={{ cursor:"pointer",fontSize:"0.84rem",fontWeight:700,color:"#19324A" }}>How these figures were calculated</summary>
+            <p style={{ color:"#4A5568",fontSize:"0.88rem",lineHeight:1.8,margin:"18px 0 0" }}>The 2025/26 audit identified 4,445 member businesses across 41 sectors. Employment and economic activity totals include only information that could be verified from member records. Where records were incomplete, no figures were assumed. The totals are therefore conservative and disclose no individual business.</p>
+          </details>
         </div>
       </div>
 
@@ -288,27 +294,23 @@ function Home({ go }) {
         <div className="con">
           <span className="sl">The Mandate</span>
           <div className="gl" />
-          <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:40,alignItems:"start" }}>
-            <div>
-              <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Four ways we work for employers. One collective employer voice.</h2>
-              <p style={{ color:"#4A5568",marginBottom:16,lineHeight:1.8 }}>Different decisions call for different forms of action. A dispute may require formal representation. A sector agreement may require an employer's circumstances to be heard at a bargaining table. A proposed regulation may need a clear account of what it would take to apply inside a business. A new legal requirement may need to be identified and met before an inspector or a dispute tests it.</p>
-              <button className="btn-p" onClick={()=>go("about")} style={{ marginTop:8 }}>About (SA)UEO</button>
-            </div>
-            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16 }}>
+          <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18,maxWidth:850 }}>Four ways we work for employers. One collective employer voice.</h2>
+          <p style={{ color:"#4A5568",marginBottom:26,lineHeight:1.8,maxWidth:900 }}>Different decisions call for different forms of action. A dispute may require formal representation. A sector agreement may require an employer's circumstances to be heard at a bargaining table. A proposed regulation may need a clear account of what it would take to apply inside a business. A new legal requirement may need to be identified and met before an inspector or a dispute tests it.</p>
+          <button className="btn-p" onClick={()=>go("about")} style={{ marginBottom:30 }}>About (SA)UEO</button>
+          <div className="modern-mandate-cards" style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:22 }}>
               {[
                 { i:"⚖️",t:"Representation",d:"When a workplace matter enters a formal process, (SA)UEO represents eligible members at the CCMA, in bargaining councils and in other labour forums, subject to the rules of each forum." },
                 { i:"🏛️",t:"Collective Bargaining",d:"Where (SA)UEO participates in a bargaining structure, we put the circumstances of the employers we represent before the parties negotiating sector terms." },
                 { i:"📊",t:"Advocacy and Lobbying",d:"We gather employer insight, test it against credible evidence and engage on policy and regulatory issues that affect the way businesses employ people." },
                 { i:"📋",t:"Compliance",d:"Labour law and statutory requirements change, and the obligation to meet them sits with the employer. (SA)UEO helps members understand what applies to their workplace, identify gaps through a compliance checklist and address them with their organiser, so that an inspection, a dispute or a penalty does not find them first." },
               ].map((p,i)=>(
-                <div key={i} className="card">
+                <div key={i} className="card" style={{ padding:"30px 28px",minHeight:230 }}>
                   <div style={{ fontSize:"1.6rem",marginBottom:12 }}>{p.i}</div>
                   <h4 style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.88rem",fontWeight:700,marginBottom:8,color:"#0B1E3E" }}>{p.t}</h4>
                   <p style={{ fontSize:"0.88rem",color:"#4A5568",lineHeight:1.65 }}>{p.d}</p>
                 </div>
               ))}
             </div>
-          </div>
           <p style={{ color:"#4A5568",margin:"28px 0 0",lineHeight:1.8 }}>The purpose across all four is a stronger collective employer voice, grounded in members and facts we can substantiate.</p>
         </div>
       </div>
