@@ -55,7 +55,7 @@ a{text-decoration:none;color:inherit;}
 .modern-stat-grid>div{border-right-color:rgba(25,50,74,0.1)!important;}
 .modern-stat-grid>div>div:first-child{color:var(--coral)!important;}
 .modern-stat-grid>div>div:last-child{color:var(--ink)!important;}
-.modern-ecosystem{background:#F8F4EC!important;}
+.modern-ecosystem{background:#F7F9F8!important;}
 .modern-ecosystem h2{color:var(--ink)!important;}
 .modern-ecosystem> .con>p{color:var(--slate)!important;}
 .modern-ecosystem .modern-partner-grid>div{background:#fff!important;border-top-color:var(--coral)!important;color:var(--ink)!important;}
@@ -261,7 +261,7 @@ function Home({ go }) {
         ))}
       </div>
 
-      <div style={{ padding:"72px 0",background:"#F8F4EC" }}>
+      <div style={{ padding:"72px 0",background:"#F7F9F8" }}>
         <div className="con">
           <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1.1fr 0.9fr",gap:40,alignItems:"center" }}>
             <div>
