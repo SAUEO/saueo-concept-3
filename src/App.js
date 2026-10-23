@@ -99,8 +99,8 @@ a{text-decoration:none;color:inherit;}
 .membership-link span{color:var(--coral);font-size:0.65rem;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;}
 .membership-contact-note{background:var(--paper);border-radius:10px;padding:18px;margin-top:20px;}
 .membership-contact-note p{color:var(--slate);font-size:0.9rem;margin-bottom:18px;}
-.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-left:24px;color:var(--ink);}
-.membership-join-steps li{padding-left:8px;}
+.membership-join-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,5vw,64px);padding-left:32px;color:var(--ink);}
+.membership-join-steps li{padding-left:12px;}
 .membership-join-steps p{color:var(--ink);margin-top:8px;}
 .resource-card{cursor:default!important;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
@@ -605,13 +605,15 @@ function Membership({ go }) {
                 </div>
               ))}
             </div>
-            <section style={{ background:"#C9A84C",padding:36,gridColumn:"1 / -1" }}>
-              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:22,color:"#19324A" }}>How to join</h2>
+            <section style={{ gridColumn:"1 / -1" }}>
+              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.2rem)",marginBottom:16,color:"#19324A" }}>How to join</h2>
+              <div style={{ background:"#C9A84C",padding:36 }}>
               <ol className="membership-join-steps">
                 <li><strong>Apply</strong><p>Choose an option and complete the application-start form. If you are unsure which option fits, send an enquiry and tell us about your workplace.</p></li>
                 <li><strong>Confirm</strong><p>The team explains the option’s terms and formal requirements, confirms your details and verifies membership once those requirements are met. Submitting a form does not itself start representation.</p></li>
                 <li><strong>Use your membership</strong><p>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
               </ol>
+              </div>
             </section>
           </div>
 
