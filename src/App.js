@@ -305,7 +305,7 @@ function Home({ go }) {
                 { i:"📊",t:"Advocacy and Lobbying",d:"We gather employer insight, test it against credible evidence and engage on policy and regulatory issues that affect the way businesses employ people." },
                 { i:"📋",t:"Compliance",d:"Labour law and statutory requirements change, and the obligation to meet them sits with the employer. (SA)UEO helps members understand what applies to their workplace, identify gaps through a compliance checklist and address them with their organiser, so that an inspection, a dispute or a penalty does not find them first." },
               ].map((p,i)=>(
-                <div key={i} className="card" style={{ padding:"30px 28px",minHeight:230 }}>
+                <div key={i} className="card" style={{ padding:"30px 28px",minHeight:230,borderTop:"4px solid #C9A84C" }}>
                   <div style={{ fontSize:"1.6rem",marginBottom:12 }}>{p.i}</div>
                   <h4 style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.88rem",fontWeight:700,marginBottom:8,color:"#0B1E3E" }}>{p.t}</h4>
                   <p style={{ fontSize:"0.88rem",color:"#4A5568",lineHeight:1.65 }}>{p.d}</p>
@@ -355,7 +355,7 @@ function Home({ go }) {
       <div style={{ padding:"64px 0",background:"#E4EDE8" }}>
         <div className="con">
           <div className="homepage-insight-grid" style={{ display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:24,alignItems:"stretch" }}>
-            <div style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"3px solid #688276",borderRadius:12,padding:"30px 32px",boxShadow:"0 10px 28px rgba(16,42,67,0.06)",display:"flex",flexDirection:"column" }}>
+            <div style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"4px solid #C9A84C",borderRadius:12,padding:"30px 32px",boxShadow:"0 10px 28px rgba(16,42,67,0.06)",display:"flex",flexDirection:"column" }}>
               <span className="sl">State of Business</span>
               <div className="gl" />
               <h2 style={{ fontSize:"clamp(1.55rem,2.4vw,2rem)",lineHeight:1.2,marginBottom:16 }}>Before we advocate, we listen.</h2>
@@ -363,7 +363,7 @@ function Home({ go }) {
               <p style={{ color:"#4A5568",lineHeight:1.75,marginBottom:22 }}>The State of Business Survey helps us identify issues to investigate and build a more credible basis for advocacy and lobbying.</p>
               <button className="btn-p" onClick={()=>go("newsroom")} style={{ marginTop:"auto",alignSelf:"flex-start" }}>Why We Ask</button>
             </div>
-            <div style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"3px solid #688276",borderRadius:12,padding:"30px 32px",boxShadow:"0 10px 28px rgba(16,42,67,0.06)",display:"flex",flexDirection:"column" }}>
+            <div style={{ background:"#fff",border:"1px solid rgba(25,50,74,0.12)",borderTop:"4px solid #C9A84C",borderRadius:12,padding:"30px 32px",boxShadow:"0 10px 28px rgba(16,42,67,0.06)",display:"flex",flexDirection:"column" }}>
               <span className="sl">Employer Updates</span>
               <div className="gl" />
               <h2 style={{ fontSize:"clamp(1.55rem,2.4vw,2rem)",lineHeight:1.2,marginBottom:16 }}>Has a rule changed what you need to pay, record or do?</h2>
