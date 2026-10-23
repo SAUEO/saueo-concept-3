@@ -252,7 +252,7 @@ function Home({ go }) {
         </div>
       </div>
 
-      <div className="modern-stat-grid" style={{ background:"#102A43",display:"grid",gridTemplateColumns:"repeat(4,1fr)",borderTop:"1px solid rgba(255,107,87,0.25)" }}>
+      <div className="modern-stat-grid" style={{ background:"#102A43",display:"grid",gridTemplateColumns:"repeat(4,1fr)",borderTop:"1px solid rgba(255,107,87,0.25)",margin:"24px 0" }}>
         {[["Since 1998",""],["Registered","With the Department of Employment and Labour"],["More than 200","Active Organisers"],["41 sectors","Represented in our membership"]].map(([n,l],i)=>(
           <div key={i} style={{ textAlign:"center",padding:"24px 16px",borderRight:i<3?"1px solid rgba(201,168,76,0.12)":"none" }}>
             <div style={{ fontFamily:"'Playfair Display',serif",fontSize:"2.6rem",fontWeight:900,color:"#C9A84C",lineHeight:1 }}>{n}</div>
