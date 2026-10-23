@@ -583,7 +583,17 @@ function Membership({ go }) {
       </div>
       <div style={{ padding:"88px 0",background:"#F8F4EC" }}>
         <div className="con">
-          <div style={{ maxWidth:760,margin:"0 auto 64px" }}>
+          <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,marginBottom:64,alignItems:"start" }}>
+            <div>
+              <span className="sl">Why Organised Membership Matters</span>
+              <div className="gl" />
+              <h2 style={{ fontSize:"clamp(1.6rem,2.8vw,2.3rem)",marginBottom:16,lineHeight:1.25 }}>Unorganised employers have no voice <em style={{ color:"#C9A84C" }}>— yet are bound by the outcome.</em></h2>
+              <p style={{ color:"#4A5568",marginBottom:14 }}>In South Africa’s labour system, collective agreements reached in Bargaining Councils bind all employers in that sector — whether or not they participated. Only organised employers have standing to influence those agreements before they are concluded.</p>
+              <p style={{ color:"#4A5568",marginBottom:14,fontStyle:"italic",borderLeft:"3px solid #C9A84C",paddingLeft:16 }}>Membership is not a support service. It is institutional standing in the forums where your decisions are tested.</p>
+              <p style={{ color:"#4A5568",marginBottom:28 }}>Every (SA)UEO member also receives a coupon code to register as a Recalibrate Business Client — free of charge.</p>
+              <button className="btn-p" onClick={()=>go("contact")}>Speak to Our Team</button>
+            </div>
+            <div>
             <div style={{ background:"#0B1E3E",padding:36 }}>
               <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:18 }}>What Membership Includes</div>
               {["Recognised representation at CCMA, Labour Court & Bargaining Councils","Access to 211 professional organisers nationally","Compliance checklists, contract templates, and HR policies","Preventative compliance screening at onboarding","Expert updates on labour law changes","State of Business Survey participation","Free Recalibrate Business Client registration","Employee benefit scheme access","Professional development through the LLLRA","Invitations to employer forums and institutional engagements"].map((b,i)=>(
@@ -601,6 +611,7 @@ function Membership({ go }) {
                 <li style={{ paddingLeft:8 }}><strong>Use your membership</strong><p style={{ color:"#19324A" }}>You can then access the support included in your option. Where representation is included, (SA)UEO issues the institutional representation letter after verification. Your organiser can help you work through a practical checklist of workplace questions and records.</p></li>
               </ol>
             </section>
+            </div>
           </div>
 
           <section style={{ marginBottom:56 }}>
