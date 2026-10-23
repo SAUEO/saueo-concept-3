@@ -268,10 +268,13 @@ function Home({ go }) {
           <div className="gl" />
           <div className="modern-home-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:40,alignItems:"start" }}>
             <div>
-              <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>Employers are not alone<br /><em style={{ color:"#C9A84C" }}>in this.</em></h2>
-              <p style={{ color:"#4A5568",marginBottom:16 }}>4,445 member businesses. 200+ professional organisers. Nine provinces. One organised voice. (SA)UEO is a nationally registered employers' organisation that gives businesses collective strength in South Africa's labour system.</p>
-              <p style={{ color:"#4A5568",marginBottom:16,fontStyle:"italic",borderLeft:"3px solid #C9A84C",paddingLeft:16 }}>Without membership of an employers' organisation, you have no voice in industry negotiations, yet you are lawfully bound by the outcome.</p>
-              <button className="btn-p" onClick={()=>go("about")} style={{ marginTop:8 }}>About (SA)UEO</button>
+              <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)",lineHeight:1.2,marginBottom:18 }}>The decisions you make as an employer carry consequences.</h2>
+              <p style={{ color:"#4A5568",marginBottom:16 }}>You may need to dismiss an employee, respond to a workplace complaint, apply a sector agreement or adjust to a new legal requirement. Some decisions will be tested later. Others change what your business must pay or do before you have had much say in them.</p>
+              <p style={{ color:"#4A5568",marginBottom:24 }}>Membership places your business within a registered employers’ organisation. Represented options give eligible members access to formal representation. Across the membership offer, (SA)UEO provides information, practical support and a way for employer realities to inform collective bargaining and advocacy. The exact support depends on the option you choose.</p>
+              <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+                <button className="btn-p" onClick={()=>go("membership")}>Find Your Membership</button>
+                <button className="btn-o" onClick={()=>go("membership")}>Apply for Membership</button>
+              </div>
             </div>
             <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16 }}>
               {[
