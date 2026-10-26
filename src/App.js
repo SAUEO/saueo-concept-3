@@ -119,6 +119,38 @@ a{text-decoration:none;color:inherit;}
 .resource-access{border:0;background:transparent;color:var(--coral);font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:0;cursor:pointer;}
 .resource-access:hover{text-decoration:underline;}
 .resource-access:focus-visible{outline:2px solid var(--coral);outline-offset:4px;}
+.resource-intro-section,.resource-library-section,.resource-tools-section{background:#F3F4F2;padding:64px 0;}
+.resource-entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;}
+.resource-entry-card{width:100%;text-align:left;color:var(--ink);cursor:pointer;}
+.resource-entry-card:hover{border-top-color:#C9A84C;transform:translateY(-3px);}
+.resource-editorial-section{background:#E4EDE8;padding:64px 0;}
+.resource-updates-section{background:#F3F4F2;padding:64px 0;}
+.resource-editorial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;}
+.resource-editorial-grid>div{border-top:3px solid #C9A84C;padding-top:22px;}
+.resource-editorial-grid h2,.resource-tools-grid h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
+.resource-editorial-grid p,.resource-tools-grid p{color:var(--slate);font-size:0.88rem;margin-bottom:16px;}
+.resource-library-filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px;}
+.resource-library-filters button{padding:9px 18px;border:1px solid rgba(25,50,74,0.22);background:transparent;color:var(--ink);font:700 0.68rem 'Barlow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;}
+.resource-library-filters button.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+.resource-library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.resource-card{display:flex;flex-direction:column;}
+.resource-card .resource-access{align-self:flex-start;margin-top:auto;}
+.resource-update-filters{display:grid;grid-template-columns:1fr repeat(4,minmax(115px,1fr));gap:10px;align-items:end;margin:26px 0 22px;}
+.resource-update-filters>div{display:grid;gap:7px;}
+.resource-update-filters label{font:700 0.66rem 'Manrope',sans-serif;color:var(--ink);}
+.resource-update-filters select,.resource-update-filters input{width:100%;min-height:42px;padding:9px 10px;border:1px solid rgba(104,130,118,0.55);border-radius:6px;background:#F8FAF8;color:var(--ink);font:500 0.78rem 'Manrope',sans-serif;}
+.resource-update-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:22px;}
+.resource-update-clear{border:0;background:transparent;color:var(--ink);font:500 0.76rem 'Manrope',sans-serif;text-decoration:underline;cursor:pointer;}
+.resource-update-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.resource-update-card{border-top-color:var(--coral);min-height:230px;}
+.resource-update-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;}
+.resource-update-meta span:first-child{background:var(--ink);color:#fff;padding:4px 8px;font:800 0.55rem 'Manrope',sans-serif;letter-spacing:0.07em;text-transform:uppercase;}
+.resource-update-meta time{color:var(--slate);font:500 0.68rem 'Manrope',sans-serif;}
+.resource-update-card h3{font-size:1.05rem;line-height:1.35;margin-bottom:10px;}
+.resource-update-card p{color:var(--slate);font-size:0.86rem;margin-bottom:0;}
+.resource-update-empty{color:var(--slate);margin:0;}
+.resource-tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;}
+.resource-tools-grid>div{border-top:3px solid #C9A84C;padding-top:22px;}
 .product-preview{height:260px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:22px;}
 .product-preview img{width:100%;height:100%;object-fit:contain;display:block;}
 .product-preview-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--slate);}
@@ -211,9 +243,9 @@ footer{background:var(--ink)!important;}
   .about-dropdown button{background:transparent!important;color:#fff!important;padding:12px 14px;}
   .about-dropdown button:hover,.about-dropdown button:focus-visible{background:rgba(255,255,255,0.1)!important;color:#fff!important;}
 }
-@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.team-member-grid.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
+@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.team-member-grid.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-entry-grid,.resource-library-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters>p{grid-column:1/-1;}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid,.advocacy-evidence-grid{grid-template-columns:1fr!important;}.team-member-grid,.team-member-grid.staff-grid{grid-template-columns:1fr;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child,.advocacy-evidence-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid,.advocacy-evidence-grid,.resource-editorial-grid,.resource-tools-grid{grid-template-columns:1fr!important;}.resource-entry-grid,.resource-library-grid,.resource-update-grid,.resource-update-filters{grid-template-columns:1fr;}.resource-update-filters>p{grid-column:auto;}.resource-intro-section,.resource-library-section,.resource-tools-section,.resource-editorial-section,.resource-updates-section{padding:48px 0;}.team-member-grid,.team-member-grid.staff-grid{grid-template-columns:1fr;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child,.advocacy-evidence-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -1177,6 +1209,8 @@ function Newsroom({ go }) {
 // RESOURCE HUB
 function ResourceHub({ go }) {
   const [filter, setFilter] = useState("all");
+  const [updateFilters, setUpdateFilters] = useState({ topic:"all",sector:"all",type:"all",month:"" });
+  const [appliedUpdateFilters, setAppliedUpdateFilters] = useState({ topic:"all",sector:"all",type:"all",month:"" });
   const res = [
     { cat:"templates",tag:"Starter Template",i:"📄",t:"Basic Employment Contract - Domestic Employer",d:"A practical starting contract for employing a domestic worker.",url:"https://saueo.co.za/wp-content/uploads/2025/10/CONTRACT-OF-EMPLOYMENT-DOMESTIC-WORKER.doc" },
     { cat:"templates",tag:"Starter Template",i:"📄",t:"Domestic Employer Payslip Example",d:"An example payslip to help domestic employers keep clearer employment records.",url:"https://saueo.co.za/wp-content/uploads/2025/09/PAYSLIP.pdf" },
@@ -1185,7 +1219,27 @@ function ResourceHub({ go }) {
     { cat:"guides",tag:"Official Form",i:"📘",t:"UIF (UI.19) Form",d:"The official UI.19 form for relevant UIF administration.",url:"https://saueo.co.za/wp-content/uploads/2025/09/Form-UI19.pdf" },
     { cat:"guides",tag:"Official Form",i:"📘",t:"UI 8D Form",d:"Application for registration as an employer of workers in a private household.",url:"https://saueo.co.za/wp-content/uploads/2025/09/Form-UI-8D-Application-for-registration-as-an-employer-of-workers-in-a-PRIVATE-HOUSEHOLD.pdf" },
   ];
+  const updates = [
+    { topic:"National Minimum Wage",sector:"All sectors",type:"Employer update",month:"2026-02",tag:"EMPLOYER UPDATE",date:"Feb 2026",title:"National Minimum Wage: February 2026",description:"Demonstration update showing how a wage change can be presented with the date, status and practical checks employers may need to make." },
+    { topic:"Collective Bargaining",sector:"Bargaining councils",type:"Bargaining update",month:"2026-05",tag:"BARGAINING UPDATE",date:"May 2026",title:"Collective Bargaining: May 2026",description:"Demonstration update on bargaining developments, with a clear publication date and a summary of what employers may need to review." },
+  ];
   const filtered = filter === "all" ? res : res.filter(r => r.cat === filter);
+  const visibleUpdates = updates.filter(update =>
+    (appliedUpdateFilters.topic === "all" || update.topic === appliedUpdateFilters.topic) &&
+    (appliedUpdateFilters.sector === "all" || update.sector === appliedUpdateFilters.sector) &&
+    (appliedUpdateFilters.type === "all" || update.type === appliedUpdateFilters.type) &&
+    (!appliedUpdateFilters.month || update.month === appliedUpdateFilters.month)
+  );
+  const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior:"smooth",block:"start" });
+  const goToGuides = () => {
+    setFilter("all");
+    scrollTo("resource-library");
+  };
+  const clearUpdateFilters = () => {
+    const cleared = { topic:"all",sector:"all",type:"all",month:"" };
+    setUpdateFilters(cleared);
+    setAppliedUpdateFilters(cleared);
+  };
 
   return (
     <div>
@@ -1193,21 +1247,39 @@ function ResourceHub({ go }) {
         <div className="bc">Home / Resource Hub</div>
         <h1>Resource Hub.<br /><em>Compliance tools built for South African employers.</em></h1>
       </div>
-      <div style={{ padding:"80px 0",background:"#F3F4F2" }}>
+      <section className="resource-intro-section">
         <div className="con">
-            <div style={{ background:"#0B1E3E",padding:"28px 36px",marginBottom:36,display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:16 }}>
-            <div>
-              <h3 style={{ color:"#fff",fontSize:"1rem",marginBottom:6 }}>Free starter resources for employers</h3>
-              <p style={{ color:"rgba(255,255,255,0.65)",fontSize:"0.88rem",margin:0 }}>Practical tools and official forms to help you take the next step with confidence.</p>
-            </div>
-            <button className="btn-p" onClick={()=>go("membership")}>Need tailored support?</button>
+          <h2 style={{ fontSize:"clamp(1.5rem,2.6vw,2rem)",marginBottom:14 }}>Running a business is not a single-issue job.</h2>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:16 }}>A fuel increase affects costs. A payroll error can become a compliance problem. A change to leave affects staffing plans. Employers need to see how developments across labour, business and the wider economy reach their own workplace.</p>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:26 }}>Heads-Up, webinars, employer updates and practical guides bring those developments into view. We distinguish proposals from requirements already in force, explain who may be affected and point to the questions worth checking. General information is a starting point; an organiser can help with the facts of your business.</p>
+          <div className="resource-entry-grid">
+            <button type="button" className="card resource-entry-card" onClick={()=>go("newsroom")}>Newsletter</button>
+            <button type="button" className="card resource-entry-card" onClick={()=>scrollTo("resource-webinars")}>Webinars and Events</button>
+            <button type="button" className="card resource-entry-card" onClick={goToGuides}>Guides and Tools</button>
           </div>
-          <div style={{ display:"flex",gap:10,marginBottom:32,flexWrap:"wrap" }}>
+        </div>
+      </section>
+      <section className="resource-editorial-section">
+        <div className="con resource-editorial-grid">
+          <div>
+            <h2>The employer briefing.</h2>
+            <p>Heads-Up brings together the developments that may change what employers pay, plan, record or decide. Labour-law amendments sit alongside matters such as operating costs, payroll, leave, safety and financial administration, because an employer deals with all of them in the same business.</p>
+            <p>Read the current edition for the facts, the date of each development and its possible practical effect. Use the archive to follow an issue over time.</p>
+          </div>
+          <div id="resource-webinars">
+            <h2>Questions worth putting to people who work with them every day.</h2>
+            <p>A new requirement can raise labour, financial and operational questions at once. (SA)UEO’s webinars bring organisers and relevant specialists into conversation so employers can understand an issue from more than one angle. Sessions are announced here when scheduled; recordings are made available to members when prepared for release.</p>
+          </div>
+        </div>
+      </section>
+      <section className="resource-library-section" id="resource-library">
+        <div className="con">
+          <div className="resource-library-filters" aria-label="Filter resources">
             {[["all","All Resources"],["templates","Templates"],["checklists","Checklists"],["guides","Guides"]].map(([id,label])=>(
-              <button key={id} onClick={()=>setFilter(id)} style={{ padding:"9px 20px",fontFamily:"'Barlow',sans-serif",fontSize:"0.72rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",border:`2px solid ${filter===id?"#0B1E3E":"rgba(11,30,62,0.2)"}`,background:filter===id?"#0B1E3E":"transparent",color:filter===id?"#fff":"#0B1E3E",cursor:"pointer",transition:"all 0.2s" }}>{label}</button>
+              <button key={id} type="button" className={filter === id ? "active" : ""} aria-pressed={filter === id} onClick={()=>setFilter(id)}>{label}</button>
             ))}
           </div>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:20 }}>
+          <div className="resource-library-grid">
             {filtered.map((r,i)=>(
               <div key={i} className="card resource-card">
                 <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:12 }}>
@@ -1221,7 +1293,72 @@ function ResourceHub({ go }) {
             ))}
           </div>
         </div>
-      </div>
+      </section>
+      <section className="resource-updates-section">
+        <div className="con">
+          <h2 style={{ fontSize:"clamp(1.5rem,2.6vw,2rem)",lineHeight:1.2,marginBottom:18 }}>Proposed, published or in force: know which stage a change has reached.</h2>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:16 }}>Employer alerts, guidance and commentary cover matters such as earnings thresholds, leave provisions, bargaining council extensions, enforcement activity, court judgments and proposed legislation. Each update should make the date and status of the development clear, then explain what an employer may need to check.</p>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:0 }}>Media coverage and (SA)UEO commentary are identified as such. They do not replace the practical updates employers come here to find.</p>
+          <div className="resource-update-filters">
+            <p style={{ color:"var(--slate)",fontSize:"0.78rem",margin:0 }}>Demonstration only — this form cannot send enquiries.</p>
+            <div>
+              <label htmlFor="update-topic">Topic</label>
+              <select id="update-topic" value={updateFilters.topic} onChange={event=>setUpdateFilters({...updateFilters,topic:event.target.value})}>
+                <option value="all">All</option>
+                {[...new Set(updates.map(update=>update.topic))].map(topic=><option key={topic} value={topic}>{topic}</option>)}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="update-sector">Sector</label>
+              <select id="update-sector" value={updateFilters.sector} onChange={event=>setUpdateFilters({...updateFilters,sector:event.target.value})}>
+                <option value="all">All</option>
+                {[...new Set(updates.map(update=>update.sector))].map(sector=><option key={sector} value={sector}>{sector}</option>)}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="update-type">Content type</label>
+              <select id="update-type" value={updateFilters.type} onChange={event=>setUpdateFilters({...updateFilters,type:event.target.value})}>
+                <option value="all">All</option>
+                {[...new Set(updates.map(update=>update.type))].map(type=><option key={type} value={type}>{type}</option>)}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="update-month">Date</label>
+              <input id="update-month" type="month" value={updateFilters.month} onChange={event=>setUpdateFilters({...updateFilters,month:event.target.value})} />
+            </div>
+          </div>
+          <div className="resource-update-actions">
+            <button type="button" className="btn-p" onClick={()=>setAppliedUpdateFilters({...updateFilters})}>Filter Updates</button>
+            <button type="button" className="resource-update-clear" onClick={clearUpdateFilters}>Clear filters</button>
+          </div>
+          {visibleUpdates.length > 0 ? (
+            <div className="resource-update-grid">
+              {visibleUpdates.map(update=>(
+                <article key={update.topic} className="card resource-update-card">
+                  <div className="resource-update-meta"><span>{update.tag}</span><time dateTime={update.month}>{update.date}</time></div>
+                  <h3>{update.title}</h3>
+                  <p>{update.description}</p>
+                </article>
+              ))}
+            </div>
+          ) : <p className="resource-update-empty">No employer updates are currently available for this selection.</p>}
+        </div>
+      </section>
+      <section className="resource-tools-section">
+        <div className="con resource-tools-grid">
+          <div>
+            <h2>Members receive new resources first.</h2>
+            <p>We develop guides and tools around the questions employers bring us. Each one is checked, sent to members and then placed in the public resource library. That library grows as material is completed, rather than promising a fixed number of guides by a fixed date.</p>
+            <p>Public guides explain the general position and help you see what to check. They cannot determine the right step for your particular workplace without its facts.</p>
+          </div>
+          <div>
+            <h2>Tools for the work behind a sound decision.</h2>
+            <p>Members can use the tools available under their option to check workplace processes and keep records in order: compliance checklists, HR templates, guidance on core employment obligations and sector-specific material where available. The tools are general resources; an organiser can help apply them to your circumstances.</p>
+            <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
+            <button type="button" className="btn-p" onClick={()=>go("contact")}>Talk to us</button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
