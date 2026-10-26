@@ -126,6 +126,8 @@ a{text-decoration:none;color:inherit;}
 .resource-entry-card h3{font-size:1.1rem;line-height:1.3;}
 .resource-entry-card p{color:var(--slate);font-size:0.82rem;line-height:1.65;}
 .resource-entry-card .btn-p,.resource-entry-card .btn-o{margin-top:auto;text-align:center;}
+.resource-entry-actions{display:flex;gap:10px;width:100%;margin-top:auto;}
+.resource-entry-actions .btn-p,.resource-entry-actions .btn-o{flex:1 1 0;min-width:0;margin-top:0;padding:12px 10px;}
 .resource-entry-card:hover{border-top-color:#C9A84C;transform:translateY(-3px);}
 .resource-updates-section{background:#E4EDE8;padding:64px 0;}
 .resource-library-filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px;}
@@ -151,7 +153,7 @@ a{text-decoration:none;color:inherit;}
 .resource-member-first{background:transparent;padding:48px 0 30px;}
 .resource-member-first .con{padding-top:0;}
 .resource-tools-standalone{background:#F3F4F2;padding:58px 0;}
-.resource-tools-standalone .con{border-top:3px solid var(--coral);padding-top:22px;}
+.resource-tools-standalone .con{padding-top:0;}
 .resource-tools-standalone h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
 .resource-tools-standalone p{color:var(--slate);font-size:0.88rem;margin-bottom:16px;}
 .resource-nav-item .about-nav-trigger{font-size:0.75rem;font-weight:800;}
@@ -1425,8 +1427,10 @@ function ResourceHub({ go }) {
             <div className="card resource-entry-card">
               <h3>Newsletter</h3>
               <p>Read the current edition for the facts, the date of each development and its possible practical effect. Use the archive to follow an issue over time.</p>
-              <button type="button" className="btn-p" onClick={()=>go("newsletter")}>Read the Latest Edition</button>
-              <a className="btn-o" href="mailto:info@saueo.co.za?subject=Subscribe%20to%20Heads-Up%21">Subscribe to Heads-Up</a>
+              <div className="resource-entry-actions">
+                <button type="button" className="btn-p" onClick={()=>go("newsletter")}>Read the Latest Edition</button>
+                <a className="btn-o" href="mailto:info@saueo.co.za?subject=Subscribe%20to%20Heads-Up%21">Subscribe to Heads-Up</a>
+              </div>
             </div>
             <div className="card resource-entry-card">
               <h3>Webinars &amp; events</h3>
