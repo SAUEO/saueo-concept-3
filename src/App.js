@@ -37,6 +37,7 @@ a{text-decoration:none;color:inherit;}
 .modern-nav .nav-main>div>div>div:last-child{color:var(--ink)!important;}
 .modern-nav .nav-links span{color:var(--ink)!important;}
 .modern-nav .nav-links span[style*="C9A84C"]{color:var(--coral)!important;}
+.modern-nav .nav-links .shop-nav-link{color:var(--ink)!important;}
 .modern-nav .nav-toggle{border-color:var(--coral);color:var(--coral);}
 .modern-nav .nav-links{background:#fff;}
 .modern-nav .nav-utility{background:var(--mint)!important;}
@@ -260,6 +261,7 @@ footer{background:var(--ink)!important;}
   .nav-links{display:none!important;position:absolute;top:100%;left:0;right:0;background:var(--ink-deep);padding:10px 22px 22px;border-top:1px solid rgba(255,107,87,0.28);box-shadow:0 14px 28px rgba(7,28,44,0.28);}
   .nav-links.open{display:flex!important;flex-direction:column;align-items:stretch;gap:0!important;}
   .nav-links.open span{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .nav-links.open .shop-nav-link{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);color:#fff!important;}
   .nav-links.open button{margin-top:14px;}
   .about-nav-item{width:100%;flex-wrap:wrap;gap:0;border-bottom:1px solid rgba(255,255,255,0.08);}
   .about-nav-trigger{flex:1;padding:14px 0;text-align:left;color:#fff!important;}
@@ -402,7 +404,7 @@ function Nav({ cur, go }) {
               )}
             </div>
           ) : id === "shop" ? (
-            <a key={id} href="https://learn.saueo.co.za/category/all-products" target="_blank" rel="noreferrer" style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</a>
+            <a key={id} className="shop-nav-link" href="https://learn.saueo.co.za/category/all-products" target="_blank" rel="noreferrer" style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",cursor:"pointer",borderBottom:"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</a>
           ) : (
             <span key={id} onClick={()=>go(id)} style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</span>
           ))}
