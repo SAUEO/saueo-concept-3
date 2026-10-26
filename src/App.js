@@ -176,6 +176,28 @@ a{text-decoration:none;color:inherit;}
 .state-business-findings p,.state-business-cta p{color:var(--slate);font-size:0.88rem;max-width:920px;margin:0;}
 .state-business-cta{background:#E4EDE8;padding:56px 0 68px;}
 .state-business-cta p{margin-bottom:20px;}
+.contact-intro{background:#F3F4F2;padding:40px 0;}
+.contact-intro h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;margin-bottom:14px;}
+.contact-intro p{color:var(--slate);font-size:0.88rem;max-width:1000px;margin:0;}
+.contact-details-section{background:#F3F4F2;padding:64px 0;}
+.contact-layout{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:44px;align-items:start;}
+.contact-information h2{font-size:1.6rem;margin-bottom:24px;line-height:1.25;}
+.contact-detail{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start;}
+.contact-detail-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+.contact-detail-label{font:700 0.65rem 'Barlow',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#9CA3AF;margin-bottom:4px;}
+.contact-detail-value{font:400 1rem 'DM Serif Display',serif;color:#0B1E3E;}
+.contact-member-note{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);}
+.contact-member-note h2{font-size:clamp(1.45rem,2.4vw,1.8rem);margin-bottom:12px;}
+.contact-member-note p{color:var(--slate);font-size:0.88rem;margin:0;}
+.contact-form-panel{background:#fff;padding:40px;box-shadow:0 8px 40px rgba(11,30,62,0.1);}
+.contact-form-panel h2{color:#0B1E3E;font-size:1.2rem;margin-bottom:8px;}
+.contact-form-panel p{color:#4A5568;font-size:0.9rem;margin-bottom:18px;}
+.contact-form-embed{display:block;width:100%;height:760px;border:0;background:#fff;}
+.contact-bottom-cta{background:#F3F4F2;padding:0 0 58px;}
+.contact-bottom-cta .con{border-top:1px solid var(--line);padding-top:42px;}
+.contact-bottom-cta h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;margin-bottom:14px;}
+.contact-bottom-cta p{color:var(--slate);font-size:0.88rem;margin-bottom:20px;}
+.contact-bottom-cta p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
 .resource-nav-item .about-nav-trigger{font-size:0.75rem;font-weight:800;}
 .resource-nav-item .about-nav-toggle{font-size:0.75rem;}
 .product-preview{height:260px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:22px;}
@@ -290,7 +312,7 @@ footer{background:var(--ink)!important;}
   .about-dropdown button{background:transparent!important;color:#fff!important;padding:12px 14px;}
   .about-dropdown button:hover,.about-dropdown button:focus-visible{background:rgba(255,255,255,0.1)!important;color:#fff!important;}
 }
-@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.team-member-grid.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-entry-grid,.resource-library-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters>p{grid-column:1/-1;}.state-business-steps{grid-template-columns:repeat(2,minmax(0,1fr));}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
+@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.team-member-grid.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-entry-grid,.resource-library-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters>p{grid-column:1/-1;}.state-business-steps{grid-template-columns:repeat(2,minmax(0,1fr));}.contact-layout{grid-template-columns:1fr;}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
 @media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid,.advocacy-evidence-grid,.state-business-intro-grid,.state-business-steps{grid-template-columns:1fr!important;}.resource-entry-grid,.resource-library-grid,.resource-update-grid,.resource-update-filters{grid-template-columns:1fr;}.resource-update-filters>p{grid-column:auto;}.resource-intro-section,.resource-tools-section,.resource-updates-section{padding:48px 0;}.resource-library-section{padding:0 0 48px;}.resource-member-first{padding:40px 0;}.state-business-intro,.state-business-process{padding:48px 0;}.state-business-findings,.state-business-cta{padding:44px 0;}.team-member-grid,.team-member-grid.staff-grid{grid-template-columns:1fr;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child,.advocacy-evidence-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
@@ -426,7 +448,7 @@ function Nav({ cur, go }) {
           ) : (
             <span key={id} onClick={()=>go(id)} style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</span>
           ))}
-          <button className="btn-p" onClick={()=>go("contact")} style={{ fontSize:"0.66rem",padding:"9px 18px" }}>Get Help</button>
+          <button className="btn-p" onClick={()=>go("contact")} style={{ fontSize:"0.66rem",padding:"9px 18px" }}>Contact Us</button>
         </div>
       </div>
     </nav>
@@ -1830,77 +1852,59 @@ function Services({ go }) {
 }
 
 // CONTACT
-function Contact() {
-  const [form, setForm] = useState({ name:"",email:"",phone:"",cat:"",msg:"" });
-  const [done, setDone] = useState(false);
-  const ch = e => setForm(f => ({ ...f,[e.target.name]:e.target.value }));
-
+function Contact({ go }) {
   return (
     <div>
       <div className="ph">
         <div className="bc">Home / Contact Us</div>
-        <h1>Get in Touch.<br /><em>We are here to help.</em></h1>
+        <h1>Contact Us.</h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F3F4F2" }}>
+      <section className="contact-intro">
         <div className="con">
-          <div style={{ display:"grid",gridTemplateColumns:"2fr 3fr",gap:56,alignItems:"start" }}>
-            <div>
-              <span className="sl">Contact Information</span>
-              <div className="gl" />
-              <h2 style={{ fontSize:"1.6rem",marginBottom:24,lineHeight:1.25 }}>Reach the right <em style={{ color:"#C9A84C" }}>team directly.</em></h2>
-              {[["✉️","General Enquiries","info@saueo.co.za"],["🕐","Office Hours","Monday to Friday: 07:30 to 16:30"],["🔐","Member Portal","portal.saueo.co.za"]].map(([ic,lbl,val],i)=>(
-                <div key={i} style={{ display:"flex",gap:16,marginBottom:22,alignItems:"flex-start" }}>
-                  <div style={{ fontSize:"1.2rem",flexShrink:0,marginTop:2 }}>{ic}</div>
-                  <div>
-                    <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"#9CA3AF",marginBottom:4 }}>{lbl}</div>
-                    <div style={{ fontFamily:"'Crimson Pro',serif",fontSize:"1rem",color:"#0B1E3E" }}>{val}</div>
-                  </div>
+          <h2>Tell us what you need to deal with.</h2>
+          <p>A workplace dispute may be under way. You may be weighing a staffing decision, checking a membership option or seeking the right person at (SA)UEO. Send us the essentials and we will route your message to the appropriate team.</p>
+        </div>
+      </section>
+      <section className="contact-details-section">
+        <div className="con contact-layout">
+          <div className="contact-information">
+            <span className="sl">Contact Information</span>
+            <div className="gl" />
+            <h2>Reach the right <em style={{ color:"#C9A84C" }}>team directly.</em></h2>
+            {[["✉️","General Enquiries","info@saueo.co.za"],["🕐","Office Hours","Monday to Friday: 07:30 to 16:30"],["🔐","Member Portal","portal.saueo.co.za"]].map(([ic,lbl,val],i)=>(
+              <div className="contact-detail" key={i}>
+                <div className="contact-detail-icon">{ic}</div>
+                <div>
+                  <div className="contact-detail-label">{lbl}</div>
+                  <div className="contact-detail-value">{val}</div>
                 </div>
-              ))}
-              <div style={{ background:"#0B1E3E",padding:28,marginTop:8 }}>
-                <div style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:800,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C9A84C",marginBottom:10 }}>National Footprint</div>
-                <p style={{ color:"rgba(255,255,255,0.78)",fontSize:"0.9rem",lineHeight:1.75 }}>More than 200 organisers operating across all nine provinces, ensuring employers are never without accessible, professionally governed support.</p>
               </div>
-            </div>
-            <div style={{ background:"#fff",padding:44,boxShadow:"0 8px 40px rgba(11,30,62,0.1)" }}>
-              {done ? (
-                <div style={{ textAlign:"center",padding:"36px 0" }}>
-                  <div style={{ fontSize:"2.4rem",marginBottom:14 }}>✅</div>
-                  <h3 style={{ color:"#0B1E3E",fontSize:"1.3rem",marginBottom:12 }}>Message Received</h3>
-                  <p style={{ color:"#4A5568" }}>Thank you for reaching out. A member of our team will respond within one business day.</p>
-                </div>
-              ) : (
-                <>
-                  <h3 style={{ color:"#0B1E3E",fontSize:"1.2rem",marginBottom:8 }}>Send Us a Message</h3>
-                  <p style={{ color:"#4A5568",fontSize:"0.9rem",marginBottom:24 }}>Complete the form and our team will respond within one business day.</p>
-                  {[["name","Full Name *","text"],["email","Email Address *","email"],["phone","Phone Number","tel"]].map(([nm,lbl,tp])=>(
-                    <div key={nm} style={{ marginBottom:16 }}>
-                      <label style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"#0B1E3E",display:"block",marginBottom:6 }}>{lbl}</label>
-                      <input type={tp} name={nm} value={form[nm]} onChange={ch} style={{ width:"100%",padding:"10px 14px",border:"1px solid rgba(11,30,62,0.2)",fontFamily:"'Crimson Pro',serif",fontSize:"1rem",outline:"none",background:"#F8F4EC" }} />
-                    </div>
-                  ))}
-                  <div style={{ marginBottom:16 }}>
-                    <label style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"#0B1E3E",display:"block",marginBottom:6 }}>Enquiry Type</label>
-                    <select name="cat" value={form.cat} onChange={ch} style={{ width:"100%",padding:"10px 14px",border:"1px solid rgba(11,30,62,0.2)",fontFamily:"'Crimson Pro',serif",fontSize:"1rem",outline:"none",background:"#F8F4EC" }}>
-                      <option value="">Select an option</option>
-                      <option>Membership Enquiry</option>
-                      <option>CCMA or Labour Dispute</option>
-                      <option>Compliance Support</option>
-                      <option>Collective Bargaining</option>
-                      <option>General Enquiry</option>
-                    </select>
-                  </div>
-                  <div style={{ marginBottom:24 }}>
-                    <label style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.65rem",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",color:"#0B1E3E",display:"block",marginBottom:6 }}>Message *</label>
-                    <textarea name="msg" value={form.msg} onChange={ch} rows={5} style={{ width:"100%",padding:"10px 14px",border:"1px solid rgba(11,30,62,0.2)",fontFamily:"'Crimson Pro',serif",fontSize:"1rem",outline:"none",background:"#F8F4EC",resize:"vertical" }} />
-                  </div>
-                  <button className="btn-p" onClick={()=>{ if(form.name&&form.email&&form.msg)setDone(true); }} style={{ width:"100%",textAlign:"center" }}>Send Message</button>
-                </>
-              )}
+            ))}
+            <div className="contact-member-note">
+              <h2>Already a member?</h2>
+              <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
             </div>
           </div>
+          <div className="contact-form-panel">
+            <h2>Send Us a Message</h2>
+            <p>Complete the form and our team will respond within one business day.</p>
+            <iframe
+              className="contact-form-embed"
+              src="https://forms.clickup.com/20674763/f/kpy6b-16252/41ELO244L5BXJG4VHY"
+              title="Contact (SA)UEO"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
         </div>
-      </div>
+      </section>
+      <section className="contact-bottom-cta">
+        <div className="con">
+          <h2>Looking for membership or employer updates?</h2>
+          <p>Explore the options or subscribe to <a href="#newsletter" onClick={event=>{event.preventDefault();go("newsletter");}}>Heads-Up</a>. An enquiry and a subscription are separate choices.</p>
+          <button className="btn-p" type="button" onClick={()=>go("membership")}>Find Your Membership</button>
+        </div>
+      </section>
     </div>
   );
 }
@@ -1961,7 +1965,7 @@ export default function App() {
     shop: <Shop />,
     stateofbusiness: <StateOfBusiness />,
     services: <Services go={go} />,
-    contact: <Contact />,
+    contact: <Contact go={go} />,
   };
   return (
     <>
