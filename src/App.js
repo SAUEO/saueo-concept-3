@@ -120,7 +120,8 @@ a{text-decoration:none;color:inherit;}
 .resource-access:hover{text-decoration:underline;}
 .resource-access:focus-visible{outline:2px solid var(--coral);outline-offset:4px;}
 .resource-intro-section,.resource-library-section,.resource-tools-section{background:#F3F4F2;padding:64px 0;}
-.resource-library-section{padding:0 0 64px;}
+.resource-library-section{background:#E4EDE8;padding:0 0 64px;}
+.resource-library-section .resource-card{border-color:#C9A84C;}
 .resource-entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;}
 .resource-entry-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0;}
 .resource-entry-card h3{font-size:1.1rem;line-height:1.3;}
@@ -129,7 +130,7 @@ a{text-decoration:none;color:inherit;}
 .resource-entry-actions{display:flex;gap:10px;width:100%;margin-top:auto;}
 .resource-entry-actions .btn-p,.resource-entry-actions .btn-o{flex:1 1 0;min-width:0;margin-top:0;padding:12px 10px;}
 .resource-entry-card:hover{border-top-color:#C9A84C;transform:translateY(-3px);}
-.resource-updates-section{background:#E4EDE8;padding:64px 0;}
+.resource-updates-section{background:#F3F4F2;padding:64px 0;}
 .resource-library-filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px;}
 .resource-library-filters button{padding:9px 18px;border:1px solid rgba(25,50,74,0.22);background:transparent;color:var(--ink);font:700 0.68rem 'Barlow',sans-serif;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;}
 .resource-library-filters button.active{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -143,7 +144,7 @@ a{text-decoration:none;color:inherit;}
 .resource-update-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:22px;}
 .resource-update-clear{border:0;background:transparent;color:var(--ink);font:500 0.76rem 'Manrope',sans-serif;text-decoration:underline;cursor:pointer;}
 .resource-update-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
-.resource-update-card{border-top-color:#C9A84C;min-height:230px;}
+.resource-update-card{border-color:var(--coral);min-height:230px;}
 .resource-update-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;}
 .resource-update-meta span:first-child{background:var(--ink);color:#fff;padding:4px 8px;font:800 0.55rem 'Manrope',sans-serif;letter-spacing:0.07em;text-transform:uppercase;}
 .resource-update-meta time{color:var(--slate);font:500 0.68rem 'Manrope',sans-serif;}
@@ -152,7 +153,7 @@ a{text-decoration:none;color:inherit;}
 .resource-update-empty{color:var(--slate);margin:0;}
 .resource-member-first{background:transparent;padding:48px 0 30px;}
 .resource-member-first .con{padding-top:0;}
-.resource-tools-standalone{background:#F3F4F2;padding:58px 0;}
+.resource-tools-standalone{background:#E4EDE8;padding:58px 0;}
 .resource-tools-standalone .con{padding-top:0;}
 .resource-tools-standalone h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
 .resource-tools-standalone p{color:var(--slate);font-size:0.88rem;margin-bottom:16px;}
@@ -1532,7 +1533,7 @@ function ResourceHub({ go }) {
             <a className="btn-p" href="https://portal.saueo.co.za">Member login</a>
         </div>
       </section>
-      <section className="resource-intro-section" style={{ background:"#E4EDE8",borderTop:"1px solid #C9A84C",borderBottom:"1px solid #C9A84C" }}>
+      <section className="resource-intro-section" style={{ background:"#F3F4F2",borderTop:"1px solid #C9A84C",borderBottom:"1px solid #C9A84C" }}>
         <div className="con">
           <h2 style={{ fontSize:"clamp(1.5rem,2.6vw,2rem)",marginBottom:14 }}>Stay current on what affects your workplace.</h2>
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:20 }}>Subscribe to Heads-Up for employer developments. If you need help applying one to your business, explore membership.</p>
