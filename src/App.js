@@ -74,12 +74,13 @@ a{text-decoration:none;color:inherit;}
 .partnership-card .partner-name{color:var(--coral)!important;}
 .partnership-hierarchy{background:var(--ink)!important;}
 .services-intro{grid-template-columns:1fr 1.25fr!important;}
-.services-section{background:linear-gradient(180deg,#E4EDE8 0%,#EEF2EE 36%,#F3F4F2 100%);}
+.services-overview{background:#F3F4F2;padding:88px 0 0;}
+.services-results-section{background:#E4EDE8;padding:56px 0 88px;}
 .services-categories{grid-template-columns:repeat(3,1fr)!important;gap:12px!important;align-content:start;}
 .services-categories>div{background:transparent!important;border:0;}
-.services-category{background:var(--mint);border:1px solid rgba(25,50,74,0.1);border-radius:10px;text-align:left;min-height:70px;padding:14px 16px;font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:var(--ink);cursor:pointer;transition:background 0.2s,transform 0.2s,border-color 0.2s;}
+.services-category{background:var(--mint);border:1px solid rgba(25,50,74,0.1);border-top:3px solid var(--coral);border-radius:10px;text-align:left;min-height:70px;padding:14px 16px;font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:var(--ink);cursor:pointer;transition:background 0.2s,transform 0.2s,border-color 0.2s;}
 .services-category:hover{transform:translateY(-2px);border-color:var(--coral);}
-.services-category.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 8px 16px rgba(25,50,74,0.14);}
+.services-category.active{background:var(--ink);color:#fff;border-color:var(--ink);border-top-color:var(--coral);box-shadow:0 8px 16px rgba(25,50,74,0.14);}
 .service-results-heading{display:flex;align-items:end;gap:18px;flex-wrap:wrap;margin:0 0 22px;padding-top:8px;scroll-margin-top:120px;}
 .service-results-heading .sl{margin:0;flex-basis:100%;}
 .service-results-heading h2{font-size:clamp(1.5rem,2.6vw,2rem);color:var(--ink);}
@@ -1374,9 +1375,9 @@ function Services({ go }) {
         <div className="bc">Home / Services & Programmes</div>
         <h1>Services & Programmes.<br /><em>More than labour. By institutional design.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F3F4F2" }}>
+      <div className="services-overview">
         <div className="con">
-          <div className="services-intro" style={{ display:"grid",gridTemplateColumns:"1fr 2fr",gap:56,marginBottom:56,alignItems:"start" }}>
+          <div className="services-intro" style={{ display:"grid",gridTemplateColumns:"1fr 2fr",gap:56,marginBottom:0,alignItems:"start" }}>
             <div>
               <span className="sl">How We Help Employers</span>
               <div className="gl" />
@@ -1394,6 +1395,10 @@ function Services({ go }) {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+      <div className="services-results-section">
+        <div className="con">
           <div id="service-results" className="service-results-heading"><span className="sl">Selected support area</span><h2>{activeLabel}</h2><button type="button" onClick={()=>setActiveCategory("all")}>Show all services</button></div>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:20 }}>
             {visibleServices.map((s,i)=>(
