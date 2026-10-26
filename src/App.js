@@ -76,6 +76,7 @@ a{text-decoration:none;color:inherit;}
 .services-intro{grid-template-columns:1fr 1.25fr!important;}
 .services-overview{background:#F3F4F2;padding:88px 0 0;}
 .services-results-section{background:#E4EDE8;padding:56px 0 88px;}
+.services-results-section .card{border-top-color:#C9A84C;}
 .services-categories{grid-template-columns:repeat(3,1fr)!important;gap:12px!important;align-content:start;}
 .services-categories>div{background:transparent!important;border:0;}
 .services-category{background:var(--mint);border:1px solid rgba(25,50,74,0.1);border-top:3px solid var(--coral);border-radius:10px;text-align:left;min-height:70px;padding:14px 16px;font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:var(--ink);cursor:pointer;transition:background 0.2s,transform 0.2s,border-color 0.2s;}
