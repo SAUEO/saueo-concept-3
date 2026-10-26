@@ -175,7 +175,7 @@ a{text-decoration:none;color:inherit;}
 .newsletter-briefing{background:#F3F4F2;padding:54px 0;}
 .newsletter-briefing h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:14px;}
 .newsletter-briefing p{color:var(--slate);font-size:0.9rem;margin-bottom:14px;max-width:1000px;}
-.newsletter-featured-section{background:#C9A84C;padding:48px 0;}
+.newsletter-featured-section{background:#F3F4F2;padding:48px 0;}
 .newsletter-featured-section .featured-article{background:#C9A84C;border:1px solid #19324A;border-radius:12px;box-shadow:none;margin:0;}
 .newsletter-featured-section .featured-article-copy h2{color:#071429;}
 .newsletter-featured-section .featured-article-copy p{color:#19324A;}
@@ -272,7 +272,7 @@ function Nav({ cur, go }) {
   const [sc, setSc] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [voiceOpen, setVoiceOpen] = useState(false);
+  const [resourceOpen, setResourceOpen] = useState(false);
   useEffect(() => {
     const fn = () => setSc(window.scrollY > 40);
     window.addEventListener("scroll", fn);
@@ -282,7 +282,7 @@ function Nav({ cur, go }) {
   useEffect(() => {
     setMobileOpen(false);
     setAboutOpen(false);
-    setVoiceOpen(false);
+    setResourceOpen(false);
   }, [cur]);
 
   const aboutPages = [
@@ -300,7 +300,7 @@ function Nav({ cur, go }) {
 
   const links = [
     ["home","Home"],["services","How We Support"],["membership","Membership"],
-    ["resourcehub","Resources"],["shop","Shop"],["newsroom","Employer Voice"],["partnerships","Partners"],
+    ["resourcehub","Resources"],["shop","Shop"],["partnerships","Partners"],
   ];
 
   return (
@@ -361,34 +361,34 @@ function Nav({ cur, go }) {
               </div>
             )}
           </div>
-          {links.slice(1).map(([id,label])=>id === "newsroom" ? (
+          {links.slice(1).map(([id,label])=>id === "resourcehub" ? (
             <div
               key={id}
-              className={`about-nav-item voice-nav-item${cur==="newsroom"||cur==="newsletter"?" active":""}`}
-              onMouseEnter={()=>{ if (window.matchMedia("(hover: hover)").matches) setVoiceOpen(true); }}
-              onMouseLeave={()=>{ if (window.matchMedia("(hover: hover)").matches) setVoiceOpen(false); }}
+              className={`about-nav-item resource-nav-item${cur==="resourcehub"||cur==="newsletter"?" active":""}`}
+              onMouseEnter={()=>{ if (window.matchMedia("(hover: hover)").matches) setResourceOpen(true); }}
+              onMouseLeave={()=>{ if (window.matchMedia("(hover: hover)").matches) setResourceOpen(false); }}
             >
               <button
                 className="about-nav-trigger"
                 type="button"
-                onClick={()=>go("newsroom")}
-                aria-current={cur==="newsroom"?"page":undefined}
-                style={{ color:cur==="newsroom"||cur==="newsletter"?"#C9A84C":"#fff",borderBottom:cur==="newsroom"||cur==="newsletter"?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
+                onClick={()=>go("resourcehub")}
+                aria-current={cur==="resourcehub"?"page":undefined}
+                style={{ color:cur==="resourcehub"||cur==="newsletter"?"#C9A84C":"#fff",borderBottom:cur==="resourcehub"||cur==="newsletter"?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
               >{label}</button>
               <button
                 className="about-nav-toggle"
                 type="button"
-                aria-label={`${voiceOpen ? "Close" : "Open"} Employer Voice menu`}
-                aria-expanded={voiceOpen}
-                aria-controls="voice-subnavigation"
-                onClick={()=>setVoiceOpen(open=>!open)}
-                onKeyDown={event=>{ if (event.key === "Escape") setVoiceOpen(false); }}
-                style={{ color:cur==="newsroom"||cur==="newsletter"?"#C9A84C":"#fff" }}
+                aria-label={`${resourceOpen ? "Close" : "Open"} Resources menu`}
+                aria-expanded={resourceOpen}
+                aria-controls="resource-subnavigation"
+                onClick={()=>setResourceOpen(open=>!open)}
+                onKeyDown={event=>{ if (event.key === "Escape") setResourceOpen(false); }}
+                style={{ color:cur==="resourcehub"||cur==="newsletter"?"#C9A84C":"#fff" }}
               >
-                <span aria-hidden="true">{voiceOpen ? "⌃" : "⌄"}</span>
+                <span aria-hidden="true">{resourceOpen ? "⌃" : "⌄"}</span>
               </button>
-              {voiceOpen && (
-                <div id="voice-subnavigation" className="about-dropdown" aria-label="Employer Voice pages">
+              {resourceOpen && (
+                <div id="resource-subnavigation" className="about-dropdown" aria-label="Resources pages">
                   <button type="button" onClick={()=>go("newsletter")} aria-current={cur==="newsletter"?"page":undefined}>Newsletter</button>
                 </div>
               )}
