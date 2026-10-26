@@ -74,6 +74,7 @@ a{text-decoration:none;color:inherit;}
 .partnership-card .partner-name{color:var(--coral)!important;}
 .partnership-hierarchy{background:var(--ink)!important;}
 .services-intro{grid-template-columns:1fr 1.25fr!important;}
+.services-section{background:linear-gradient(180deg,#E4EDE8 0%,#EEF2EE 36%,#F3F4F2 100%);}
 .services-categories{grid-template-columns:repeat(3,1fr)!important;gap:12px!important;align-content:start;}
 .services-categories>div{background:transparent!important;border:0;}
 .services-category{background:var(--mint);border:1px solid rgba(25,50,74,0.1);border-radius:10px;text-align:left;min-height:70px;padding:14px 16px;font-family:'Manrope',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.03em;color:var(--ink);cursor:pointer;transition:background 0.2s,transform 0.2s,border-color 0.2s;}
@@ -524,7 +525,7 @@ function Partnerships() {
         <div className="bc">Home / Partnerships & Member Value</div>
         <h1>Complementary expertise.<br /><em>One stronger employer ecosystem.</em></h1>
       </div>
-      <div style={{ padding:"88px 0",background:"#F3F4F2" }}>
+      <div className="services-section" style={{ padding:"88px 0" }}>
         <div className="con">
           <span className="sl">Partnerships & Member Value</span>
           <div className="gl" />
