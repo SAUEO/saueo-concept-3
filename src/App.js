@@ -148,8 +148,8 @@ a{text-decoration:none;color:inherit;}
 .resource-update-card h3{font-size:1.05rem;line-height:1.35;margin-bottom:10px;}
 .resource-update-card p{color:var(--slate);font-size:0.86rem;margin-bottom:0;}
 .resource-update-empty{color:var(--slate);margin:0;}
-.resource-member-first{background:#E4EDE8;padding:48px 0;border-top:1px solid #C9A84C;border-bottom:1px solid #C9A84C;}
-.resource-member-first .con{border-top:3px solid #C9A84C;padding-top:22px;}
+.resource-member-first{background:transparent;padding:48px 0 30px;}
+.resource-member-first .con{padding-top:0;}
 .resource-tools-standalone{background:#F3F4F2;padding:58px 0;}
 .resource-tools-standalone .con{border-top:3px solid var(--coral);padding-top:22px;}
 .resource-tools-standalone h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
