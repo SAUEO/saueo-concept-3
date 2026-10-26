@@ -121,7 +121,10 @@ a{text-decoration:none;color:inherit;}
 .resource-access:focus-visible{outline:2px solid var(--coral);outline-offset:4px;}
 .resource-intro-section,.resource-library-section,.resource-tools-section{background:#F3F4F2;padding:64px 0;}
 .resource-entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;}
-.resource-entry-card{display:flex;align-items:center;width:100%;text-align:left;color:var(--ink);text-decoration:none;cursor:pointer;}
+.resource-entry-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0;}
+.resource-entry-card h3{font-size:1.1rem;line-height:1.3;}
+.resource-entry-card p{color:var(--slate);font-size:0.82rem;line-height:1.65;}
+.resource-entry-card .btn-p,.resource-entry-card .btn-o{margin-top:auto;text-align:center;}
 .resource-entry-card:hover{border-top-color:#C9A84C;transform:translateY(-3px);}
 .resource-editorial-section{background:#E4EDE8;padding:64px 0;}
 .resource-updates-section{background:#E4EDE8;padding:64px 0;}
@@ -151,6 +154,14 @@ a{text-decoration:none;color:inherit;}
 .resource-update-empty{color:var(--slate);margin:0;}
 .resource-tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;}
 .resource-tools-grid>div{border-top:3px solid #C9A84C;padding-top:22px;}
+.resource-member-first{background:#E4EDE8;padding:48px 0;border-top:1px solid #C9A84C;border-bottom:1px solid #C9A84C;}
+.resource-member-first .con{border-top:3px solid #C9A84C;padding-top:22px;}
+.resource-tools-standalone{background:#F3F4F2;padding:58px 0;}
+.resource-tools-standalone .con{border-top:3px solid var(--coral);padding-top:22px;}
+.resource-tools-standalone h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
+.resource-tools-standalone p{color:var(--slate);font-size:0.88rem;margin-bottom:16px;}
+.resource-nav-item .about-nav-trigger{font-size:0.75rem;font-weight:800;}
+.resource-nav-item .about-nav-toggle{font-size:0.75rem;}
 .product-preview{height:260px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:22px;}
 .product-preview img{width:100%;height:100%;object-fit:contain;display:block;}
 .product-preview-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--slate);}
@@ -373,7 +384,7 @@ function Nav({ cur, go }) {
                 type="button"
                 onClick={()=>go("resourcehub")}
                 aria-current={cur==="resourcehub"?"page":undefined}
-                style={{ color:cur==="resourcehub"||cur==="newsletter"?"#C9A84C":"#fff",borderBottom:cur==="resourcehub"||cur==="newsletter"?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
+                style={{ color:"#19324A",borderBottom:cur==="resourcehub"||cur==="newsletter"?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
               >{label}</button>
               <button
                 className="about-nav-toggle"
@@ -383,7 +394,7 @@ function Nav({ cur, go }) {
                 aria-controls="resource-subnavigation"
                 onClick={()=>setResourceOpen(open=>!open)}
                 onKeyDown={event=>{ if (event.key === "Escape") setResourceOpen(false); }}
-                style={{ color:cur==="resourcehub"||cur==="newsletter"?"#C9A84C":"#fff" }}
+                style={{ color:"#19324A" }}
               >
                 <span aria-hidden="true">{resourceOpen ? "⌃" : "⌄"}</span>
               </button>
@@ -1417,9 +1428,24 @@ function ResourceHub({ go }) {
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:16 }}>A fuel increase affects costs. A payroll error can become a compliance problem. A change to leave affects staffing plans. Employers need to see how developments across labour, business and the wider economy reach their own workplace.</p>
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:26 }}>Heads-Up, webinars, employer updates and practical guides bring those developments into view. We distinguish proposals from requirements already in force, explain who may be affected and point to the questions worth checking. General information is a starting point; an organiser can help with the facts of your business.</p>
           <div className="resource-entry-grid">
-            <button type="button" className="card resource-entry-card" onClick={()=>go("newsletter")}>Newsletter</button>
-            <a className="card resource-entry-card" href="https://learn.saueo.co.za/category/all-products">Webinars and Events</a>
-            <button type="button" className="card resource-entry-card" onClick={goToGuides}>Guides and Tools</button>
+            <div className="card resource-entry-card">
+              <h3>Newsletter</h3>
+              <p>Heads-Up brings together the developments that may change what employers pay, plan, record or decide. Labour-law amendments sit alongside matters such as operating costs, payroll, leave, safety and financial administration, because an employer deals with all of them in the same business.</p>
+              <p>Read the current edition for the facts, the date of each development and its possible practical effect. Use the archive to follow an issue over time.</p>
+              <button type="button" className="btn-p" onClick={()=>go("newsletter")}>Read the Latest Edition</button>
+              <a className="btn-o" href="mailto:info@saueo.co.za?subject=Subscribe%20to%20Heads-Up%21">Subscribe to Heads-Up</a>
+            </div>
+            <div className="card resource-entry-card">
+              <h3>Webinars &amp; events</h3>
+              <p>A new requirement can raise labour, financial and operational questions at once. (SA)UEO’s webinars bring organisers and relevant specialists into conversation so employers can understand an issue from more than one angle. Sessions are announced here when scheduled; recordings are made available to members when prepared for release.</p>
+              <a className="btn-p" href="https://learn.saueo.co.za/category/all-products">See Upcoming Sessions</a>
+            </div>
+            <div className="card resource-entry-card">
+              <h3>Guides and tools</h3>
+              <p>We develop guides and tools around the questions employers bring us. Each one is checked, sent to members and then placed in the public resource library. That library grows as material is completed, rather than promising a fixed number of guides by a fixed date.</p>
+              <p>Public guides explain the general position and help you see what to check. They cannot determine the right step for your particular workplace without its facts.</p>
+              <button type="button" className="btn-p" onClick={goToGuides}>Browse Public Guides</button>
+            </div>
           </div>
         </div>
       </section>
@@ -1434,6 +1460,13 @@ function ResourceHub({ go }) {
             <h2>Questions worth putting to people who work with them every day.</h2>
             <p>A new requirement can raise labour, financial and operational questions at once. (SA)UEO’s webinars bring organisers and relevant specialists into conversation so employers can understand an issue from more than one angle. Sessions are announced here when scheduled; recordings are made available to members when prepared for release.</p>
           </div>
+        </div>
+      </section>
+      <section className="resource-member-first">
+        <div className="con">
+          <h2 style={{ fontSize:"clamp(1.5rem,2.6vw,2rem)",lineHeight:1.2,marginBottom:14 }}>Members receive new resources first.</h2>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:16 }}>We develop guides and tools around the questions employers bring us. Each one is checked, sent to members and then placed in the public resource library. That library grows as material is completed, rather than promising a fixed number of guides by a fixed date.</p>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:0 }}>Public guides explain the general position and help you see what to check. They cannot determine the right step for your particular workplace without its facts.</p>
         </div>
       </section>
       <section className="resource-library-section" id="resource-library">
@@ -1508,19 +1541,12 @@ function ResourceHub({ go }) {
           ) : <p className="resource-update-empty">No employer updates are currently available for this selection.</p>}
         </div>
       </section>
-      <section className="resource-tools-section">
-        <div className="con resource-tools-grid">
-          <div>
-            <h2>Members receive new resources first.</h2>
-            <p>We develop guides and tools around the questions employers bring us. Each one is checked, sent to members and then placed in the public resource library. That library grows as material is completed, rather than promising a fixed number of guides by a fixed date.</p>
-            <p>Public guides explain the general position and help you see what to check. They cannot determine the right step for your particular workplace without its facts.</p>
-          </div>
-          <div>
+      <section className="resource-tools-standalone">
+        <div className="con">
             <h2>Tools for the work behind a sound decision.</h2>
             <p>Members can use the tools available under their option to check workplace processes and keep records in order: compliance checklists, HR templates, guidance on core employment obligations and sector-specific material where available. The tools are general resources; an organiser can help apply them to your circumstances.</p>
             <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
-            <button type="button" className="btn-p" onClick={()=>go("contact")}>Talk to us</button>
-          </div>
+            <a className="btn-p" href="https://portal.saueo.co.za">Member login</a>
         </div>
       </section>
       <section className="resource-intro-section" style={{ background:"#E4EDE8",borderTop:"1px solid #C9A84C",borderBottom:"1px solid #C9A84C" }}>
