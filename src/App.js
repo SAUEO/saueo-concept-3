@@ -158,6 +158,23 @@ a{text-decoration:none;color:inherit;}
 .resource-tools-standalone .con{padding-top:0;}
 .resource-tools-standalone h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
 .resource-tools-standalone p{color:var(--slate);font-size:0.88rem;margin-bottom:16px;}
+.state-business-intro{background:#F3F4F2;padding:64px 0;}
+.state-business-intro-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;}
+.state-business-intro-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:32px 30px;box-shadow:0 10px 28px rgba(16,42,67,0.05);}
+.state-business-intro-card h2{font-size:clamp(1.45rem,2.5vw,2rem);line-height:1.2;margin-bottom:16px;}
+.state-business-intro-card p{color:var(--slate);font-size:0.88rem;margin-bottom:14px;}
+.state-business-intro-card p:last-of-type{margin-bottom:22px;}
+.state-business-process{background:#E4EDE8;padding:64px 0;}
+.state-business-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;}
+.state-business-step{background:#fff;border:1px solid #C9A84C;border-top:3px solid #C9A84C;border-radius:10px;padding:24px 22px;box-shadow:0 10px 24px rgba(16,42,67,0.06);}
+.state-business-step-number{display:block;color:#C9A84C;font:800 0.7rem 'Manrope',sans-serif;letter-spacing:0.12em;margin-bottom:12px;}
+.state-business-step h2{font:700 1rem 'DM Serif Display',serif;color:#7B1E32;line-height:1.35;margin-bottom:8px;}
+.state-business-step p{color:#30343A;font-size:0.82rem;line-height:1.65;margin:0;}
+.state-business-findings{background:#F3F4F2;padding:56px 0;}
+.state-business-findings h2,.state-business-cta h2{font-size:clamp(1.45rem,2.5vw,2rem);line-height:1.2;margin-bottom:12px;}
+.state-business-findings p,.state-business-cta p{color:var(--slate);font-size:0.88rem;max-width:920px;margin:0;}
+.state-business-cta{background:#E4EDE8;padding:56px 0 68px;}
+.state-business-cta p{margin-bottom:20px;}
 .resource-nav-item .about-nav-trigger{font-size:0.75rem;font-weight:800;}
 .resource-nav-item .about-nav-toggle{font-size:0.75rem;}
 .product-preview{height:260px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:22px;}
@@ -272,9 +289,9 @@ footer{background:var(--ink)!important;}
   .about-dropdown button{background:transparent!important;color:#fff!important;padding:12px 14px;}
   .about-dropdown button:hover,.about-dropdown button:focus-visible{background:rgba(255,255,255,0.1)!important;color:#fff!important;}
 }
-@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.team-member-grid.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-entry-grid,.resource-library-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters>p{grid-column:1/-1;}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
+@media(max-width:980px){.modern-home-grid{grid-template-columns:1fr!important;}.modern-partner-grid,.homepage-insight-grid{grid-template-columns:1fr!important;}.modern-stat-grid{grid-template-columns:repeat(2,1fr)!important;}.services-intro{grid-template-columns:1fr!important;}.services-categories{grid-template-columns:repeat(2,1fr)!important;}.shop-webinars>div{grid-template-columns:1fr!important;}.newsroom-intro,.featured-article{grid-template-columns:1fr;}.article-grid{grid-template-columns:repeat(2,1fr);}.team-member-grid.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-entry-grid,.resource-library-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters{grid-template-columns:repeat(2,minmax(0,1fr));}.resource-update-filters>p{grid-column:1/-1;}.state-business-steps{grid-template-columns:repeat(2,minmax(0,1fr));}.article-reader-header,.article-reader-body{padding-left:30px;padding-right:30px;}.article-reader-footer{padding-left:30px;padding-right:30px;}}
 @media(max-width:1100px){.modern-hero-mark{right:4%;width:290px;height:350px;}.modern-hero-mark img{width:220px;height:220px;}.modern-hero .con>div:first-child{width:62%;max-width:700px;}}
-@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid,.advocacy-evidence-grid{grid-template-columns:1fr!important;}.resource-entry-grid,.resource-library-grid,.resource-update-grid,.resource-update-filters{grid-template-columns:1fr;}.resource-update-filters>p{grid-column:auto;}.resource-intro-section,.resource-tools-section,.resource-updates-section{padding:48px 0;}.resource-library-section{padding:0 0 48px;}.resource-member-first{padding:40px 0;}.team-member-grid,.team-member-grid.staff-grid{grid-template-columns:1fr;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child,.advocacy-evidence-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
+@media(max-width:768px){.con{padding:0 22px;}.ph{padding:64px 22px 44px;}.nav-brand-sub{display:none;}.modern-hero{padding-top:150px!important;min-height:860px!important;}.modern-hero .con>div:first-child{width:100%!important;max-width:none!important;margin:0;text-align:left!important;}.modern-hero .con>div:first-child>div{justify-content:flex-start;}.modern-callout{right:22px!important;bottom:34px!important;}.modern-hero h1{font-size:clamp(2.55rem,13vw,4rem)!important;}.modern-stat-grid>div{padding:20px 8px!important;}.modern-hero-mark{top:auto;right:22px;bottom:150px;width:190px;height:230px;transform:rotate(2deg);}.modern-hero-mark img{width:155px;height:155px;}.modern-hero-mark-label{font-size:0.48rem;}.modern-hero-mark-line{margin-top:7px;}.modern-mandate-cards,.about-work-grid,.about-context-columns,.about-values-grid,.about-network-grid,.representation-intro,.representation-organiser-grid,.bargaining-columns,.bargaining-employer-grid,.advocacy-evidence-grid,.state-business-intro-grid,.state-business-steps{grid-template-columns:1fr!important;}.resource-entry-grid,.resource-library-grid,.resource-update-grid,.resource-update-filters{grid-template-columns:1fr;}.resource-update-filters>p{grid-column:auto;}.resource-intro-section,.resource-tools-section,.resource-updates-section{padding:48px 0;}.resource-library-section{padding:0 0 48px;}.resource-member-first{padding:40px 0;}.state-business-intro,.state-business-process{padding:48px 0;}.state-business-findings,.state-business-cta{padding:44px 0;}.team-member-grid,.team-member-grid.staff-grid{grid-template-columns:1fr;}.representation-organiser-card:last-child,.bargaining-employer-card:last-child,.advocacy-evidence-card:last-child{grid-column:auto;}.homepage-membership-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.membership-join-steps{grid-template-columns:1fr;}}
 `;
 
 // NAV
@@ -310,7 +327,7 @@ function Nav({ cur, go }) {
 
   const links = [
     ["home","Home"],["services","How We Support"],["membership","Membership"],
-    ["resourcehub","Resources"],["shop","Shop"],["partnerships","Partners"],
+    ["resourcehub","Resources"],["shop","Shop"],["stateofbusiness","State of Business"],["partnerships","Partners"],
   ];
 
   return (
@@ -1546,6 +1563,69 @@ function ResourceHub({ go }) {
   );
 }
 
+// STATE OF BUSINESS
+function StateOfBusiness() {
+  const surveyUrl = "https://forms.clickup.com/20674763/f/kpy6b-19772/HOVUQHZ887TDWJCMBU";
+  const steps = [
+    { title:"You tell us what is happening.",description:"Describe the change or pressure and its effect on your business through the survey or your organiser." },
+    { title:"We examine the accounts.",description:"We look for recurring issues and consider the differences between sectors and business sizes." },
+    { title:"We check the evidence.",description:"Member experience is considered alongside the text of a proposal, official data and other credible sources." },
+    { title:"We decide what we can responsibly say.",description:"Where the information supports a position, (SA)UEO can set out the concern, its practical effect and the evidence behind it." },
+    { title:"We use an appropriate channel.",description:"This may mean a submission, an engagement with an institution or another advocacy route. The channel depends on the issue and the opportunity available." },
+    { title:"We account for the work.",description:"When a finding or engagement is ready to share, members should be able to see what was raised. An outcome remains with the relevant decision-maker." },
+  ];
+
+  return (
+    <div>
+      <div className="ph">
+        <div className="bc">Home / State of Business</div>
+        <h1>State of Business.</h1>
+      </div>
+      <section className="state-business-intro">
+        <div className="con state-business-intro-grid">
+          <article className="state-business-intro-card">
+            <h2>Before we advocate, we listen.</h2>
+            <p>You know where a new cost appears in your accounts, which requirement takes time from a small team and what a proposed rule would change in your workplace. Those details can be missed when policy is discussed in general terms.</p>
+            <p>The State of Business Survey asks employers to describe the pressures they face. Their responses help (SA)UEO decide which issues need closer examination and give its advocacy and lobbying a firmer basis. Taking part does not promise that a policy will change.</p>
+            <a className="btn-p" href={surveyUrl} target="_blank" rel="noreferrer">Take the Survey</a>
+          </article>
+          <article className="state-business-intro-card">
+            <h2>One experience raises a question. A pattern deserves examination.</h2>
+            <p>One employer may say that a new requirement is costly. When employers in different sectors describe how it affects their payroll, staffing or compliance work, (SA)UEO can look for a pattern and test it against other information.</p>
+            <p>The number of responses matters, but so does who responded and what they were asked. When we publish a finding, we should show those limits clearly. A voluntary survey cannot claim to speak for every employer in South Africa.</p>
+          </article>
+        </div>
+      </section>
+      <section className="state-business-process">
+        <div className="con">
+          <ol className="state-business-steps">
+            {steps.map((step,index)=>(
+              <li className="state-business-step" key={step.title}>
+                <span className="state-business-step-number">{String(index+1).padStart(2,"0")}</span>
+                <h2>{step.title}</h2>
+                <p>{step.description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      <section className="state-business-findings">
+        <div className="con">
+          <h2>Show what the evidence supports, and where it stops.</h2>
+          <p>As findings are approved for publication, they appear here with the number and profile of responses, the questions asked and the limits of what can be concluded. We may use substantiated findings in advocacy and lobbying. Until a finding is ready, this page's primary action remains the survey.</p>
+        </div>
+      </section>
+      <section className="state-business-cta">
+        <div className="con">
+          <h2>Tell us what a change means where you work.</h2>
+          <p>The cost or complication you face may be invisible in the wording of a proposed rule. Your account can help us understand whether others face it too.</p>
+          <a className="btn-p" href={surveyUrl} target="_blank" rel="noreferrer">Take the Survey</a>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 // SHOP
 function Shop() {
   const [filter, setFilter] = useState("all");
@@ -1877,6 +1957,7 @@ export default function App() {
     newsletter: <Newsletter />,
     resourcehub: <ResourceHub go={go} />,
     shop: <Shop />,
+    stateofbusiness: <StateOfBusiness />,
     services: <Services go={go} />,
     contact: <Contact />,
   };
