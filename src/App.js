@@ -1879,6 +1879,15 @@ function Contact({ go }) {
                 </div>
               </div>
             ))}
+            <div className="contact-member-note">
+              <h2>Already a member?</h2>
+              <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
+            </div>
+            <div className="contact-bottom-cta">
+              <h2>Looking for membership or employer updates?</h2>
+              <p>Explore the options or subscribe to <a href="#newsletter" onClick={event=>{event.preventDefault();go("newsletter");}}>Heads-Up</a>. An enquiry and a subscription are separate choices.</p>
+              <button className="btn-p" type="button" onClick={()=>go("membership")}>Find Your Membership</button>
+            </div>
           </div>
           <div className="contact-form-panel">
             <h2>Send Us a Message</h2>
@@ -1890,15 +1899,6 @@ function Contact({ go }) {
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
             />
-            <div className="contact-member-note">
-              <h2>Already a member?</h2>
-              <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
-            </div>
-            <div className="contact-bottom-cta">
-              <h2>Looking for membership or employer updates?</h2>
-              <p>Explore the options or subscribe to <a href="#newsletter" onClick={event=>{event.preventDefault();go("newsletter");}}>Heads-Up</a>. An enquiry and a subscription are separate choices.</p>
-              <button className="btn-p" type="button" onClick={()=>go("membership")}>Find Your Membership</button>
-            </div>
           </div>
         </div>
       </section>
