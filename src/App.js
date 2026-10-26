@@ -124,7 +124,7 @@ a{text-decoration:none;color:inherit;}
 .resource-entry-card{display:flex;align-items:center;width:100%;text-align:left;color:var(--ink);text-decoration:none;cursor:pointer;}
 .resource-entry-card:hover{border-top-color:#C9A84C;transform:translateY(-3px);}
 .resource-editorial-section{background:#E4EDE8;padding:64px 0;}
-.resource-updates-section{background:#F3F4F2;padding:64px 0;}
+.resource-updates-section{background:#E4EDE8;padding:64px 0;}
 .resource-editorial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;}
 .resource-editorial-grid>div{border-top:3px solid #C9A84C;padding-top:22px;}
 .resource-editorial-grid h2,.resource-tools-grid h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:14px;}
@@ -142,7 +142,7 @@ a{text-decoration:none;color:inherit;}
 .resource-update-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:22px;}
 .resource-update-clear{border:0;background:transparent;color:var(--ink);font:500 0.76rem 'Manrope',sans-serif;text-decoration:underline;cursor:pointer;}
 .resource-update-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
-.resource-update-card{border-top-color:var(--coral);min-height:230px;}
+.resource-update-card{border-top-color:#C9A84C;min-height:230px;}
 .resource-update-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;}
 .resource-update-meta span:first-child{background:var(--ink);color:#fff;padding:4px 8px;font:800 0.55rem 'Manrope',sans-serif;letter-spacing:0.07em;text-transform:uppercase;}
 .resource-update-meta time{color:var(--slate);font:500 0.68rem 'Manrope',sans-serif;}
@@ -340,7 +340,9 @@ function Nav({ cur, go }) {
               </div>
             )}
           </div>
-          {links.slice(1).map(([id,label])=>(
+          {links.slice(1).map(([id,label])=>id === "shop" ? (
+            <a key={id} href="https://learn.saueo.co.za/category/all-products" style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</a>
+          ) : (
             <span key={id} onClick={()=>go(id)} style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</span>
           ))}
           <button className="btn-p" onClick={()=>go("contact")} style={{ fontSize:"0.66rem",padding:"9px 18px" }}>Get Help</button>
@@ -1359,7 +1361,7 @@ function ResourceHub({ go }) {
           </div>
         </div>
       </section>
-      <section className="resource-intro-section" style={{ borderTop:"1px solid var(--line)",borderBottom:"1px solid var(--line)" }}>
+      <section className="resource-intro-section" style={{ background:"#E4EDE8",borderTop:"1px solid #C9A84C",borderBottom:"1px solid #C9A84C" }}>
         <div className="con">
           <h2 style={{ fontSize:"clamp(1.5rem,2.6vw,2rem)",marginBottom:14 }}>Stay current on what affects your workplace.</h2>
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:20 }}>Subscribe to Heads-Up for employer developments. If you need help applying one to your business, explore membership.</p>
