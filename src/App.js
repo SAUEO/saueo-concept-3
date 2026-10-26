@@ -170,6 +170,25 @@ a{text-decoration:none;color:inherit;}
 .featured-article-mark{display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.2);color:var(--coral);font:800 clamp(1.2rem,3vw,2rem) 'Manrope',sans-serif;letter-spacing:0.1em;transform:rotate(3deg);}
 .featured-article-mark span{display:block;font:400 0.65rem 'Manrope',sans-serif;letter-spacing:0.16em;color:rgba(255,255,255,0.58);margin-top:10px;}
 .featured-article-image{width:100%;height:100%;min-height:220px;object-fit:cover;border-radius:12px;}
+.newsletter-hero h1{color:#071429;}
+.newsletter-hero h1 em{color:#688276;}
+.newsletter-briefing{background:#F3F4F2;padding:54px 0;}
+.newsletter-briefing h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:14px;}
+.newsletter-briefing p{color:var(--slate);font-size:0.9rem;margin-bottom:14px;max-width:1000px;}
+.newsletter-featured-section{background:#C9A84C;padding:48px 0;}
+.newsletter-featured-section .featured-article{background:#C9A84C;border:1px solid #19324A;border-radius:12px;box-shadow:none;margin:0;}
+.newsletter-featured-section .featured-article-copy h2{color:#071429;}
+.newsletter-featured-section .featured-article-copy p{color:#19324A;}
+.newsletter-featured-section .featured-article-copy .sl{color:#19324A;}
+.newsletter-featured-section .featured-article-copy .article-meta{color:#19324A;}
+.newsletter-featured-section .featured-article-mark{border-color:#19324A;color:#19324A;}
+.newsletter-featured-section .featured-article-mark span{color:#19324A;}
+.newsletter-featured-section .featured-article .btn-p{background:#19324A;color:#fff;}
+.newsletter-latest-section{background:#E4EDE8;padding:58px 0;}
+.newsletter-latest-section .article-card{border-top:3px solid #C9A84C;}
+.newsletter-archive-section{background:#F3F4F2;padding:58px 0;}
+.newsletter-archive-section .article-archive{margin-top:0;padding-top:0;border-top:0;}
+.newsletter-archive-section .archive-grid .article-card{border-top:3px solid var(--coral);}
 .article-section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 20px;}
 .article-section-heading h2{font-size:clamp(1.5rem,2.5vw,2rem);color:var(--ink);}
 .article-section-heading>span{color:var(--slate);font:700 0.7rem 'Manrope',sans-serif;text-transform:uppercase;letter-spacing:0.06em;}
@@ -253,6 +272,7 @@ function Nav({ cur, go }) {
   const [sc, setSc] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [voiceOpen, setVoiceOpen] = useState(false);
   useEffect(() => {
     const fn = () => setSc(window.scrollY > 40);
     window.addEventListener("scroll", fn);
@@ -262,6 +282,7 @@ function Nav({ cur, go }) {
   useEffect(() => {
     setMobileOpen(false);
     setAboutOpen(false);
+    setVoiceOpen(false);
   }, [cur]);
 
   const aboutPages = [
@@ -340,7 +361,39 @@ function Nav({ cur, go }) {
               </div>
             )}
           </div>
-          {links.slice(1).map(([id,label])=>id === "shop" ? (
+          {links.slice(1).map(([id,label])=>id === "newsroom" ? (
+            <div
+              key={id}
+              className={`about-nav-item voice-nav-item${cur==="newsroom"||cur==="newsletter"?" active":""}`}
+              onMouseEnter={()=>{ if (window.matchMedia("(hover: hover)").matches) setVoiceOpen(true); }}
+              onMouseLeave={()=>{ if (window.matchMedia("(hover: hover)").matches) setVoiceOpen(false); }}
+            >
+              <button
+                className="about-nav-trigger"
+                type="button"
+                onClick={()=>go("newsroom")}
+                aria-current={cur==="newsroom"?"page":undefined}
+                style={{ color:cur==="newsroom"||cur==="newsletter"?"#C9A84C":"#fff",borderBottom:cur==="newsroom"||cur==="newsletter"?"2px solid #C9A84C":"2px solid transparent",transition:"color 0.2s" }}
+              >{label}</button>
+              <button
+                className="about-nav-toggle"
+                type="button"
+                aria-label={`${voiceOpen ? "Close" : "Open"} Employer Voice menu`}
+                aria-expanded={voiceOpen}
+                aria-controls="voice-subnavigation"
+                onClick={()=>setVoiceOpen(open=>!open)}
+                onKeyDown={event=>{ if (event.key === "Escape") setVoiceOpen(false); }}
+                style={{ color:cur==="newsroom"||cur==="newsletter"?"#C9A84C":"#fff" }}
+              >
+                <span aria-hidden="true">{voiceOpen ? "⌃" : "⌄"}</span>
+              </button>
+              {voiceOpen && (
+                <div id="voice-subnavigation" className="about-dropdown" aria-label="Employer Voice pages">
+                  <button type="button" onClick={()=>go("newsletter")} aria-current={cur==="newsletter"?"page":undefined}>Newsletter</button>
+                </div>
+              )}
+            </div>
+          ) : id === "shop" ? (
             <a key={id} href="https://learn.saueo.co.za/category/all-products" style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</a>
           ) : (
             <span key={id} onClick={()=>go(id)} style={{ fontFamily:"'Barlow',sans-serif",fontSize:"0.7rem",fontWeight:600,letterSpacing:"0.06em",textTransform:"uppercase",color:cur===id?"#C9A84C":"#fff",cursor:"pointer",borderBottom:cur===id?"2px solid #C9A84C":"2px solid transparent",paddingBottom:2,transition:"color 0.2s" }}>{label}</span>
@@ -1142,18 +1195,20 @@ function Membership({ go }) {
 }
 
 // NEWSROOM
-function Newsroom({ go }) {
-  const [filter, setFilter] = useState("all");
-  const [monthFilter, setMonthFilter] = useState("current");
-  const [selectedArticle, setSelectedArticle] = useState(null);
-  const arts = [
+const newsroomArticles = [
     { cat:"insights",tag:"Insights & Opinions",t:"What the CCMA's 2025 Caseload Data Means for South African Employers",d:"15 May 2026",ex:"Over 140,000 referrals annually. We unpack what this means for employer compliance posture and representation strategy.",by:"Legal Team",body:"A high referral volume is a practical warning for every employer: workplace processes need to be ready before a dispute reaches the CCMA. A defensible position starts with clear policies, consistent records, fair procedure, and early action when concerns first arise.\n\nThe lesson is not that every disagreement becomes a case. It is that preventable gaps become harder and more expensive to correct once a matter is formally referred. Employers should review contracts, disciplinary processes, grievance channels, and the records that show how decisions were made.\n\nOrganised representation adds another layer of readiness. It gives employers a structured route to guidance and representation when a workplace issue moves beyond an internal conversation." },
     { cat:"media",tag:"Media Coverage",t:"(SA)UEO Featured in Business Day: The Future of Employer Representation",d:"8 May 2026",ex:"Our General Secretary discusses the evolution of employers' organisations in a changing world of work.",by:"Business Day",body:"The world of work is changing quickly, and employer representation must keep pace. The conversation focuses on the need for organisations that combine statutory labour knowledge with a practical understanding of business pressures.\n\nFor employers, the future is not only about reacting to disputes. It is also about building better systems, understanding obligations early, and having a credible voice when industry decisions are being shaped." },
     { cat:"insights",tag:"Insights & Opinions",t:"Collective Bargaining Season 2026: What Employers Must Know",d:"2 May 2026",ex:"As bargaining councils convene, we outline key wage demands, sector pressures, and what organised members can expect.",by:"IR Advisory",body:"Bargaining season is a period for preparation, not surprise. Employers should understand which council or sector instruments apply to them, review current wage and benefit obligations, and identify the operational impact of proposed changes.\n\nOrganised employers are better placed to understand the position being negotiated and to contribute to a structured employer voice. The practical starting point is a current picture of your workforce, payroll, contracts, and affordability constraints." },
     { cat:"media",tag:"Media Coverage",t:"LLLRA Recognised as SA's First Designated Labour Relations Body",d:"22 April 2026",ex:"The Labour Law Labour Relations Association achieves a landmark designation milestone.",by:"HR Pulse",body:"Professional standards matter because employers depend on capable, ethical representation when workplace matters are under pressure. The recognition of LLLRA represents an important step toward clearer development pathways for labour-relations practitioners.\n\nFor the wider employer community, stronger professional discipline supports better advice, clearer communication, and more consistent representation across the labour system." },
     { cat:"insights",tag:"Insights & Opinions",t:"Navigating the NMW Increase: A Practical Guide",d:"10 April 2026",ex:"The National Minimum Wage adjustment for 2026 — what your payroll and compliance approach needs to reflect.",by:"Compliance Unit",body:"A minimum-wage change should trigger a short compliance review, not only a payroll adjustment. Employers should check affected employees, written agreements, payslips, working hours, deductions, and any sector-specific instrument that may apply.\n\nMaking the change consistently and keeping a record of the review helps reduce uncertainty later. Where the position is unclear, employers should seek guidance before changing terms or processing the next pay cycle." },
     { cat:"insights",tag:"Insights & Opinions",t:"State of Business Survey 2026: Early Findings",d:"1 April 2026",ex:"First data from our annual survey surfaces the critical pressure points facing South African businesses.",by:"Research Team",body:"The early findings point to the value of listening directly to employers. Business pressure, labour risk, compliance capacity, and operational resilience are connected; they cannot be understood through isolated statistics alone.\n\nThe survey gives employer realities a structured place in the conversation and helps inform the issues that deserve practical support, evidence-led advocacy, and continued attention." },
-  ];
+];
+
+function Newsroom({ go }) {
+  const [filter, setFilter] = useState("all");
+  const [monthFilter, setMonthFilter] = useState("current");
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const arts = newsroomArticles;
   const monthKey = article => {
     const date = new Date(article.d);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
@@ -1208,6 +1263,113 @@ function Newsroom({ go }) {
   );
 }
 
+function Newsletter() {
+  const [archiveMonth, setArchiveMonth] = useState("");
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const monthKey = article => {
+    const date = new Date(article.d);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+  };
+  const monthLabel = key => new Intl.DateTimeFormat("en-ZA", { month:"long", year:"numeric" }).format(new Date(`${key}-01T00:00:00`));
+  const months = [...new Set(newsroomArticles.map(monthKey))];
+  const latestMonth = months[0];
+  const latestArticles = newsroomArticles.filter(article => monthKey(article) === latestMonth);
+  const featured = latestArticles[0];
+  const olderMonths = months.filter(month => month !== latestMonth);
+  const archivedArticles = newsroomArticles.filter(article => monthKey(article) === archiveMonth);
+  const otherArticles = latestArticles.slice(1);
+
+  return (
+    <div>
+      <div className="ph newsletter-hero">
+        <div className="bc">Home / Employer Voice / Newsletter</div>
+        <h1>Newsletter.<br /><em>Heads-Up!</em></h1>
+      </div>
+      <section className="newsletter-briefing">
+        <div className="con">
+          <h2>The employer briefing.</h2>
+          <p>Heads-Up! brings together the developments that may change what employers pay, plan, record or decide. Labour-law amendments sit alongside matters such as operating costs, payroll, leave, safety and financial administration, because an employer deals with all of them in the same business.</p>
+          <p>Read the current edition for the facts, the date of each development and its possible practical effect. Use the archive to follow an issue over time.</p>
+          <a className="btn-p" href="mailto:info@saueo.co.za?subject=Subscribe%20to%20Heads-Up%21">Subscribe to Heads-Up!</a>
+        </div>
+      </section>
+      {featured && (
+        <section className="newsletter-featured-section">
+          <div className="con">
+            <div className="featured-article">
+              <div className="featured-article-copy">
+                <span className="sl">Featured this month</span>
+                <h2>{featured.t}</h2>
+                <p>{featured.ex}</p>
+                <div className="article-meta">{featured.d} · By {featured.by}</div>
+                <button className="btn-p" type="button" onClick={()=>setSelectedArticle(featured)}>Read featured article</button>
+              </div>
+              {featured.image ? <img className="featured-article-image" src={featured.image} alt="" /> : <div className="featured-article-mark">INSIGHT<span>(SA)UEO</span></div>}
+            </div>
+          </div>
+        </section>
+      )}
+      <section className="newsletter-latest-section">
+        <div className="con">
+          <div className="article-section-heading">
+            <div><span className="sl">{monthLabel(latestMonth)}</span><h2>Latest articles</h2></div>
+            <span>{latestArticles.length} {latestArticles.length === 1 ? "article" : "articles"}</span>
+          </div>
+          <div className="article-grid">
+            {otherArticles.map(article=>(
+              <article key={article.t} className="card article-card">
+                <div style={{ display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,marginBottom:12 }}>
+                  <span style={{ background:article.cat==="insights"?"#0B1E3E":"#C9A84C",color:article.cat==="insights"?"#C9A84C":"#071429",fontFamily:"'Barlow',sans-serif",fontSize:"0.6rem",fontWeight:800,letterSpacing:"0.1em",textTransform:"uppercase",padding:"2px 8px" }}>{article.tag}</span>
+                  <time className="article-meta" style={{ margin:0 }}>{article.d}</time>
+                </div>
+                <h3 style={{ fontSize:"0.96rem",color:"#0B1E3E",marginBottom:10,lineHeight:1.4 }}>{article.t}</h3>
+                <p style={{ fontSize:"0.87rem",color:"#4A5568",lineHeight:1.65,marginBottom:14 }}>{article.ex}</p>
+                <div className="article-meta">By {article.by}</div>
+                <button type="button" className="article-read-link" onClick={()=>setSelectedArticle(article)}>Read the article →</button>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="newsletter-archive-section">
+        <div className="con">
+          <div className="article-archive">
+            <div className="article-section-heading"><div><span className="sl">Keep exploring</span><h2>Older articles</h2></div><span>Browse by month</span></div>
+            <div className="archive-months">
+              {olderMonths.map(month=><button key={month} type="button" className={archiveMonth===month?"active":""} onClick={()=>setArchiveMonth(month)}>{monthLabel(month)}</button>)}
+              {archiveMonth && <button type="button" className="archive-reset" onClick={()=>setArchiveMonth("")}>Back to latest</button>}
+            </div>
+            {archiveMonth && (
+              <div className="article-grid archive-grid">
+                {archivedArticles.map(article=>(
+                  <article key={article.t} className="card article-card">
+                    <span className="sl">{article.tag}</span>
+                    <h3 style={{ marginBottom:10 }}>{article.t}</h3>
+                    <p style={{ color:"var(--slate)",fontSize:"0.87rem",marginBottom:14 }}>{article.ex}</p>
+                    <div className="article-meta">{article.d} · By {article.by}</div>
+                    <button type="button" className="article-read-link" onClick={()=>setSelectedArticle(article)}>Read the article →</button>
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      {selectedArticle && (
+        <div className="article-modal" onClick={()=>setSelectedArticle(null)}>
+          <article className="article-reader" role="dialog" aria-modal="true" aria-label={selectedArticle.t} onClick={event=>event.stopPropagation()}>
+            <button type="button" className="article-reader-close" aria-label="Close article" onClick={()=>setSelectedArticle(null)}>×</button>
+            <div className="article-reader-header"><span className="sl">{selectedArticle.tag}</span><h2>{selectedArticle.t}</h2><div className="article-meta">{selectedArticle.d} · By {selectedArticle.by}</div></div>
+            {selectedArticle.image ? <img className="article-reader-image" src={selectedArticle.image} alt="" /> : <div className="article-reader-placeholder">(SA)UEO <span>Employer voice</span></div>}
+            <div className="article-reader-body"><p className="article-reader-lead">{selectedArticle.ex}</p><div className="article-reader-rule" />{(selectedArticle.body || "This article is ready for the full WordPress content, including the article text, supporting images, and related resources.").split("\n\n").map((paragraph,index)=><p key={index}>{paragraph}</p>)}</div>
+            <div className="article-reader-footer"><span>For general information only. Not legal advice.</span><button type="button" className="btn-o" onClick={()=>setSelectedArticle(null)}>Back to newsletter</button></div>
+          </article>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // RESOURCE HUB
 function ResourceHub({ go }) {
   const [filter, setFilter] = useState("all");
@@ -1255,7 +1417,7 @@ function ResourceHub({ go }) {
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:16 }}>A fuel increase affects costs. A payroll error can become a compliance problem. A change to leave affects staffing plans. Employers need to see how developments across labour, business and the wider economy reach their own workplace.</p>
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:26 }}>Heads-Up, webinars, employer updates and practical guides bring those developments into view. We distinguish proposals from requirements already in force, explain who may be affected and point to the questions worth checking. General information is a starting point; an organiser can help with the facts of your business.</p>
           <div className="resource-entry-grid">
-            <button type="button" className="card resource-entry-card" onClick={()=>go("newsroom")}>Newsletter</button>
+            <button type="button" className="card resource-entry-card" onClick={()=>go("newsletter")}>Newsletter</button>
             <a className="card resource-entry-card" href="https://learn.saueo.co.za/category/all-products">Webinars and Events</a>
             <button type="button" className="card resource-entry-card" onClick={goToGuides}>Guides and Tools</button>
           </div>
@@ -1700,6 +1862,7 @@ export default function App() {
     team: <Team />,
     membership: <Membership go={go} />,
     newsroom: <Newsroom go={go} />,
+    newsletter: <Newsletter />,
     resourcehub: <ResourceHub go={go} />,
     shop: <Shop />,
     services: <Services go={go} />,
