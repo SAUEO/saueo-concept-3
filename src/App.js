@@ -186,15 +186,14 @@ a{text-decoration:none;color:inherit;}
 .contact-detail-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
 .contact-detail-label{font:700 0.65rem 'Barlow',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#9CA3AF;margin-bottom:4px;}
 .contact-detail-value{font:400 1rem 'DM Serif Display',serif;color:#0B1E3E;}
-.contact-member-note{margin-top:32px;padding-top:28px;border-top:1px solid var(--line);}
 .contact-member-note h2{font-size:clamp(1.45rem,2.4vw,1.8rem);margin-bottom:12px;}
 .contact-member-note p{color:var(--slate);font-size:0.88rem;margin:0;}
 .contact-form-panel{background:#fff;padding:40px;box-shadow:0 8px 40px rgba(11,30,62,0.1);}
 .contact-form-panel h2{color:#0B1E3E;font-size:1.2rem;margin-bottom:8px;}
 .contact-form-panel p{color:#4A5568;font-size:0.9rem;margin-bottom:18px;}
-.contact-form-embed{display:block;width:100%;height:760px;border:0;background:#fff;}
-.contact-bottom-cta{background:#F3F4F2;padding:0 0 58px;}
-.contact-bottom-cta .con{border-top:1px solid var(--line);padding-top:42px;}
+.contact-form-embed{display:block;width:100%;height:1100px;border:0;background:#fff;}
+.contact-member-note{margin-top:28px;padding-top:26px;border-top:1px solid var(--line);}
+.contact-bottom-cta{margin-top:28px;padding-top:26px;border-top:1px solid var(--line);}
 .contact-bottom-cta h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;margin-bottom:14px;}
 .contact-bottom-cta p{color:var(--slate);font-size:0.88rem;margin-bottom:20px;}
 .contact-bottom-cta p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
@@ -1880,10 +1879,6 @@ function Contact({ go }) {
                 </div>
               </div>
             ))}
-            <div className="contact-member-note">
-              <h2>Already a member?</h2>
-              <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
-            </div>
           </div>
           <div className="contact-form-panel">
             <h2>Send Us a Message</h2>
@@ -1895,14 +1890,16 @@ function Contact({ go }) {
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
             />
+            <div className="contact-member-note">
+              <h2>Already a member?</h2>
+              <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
+            </div>
+            <div className="contact-bottom-cta">
+              <h2>Looking for membership or employer updates?</h2>
+              <p>Explore the options or subscribe to <a href="#newsletter" onClick={event=>{event.preventDefault();go("newsletter");}}>Heads-Up</a>. An enquiry and a subscription are separate choices.</p>
+              <button className="btn-p" type="button" onClick={()=>go("membership")}>Find Your Membership</button>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="contact-bottom-cta">
-        <div className="con">
-          <h2>Looking for membership or employer updates?</h2>
-          <p>Explore the options or subscribe to <a href="#newsletter" onClick={event=>{event.preventDefault();go("newsletter");}}>Heads-Up</a>. An enquiry and a subscription are separate choices.</p>
-          <button className="btn-p" type="button" onClick={()=>go("membership")}>Find Your Membership</button>
         </div>
       </section>
     </div>
