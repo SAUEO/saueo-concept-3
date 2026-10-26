@@ -165,6 +165,7 @@ a{text-decoration:none;color:inherit;}
 .state-business-intro-card p{color:var(--slate);font-size:0.88rem;margin-bottom:14px;}
 .state-business-intro-card p:last-of-type{margin-bottom:22px;}
 .state-business-process{background:#E4EDE8;padding:64px 0;}
+.state-business-process-heading{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin-bottom:24px;}
 .state-business-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;}
 .state-business-step{background:#fff;border:1px solid #C9A84C;border-top:3px solid #C9A84C;border-radius:10px;padding:24px 22px;box-shadow:0 10px 24px rgba(16,42,67,0.06);}
 .state-business-step-number{display:block;color:#C9A84C;font:800 0.7rem 'Manrope',sans-serif;letter-spacing:0.12em;margin-bottom:12px;}
@@ -1598,6 +1599,7 @@ function StateOfBusiness() {
       </section>
       <section className="state-business-process">
         <div className="con">
+          <h2 className="state-business-process-heading">From a response to a position</h2>
           <ol className="state-business-steps">
             {steps.map((step,index)=>(
               <li className="state-business-step" key={step.title}>
