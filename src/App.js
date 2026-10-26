@@ -121,7 +121,7 @@ a{text-decoration:none;color:inherit;}
 .resource-access:focus-visible{outline:2px solid var(--coral);outline-offset:4px;}
 .resource-intro-section,.resource-library-section,.resource-tools-section{background:#F3F4F2;padding:64px 0;}
 .resource-entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px;}
-.resource-entry-card{width:100%;text-align:left;color:var(--ink);cursor:pointer;}
+.resource-entry-card{display:flex;align-items:center;width:100%;text-align:left;color:var(--ink);text-decoration:none;cursor:pointer;}
 .resource-entry-card:hover{border-top-color:#C9A84C;transform:translateY(-3px);}
 .resource-editorial-section{background:#E4EDE8;padding:64px 0;}
 .resource-updates-section{background:#F3F4F2;padding:64px 0;}
@@ -1254,7 +1254,7 @@ function ResourceHub({ go }) {
           <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:26 }}>Heads-Up, webinars, employer updates and practical guides bring those developments into view. We distinguish proposals from requirements already in force, explain who may be affected and point to the questions worth checking. General information is a starting point; an organiser can help with the facts of your business.</p>
           <div className="resource-entry-grid">
             <button type="button" className="card resource-entry-card" onClick={()=>go("newsroom")}>Newsletter</button>
-            <button type="button" className="card resource-entry-card" onClick={()=>scrollTo("resource-webinars")}>Webinars and Events</button>
+            <a className="card resource-entry-card" href="https://learn.saueo.co.za/category/all-products">Webinars and Events</a>
             <button type="button" className="card resource-entry-card" onClick={goToGuides}>Guides and Tools</button>
           </div>
         </div>
@@ -1357,6 +1357,13 @@ function ResourceHub({ go }) {
             <p>Contact your organiser directly. If you cannot reach them or are unsure whom to contact, use the form and tell us you are a member.</p>
             <button type="button" className="btn-p" onClick={()=>go("contact")}>Talk to us</button>
           </div>
+        </div>
+      </section>
+      <section className="resource-intro-section" style={{ borderTop:"1px solid var(--line)",borderBottom:"1px solid var(--line)" }}>
+        <div className="con">
+          <h2 style={{ fontSize:"clamp(1.5rem,2.6vw,2rem)",marginBottom:14 }}>Stay current on what affects your workplace.</h2>
+          <p style={{ color:"var(--slate)",fontSize:"0.88rem",marginBottom:20 }}>Subscribe to Heads-Up for employer developments. If you need help applying one to your business, explore membership.</p>
+          <button type="button" className="btn-p" onClick={()=>go("membership")}>Find your membership</button>
         </div>
       </section>
     </div>
